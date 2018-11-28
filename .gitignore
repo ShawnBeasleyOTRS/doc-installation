@@ -1,0 +1,8 @@
+.project
+.DS_Store
+.c9
+testbuild
+_build
+_static
+_sphinx-themes
+locale/*/LC_MESSAGES/*.mo
