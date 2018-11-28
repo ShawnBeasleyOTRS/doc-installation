@@ -15,7 +15,7 @@ Ticket index module can be set in system configuration setting ``Ticket::IndexMo
 ``Kernel::System::Ticket::IndexAccelerator::StaticDB``
    The most powerful module, should be used when you have above 80,000 open tickets. It uses an extra ``ticket_index`` table, which will be populated with keywords based on ticket data. Use the following command for generating an initial index after switching backends:
 
-   ::
+   .. code-block:: bash
 
       otrs> /opt/otrs/bin/otrs.Console.pl Maint::Ticket::QueueIndexRebuild
 
@@ -27,7 +27,7 @@ OTRS uses a special search index to perform full-text searches across fields in 
 
 To create an initial index, use this command:
 
-::
+.. code-block:: bash
 
    otrs> /opt/otrs/bin/otrs.Console.pl Maint::Ticket::FulltextIndex --rebuild
 
@@ -52,7 +52,7 @@ There are some options available for fine tuning the search index:
 
       Run the following command in order to generate a new index:
 
-      ::
+      .. code-block:: bash
 
          otrs> /opt/otrs/bin/otrs.Console.pl Maint::Ticket::FulltextIndexRebuild
 
@@ -113,7 +113,7 @@ There are two different backend modules for the article storage of phone, email 
 
 You can switch from one back-end to the other on the fly. You can switch the backend in the system configuration, and then run this command line utility to put the articles from the database onto the filesystem or the other way around:
 
-::
+.. code-block:: bash
 
    otrs> /opt/otrs/bin/otrs.Console.pl Admin::Article::StorageSwitch --target ArticleStorageFS
 
@@ -164,7 +164,7 @@ Caching
 
 OTRS caches a lot of temporary data in ``/opt/otrs/var/tmp``. Please make sure that this uses a high performance file system and storage. If you have enough RAM, you can also try to put this directory on a ramdisk like this:
 
-::
+.. code-block:: bash
 
    otrs> /opt/otrs/bin/otrs.Console.pl Maint::Session::DeleteAll
    otrs> /opt/otrs/bin/otrs.Console.pl Maint::Cache::Delete

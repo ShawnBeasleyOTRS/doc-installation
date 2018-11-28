@@ -16,7 +16,7 @@ Here's how to disable SELinux for RHEL/CentOS/Fedora.
 
 1. Configure ``SELINUX=disabled`` in the ``/etc/selinux/config`` file:
 
-   ::
+   .. code-block:: none
 
       # This file controls the state of SELinux on the system.
       # SELINUX= can take one of these three values:
@@ -31,7 +31,7 @@ Here's how to disable SELinux for RHEL/CentOS/Fedora.
 
 2. Reboot your system. After reboot, confirm that the ``getenforce`` command returns *Disabled*:
 
-   ::
+   .. code-block:: bash
 
       root> getenforce
       Disabled
@@ -42,7 +42,7 @@ Step 1: Unpack and Install the Application
 
 Unpack the source archive (for example, using ``tar``) into the directory ``/opt``, and rename the directory from ``otrs-x.x.x`` to ``otrs`` (see script below).
 
-::
+.. code-block:: bash
 
    root> tar xzf /tmp/otrs-x.x.x.tar.gz
    root> mv otrs-x.x.x /opt/otrs
@@ -53,7 +53,7 @@ Step 2: Install Additional Programs and Perl Modules
 
 Use the following script to get an overview of all installed and required CPAN modules and other external dependencies.
 
-::
+.. code-block:: none
 
    root> perl /opt/otrs/bin/otrs.CheckEnvironment.pl
    Checking for Perl Modules:
@@ -74,7 +74,7 @@ Step 3: Create the OTRS User
 
 Create a dedicated user for OTRS:
 
-::
+.. code-block:: bash
 
    root> useradd -r -d /opt/otrs -c 'OTRS user' otrs
 
@@ -84,7 +84,7 @@ Step 4: Activate the Default Config File
 
 There is one OTRS config file bundled in ``$OTRS_HOME/Kernel/Config.pm.dist``. You must activate it by copying it without the ``.dist`` filename extension.
 
-::
+.. code-block:: bash
 
    root> cp /opt/otrs/Kernel/Config.pm.dist /opt/otrs/Kernel/Config.pm
 
@@ -96,7 +96,7 @@ OTRS comes with an own built-in web server that is used behind apache as a rever
 
 On some systems like Debian and SuSE, these modules need to be specifically enabled:
 
-::
+.. code-block:: bash
 
    root> a2enmod proxy
    root> a2enmod proxy_http
@@ -106,14 +106,14 @@ Most Apache installations have a ``conf.d`` directory included. On Linux systems
 link the appropriate template in ``/opt/otrs/scripts/apache2-httpd.include.conf`` to a file called
 ``zzz_otrs.conf`` in the Apache configuration directory (to make sure it is loaded after the other configurations).
 
-::
+.. code-block:: bash
 
    # Debian/Ubuntu:
    root> ln -s /opt/otrs/scripts/apache2-httpd.include.conf /etc/apache2/sites-enabled/zzz_otrs.conf
 
 Now you can restart your web server to load the new configuration settings. On most systems you can do that with the command:
 
-::
+.. code-block:: bash
 
    root> systemctl restart apache2.service
 
@@ -123,7 +123,7 @@ Step 6: Set File Permissions
 
 Please execute the following command to set the file and directory permissions for OTRS. It will try to detect the correct user and group settings needed for your setup.
 
-::
+.. code-block:: bash
 
    root> /opt/otrs/bin/otrs.SetPermissions.pl
 
@@ -147,7 +147,7 @@ MySQL
 
 Run the following commands in MySQL as database admin user:
 
-::
+.. code-block:: none
 
    root> mysql -uroot -p
 
@@ -166,7 +166,7 @@ Run the following commands in MySQL as database admin user:
 
 Run the following commands on the shell to create schema and insert data:
 
-::
+.. code-block:: bash
 
    root> mysql -uroot -p otrs < /opt/otrs/scripts/database/otrs-schema.mysql.sql
    root> mysql -uroot -p otrs < /opt/otrs/scripts/database/otrs-initial_insert.mysql.sql
@@ -174,7 +174,7 @@ Run the following commands on the shell to create schema and insert data:
 
 Configure database settings in ``Kernel/Config.pm``:
 
-::
+.. code-block:: perl
 
    $Self->{DatabaseHost} = '127.0.0.1';
    $Self->{Database}     = 'otrs';
@@ -186,7 +186,7 @@ Configure database settings in ``Kernel/Config.pm``:
 
    The following configuration settings are recommended for MySQL setups. Please add the following lines to ``/etc/my.cnf`` under the ``[mysqld]`` section:
 
-   ::
+   .. code-block:: ini
 
       max_allowed_packet   = 64M
       query_cache_size     = 32M
@@ -198,7 +198,7 @@ PostgreSQL
 
 Run these commands as ``postgres`` user:
 
-::
+.. code-block:: bash
 
    # Switch user
    root> sudo su - postgres
@@ -211,7 +211,7 @@ Run these commands as ``postgres`` user:
 
 Run these commands on the shell as ``otrs`` user.
 
-::
+.. code-block:: bash
 
    # Create schema and insert data.
    otrs> export PGPASSWORD=some-pass
@@ -221,7 +221,7 @@ Run these commands on the shell as ``otrs`` user.
 
 Configure database settings in ``Kernel/Config.pm``:
 
-::
+.. code-block:: perl
 
    $Self->{DatabaseHost} = '127.0.0.1';
    $Self->{Database}     = 'otrs';
@@ -235,7 +235,7 @@ Finishing the Database Setup
 
 To verify your database setup, run the following command:
 
-::
+.. code-block:: none
 
    otrs> /opt/otrs/bin/otrs.Console.pl Maint::Database::Check
    Trying to connect to database 'DBI:Pg:dbname=otrs;host=localhost' with user 'otrs'...
@@ -243,7 +243,7 @@ To verify your database setup, run the following command:
 
 Once the database is configured correctly, please initialize the system configuration with the following command:
 
-::
+.. code-block:: none
 
    otrs> /opt/otrs/bin/otrs.Console.pl Maint::Config::Rebuild
    Rebuilding the system configuration...
@@ -253,7 +253,7 @@ Once the database is configured correctly, please initialize the system configur
 
    For security reasons, please change the default password of the admin user ``root@localhost`` by generating a random password.
 
-   ::
+   .. code-block:: none
 
       otrs> /opt/otrs/bin/otrs.Console.pl Admin::User::SetPassword root@localhost
       Generated password 'rtB98S55kuc9'.
@@ -261,7 +261,7 @@ Once the database is configured correctly, please initialize the system configur
 
    You can also choose to set your own password.
 
-   ::
+   .. code-block:: none
 
       otrs> /opt/otrs/bin/otrs.Console.pl Admin::User::SetPassword root@localhost geheim
       Successfully set password for user 'root@localhost'
@@ -275,7 +275,7 @@ OTRS requires an active cluster of Elasticsearch 6.0 or higher. The easiest way 
 
 Additionally, OTRS requires plugins to be installed into Elasticsearch:
 
-::
+.. code-block:: bash
 
    # Install required plugins for elasticsearch.
    root> /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch ingest-attachment
@@ -283,11 +283,11 @@ Additionally, OTRS requires plugins to be installed into Elasticsearch:
 
 .. note::
 
-	Restart elasticsearch afterwards, or indexes will not be built.
+   Restart elasticsearch afterwards, or indexes will not be built.
 
 To verify the Elasticsearch installation, you can use the following command:
 
-::
+.. code-block:: none
 
    otrs> /opt/otrs/bin/otrs.Console.pl Maint::DocumentSearch::Check
    Trying to connect to cluster...
@@ -299,7 +299,7 @@ Step 9: Start the OTRS Daemon and Web Server
 
 The new OTRS daemon is responsible for handling any asynchronous and recurring tasks in OTRS. The built-in OTRS web server process handles the web requests handed over from Apache. Both processes must be started from the ``otrs`` user.
 
-::
+.. code-block:: bash
 
    otrs> /opt/otrs/bin/otrs.Daemon.pl start
    otrs> /opt/otrs/bin/otrs.WebServer.pl
@@ -312,7 +312,7 @@ Now you are ready to login to your system at http://localhost/otrs/index.pl as u
 
 .. note::
 
-	Accessing the external interface using http://localhost
+   Accessing the external interface using http://localhost
 
 
 Step 11: Setup Systemd Files
@@ -320,7 +320,7 @@ Step 11: Setup Systemd Files
 
 OTRS comes with example systemd configuration files that can be used to make sure that the OTRS daemon and web server are started automatically after the system starts.
 
-::
+.. code-block:: bash
 
    root> cd /opt/otrs/scripts/systemd
    root> for UNIT in *.service; do cp -vf $UNIT /usr/lib/systemd/system/; systemctl enable $UNIT; done
@@ -337,7 +337,7 @@ You can activate the bash autocompletion by installing the package ``bash-comple
 
 After restarting your shell, you can just type this command followed by TAB, and it will list all available commands:
 
-::
+.. code-block:: bash
 
    otrs> /opt/otrs/bin/otrs.Console.pl
 
@@ -346,7 +346,7 @@ If you type a few characters of the command name, TAB will show all matching com
 .. note::
    By problems you can source it in your ~/.bashrc by adding this line:
 
-   ::
+   .. code-block:: bash
 
       source /opt/otrs/.bash_completion
 
