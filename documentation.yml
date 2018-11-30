@@ -12,7 +12,7 @@ ProjectName: OTRS Installation Guide
 Copyright: 2018, OTRS AG
 Author: OTRS AG
 Version: 7.0
-Release: 7.0.1
+Release: 7.0
 HTMLBasename: doc-installation
 Stable: 1
 Publish: 1
