@@ -1,4 +1,5 @@
 ---
+# variables to be used inside the RST files.
 Variables:
   doc_name: OTRS Installation Guide
   doc_description: This is the description of the documentation.
@@ -8,11 +9,24 @@ Variables:
   doc_url: https://otrs.com
   doc_datestamp: current_datestamp
   doc_license: GNU Free Documentation License
+
+# project meta information
 ProjectName: OTRS Installation Guide
 Copyright: 2018, OTRS AG
 Author: OTRS AG
 Version: 7.0
 Release: 7.0
+
+# sphinx extension module names to be used
+Extensions:
+  - sphinx.ext.autosectionlabel
+  - sphinx.ext.extlinks
+
+# basename to be used by HTML help builder
 HTMLBasename: doc-installation
+
+# generate stable link to the current version
 Stable: 1
+
+# publish documentation to target repository
 Publish: 1
