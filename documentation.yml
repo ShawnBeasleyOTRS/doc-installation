@@ -33,8 +33,8 @@ Publish: 1
 
 # PDF output directory path and filename
 PDFOutputPath: doc-installation/{{Version}}/{{Language}}/pdf/
-PDFFilename: otrs_installation_manual_{{Version}}_{{Language}}.pdf
+PDFFilename: otrs_installation_guide_{{Version}}_{{Language}}.pdf
 
 # EPub output directory path and filename
 EPUBOutputPath: doc-installation/{{Version}}/{{Language}}/epub/
-EPUBFilename: otrs_installation_manual_{{Version}}_{{Language}}.epub
+EPUBFilename: otrs_installation_guide_{{Version}}_{{Language}}.epub
