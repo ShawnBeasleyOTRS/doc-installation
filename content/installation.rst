@@ -196,28 +196,31 @@ Configure database settings in ``Kernel/Config.pm``:
 PostgreSQL
 ~~~~~~~~~~
 
+.. note::
+
+   We assume, that OTRS and PostgreSQL server run on the same machine and PostgeSQL uses *Peer* authentication method. For more information see the `Client Authentication <https://www.postgresql.org/docs/current/client-authentication.html>`__ section in the PostgreSQL manual.
+
 Run these commands as ``postgres`` user:
 
 .. code-block:: bash
 
    # Switch user
-   root> sudo su - postgres
-
-   # Create database
-   postgres> createdb --encoding=utf8 --owner=otrs otrs
+   root> su - postgres
 
    # Create database user
-   postgres> echo "create user otrs password 'choose-your-password';" | psql
+   postgres> createuser otrs
+
+   # Create database
+   postgres> createdb --encoding=UTF8 --owner=otrs otrs
 
 Run these commands on the shell as ``otrs`` user.
 
 .. code-block:: bash
 
    # Create schema and insert data.
-   otrs> export PGPASSWORD=some-pass
-   otrs> psql otrs otrs -h localhost < /opt/otrs/scripts/database/otrs-schema.postgresql.sql
-   otrs> psql otrs otrs -h localhost < /opt/otrs/scripts/database/otrs-initial_insert.postgresql.sql
-   otrs> psql otrs otrs -h localhost < /opt/otrs/scripts/database/otrs-schema-post.postgresql.sql
+   otrs> psql < /opt/otrs/scripts/database/otrs-schema.postgresql.sql
+   otrs> psql < /opt/otrs/scripts/database/otrs-initial_insert.postgresql.sql
+   otrs> psql < /opt/otrs/scripts/database/otrs-schema-post.postgresql.sql
 
 Configure database settings in ``Kernel/Config.pm``:
 
