@@ -66,12 +66,31 @@ Step 3: Install the New Release
 
    With OTRS 7 RPMs are no longer provided. RPM based installations need to switch by uninstalling the RPM (this will not drop your database) and using the source archives instead.
 
+You can obtain either ``otrs-x.y.z.tar.gz`` or ``otrs-x.y.z.tar.bz2``. Unpack the source archive (for example, using ``tar``) into the directory ``/opt``, and create a symbolic link ``/opt/otrs`` that points to ``/opt/otrs-x.y.z``. **Do not forget** to replace the version numbers!
+
+.. note::
+
+   Package ``bzip2`` is not installed in some systems by default. Make sure, that ``bzip2`` is installed before unpacking ``otrs-x.y.z.tar.bz2``.
+
+Unpack command for ``otrs-x.y.z.tar.gz``:
+
 .. code-block:: bash
 
-   root> cd /opt
-   root> mv otrs otrs-old
-   root> tar -xzf otrs-x.x.x.tar.gz
-   root> mv otrs-x.x.x otrs
+   root> tar -xzf otrs-x.y.z.tar.gz -C /opt
+
+Unpack command for ``otrs-x.y.z.tar.bz2``:
+
+.. code-block:: bash
+
+   root> tar -xjf otrs-x.y.z.tar.bz2 -C /opt
+
+It is recommended to create a symbolic link named ``/opt/otrs`` that always points to the latest OTRS version. Using symbolic link makes easy to manage the OTRS updates, because you can leave untouched the directory of the previous version, only the symbolic link needs to change. If you need to revert the update, you can change the target of the symbolic link back.
+
+Execute this command to create a symbolic link:
+
+.. code-block:: bash
+
+   root> ln -fns /opt/otrs-x.y.z /opt/otrs
 
 
 Restore Old Configuration Files
@@ -101,7 +120,7 @@ If you have additional packages with default statistics you have to restore the 
 Set File Permissions
 ~~~~~~~~~~~~~~~~~~~~
 
-Please execute the following command as root user to set the file and directory permissions for OTRS. It will try to detect the correct user and group settings needed for your setup.
+Please execute the following command to set the file and directory permissions for OTRS. It will try to detect the correct user and group settings needed for your setup.
 
 .. code-block:: bash
 

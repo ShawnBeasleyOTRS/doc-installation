@@ -5,6 +5,7 @@ This chapter describes the installation and basic configuration of the central O
 
 Follow the detailed steps in this chapter to install OTRS on your server. You can then use its web interface to login and administer the system.
 
+
 Preparation: Disable SELinux
 ----------------------------
 
@@ -40,12 +41,31 @@ Here's how to disable SELinux for RHEL/CentOS/Fedora.
 Step 1: Unpack and Install the Application
 ------------------------------------------
 
-Unpack the source archive (for example, using ``tar``) into the directory ``/opt``, and rename the directory from ``otrs-x.x.x`` to ``otrs`` (see script below).
+You can obtain either ``otrs-x.y.z.tar.gz`` or ``otrs-x.y.z.tar.bz2``. Unpack the source archive (for example, using ``tar``) into the directory ``/opt``, and create a symbolic link ``/opt/otrs`` that points to ``/opt/otrs-x.y.z``. **Do not forget** to replace the version numbers!
+
+.. note::
+
+   Package ``bzip2`` is not installed in some systems by default. Make sure, that ``bzip2`` is installed before unpacking ``otrs-x.y.z.tar.bz2``.
+
+Unpack command for ``otrs-x.y.z.tar.gz``:
 
 .. code-block:: bash
 
-   root> tar xzf /tmp/otrs-x.x.x.tar.gz
-   root> mv otrs-x.x.x /opt/otrs
+   root> tar -xzf otrs-x.y.z.tar.gz -C /opt
+
+Unpack command for ``otrs-x.y.z.tar.bz2``:
+
+.. code-block:: bash
+
+   root> tar -xjf otrs-x.y.z.tar.bz2 -C /opt
+
+It is recommended to create a symbolic link named ``/opt/otrs`` that always points to the latest OTRS version. Using symbolic link makes easy to manage the OTRS updates, because you can leave untouched the directory of the previous version, only the symbolic link needs to change. If you need to revert the update, you can change the target of the symbolic link back.
+
+Execute this command to create a symbolic link:
+
+.. code-block:: bash
+
+   root> ln -fns /opt/otrs-x.y.z /opt/otrs
 
 
 Step 2: Install Additional Programs and Perl Modules
@@ -66,6 +86,14 @@ Use the following script to get an overview of all installed and required CPAN m
 
    Please note that OTRS requires a working Perl installation with all *core* modules such as the module ``version``. These modules are not explicitly checked by the script. You may need to install a ``perl-core`` package on some systems like RHEL that do not install the Perl core packages by default.
 
+To install the required and optional packages, you can use either CPAN or the package manager of your Linux distribution.
+
+Execute this command to get an install command to install the missing dependencies:
+
+.. code-block:: bash
+
+   root> /opt/otrs/bin/otrs.CheckEnvironment.pl --list
+
 OTRS requires a supported stable version of Node.js to be installed. Please refer to the `Node.js installation instructions <https://nodejs.org/en/download/package-manager/>`__.
 
 
@@ -76,13 +104,13 @@ Create a dedicated user for OTRS:
 
 .. code-block:: bash
 
-   root> useradd -r -d /opt/otrs -c 'OTRS user' otrs
+   root> useradd -r -d /opt/otrs -c 'OTRS user' otrs -s /bin/bash
 
 
-Step 4: Activate the Default Config File
-----------------------------------------
+Step 4: Activate the Default Configuration File
+-----------------------------------------------
 
-There is one OTRS config file bundled in ``$OTRS_HOME/Kernel/Config.pm.dist``. You must activate it by copying it without the ``.dist`` filename extension.
+There is an OTRS configuration file bundled in ``$OTRS_HOME/Kernel/Config.pm.dist``. You must activate it by copying it without the ``.dist`` filename extension.
 
 .. code-block:: bash
 
@@ -142,8 +170,8 @@ The following steps need to be taken to setup the database for OTRS properly:
 
    Please note that OTRS requires ``utf8`` as database storage encoding.
 
-MySQL
-~~~~~
+MySQL or MariaDB
+~~~~~~~~~~~~~~~~
 
 Run the following commands in MySQL as database admin user:
 
@@ -198,7 +226,7 @@ PostgreSQL
 
 .. note::
 
-   We assume, that OTRS and PostgreSQL server run on the same machine and PostgeSQL uses *Peer* authentication method. For more information see the `Client Authentication <https://www.postgresql.org/docs/current/client-authentication.html>`__ section in the PostgreSQL manual.
+   We assume, that OTRS and PostgreSQL server run on the same machine and PostgreSQL uses *Peer* authentication method. For more information see the `Client Authentication <https://www.postgresql.org/docs/current/client-authentication.html>`__ section in the PostgreSQL manual.
 
 Run these commands as ``postgres`` user:
 
@@ -266,7 +294,7 @@ Once the database is configured correctly, please initialize the system configur
 
    .. code-block:: none
 
-      otrs> /opt/otrs/bin/otrs.Console.pl Admin::User::SetPassword root@localhost geheim
+      otrs> /opt/otrs/bin/otrs.Console.pl Admin::User::SetPassword root@localhost your-own-password
       Successfully set password for user 'root@localhost'
 
 
@@ -286,7 +314,7 @@ Additionally, OTRS requires plugins to be installed into Elasticsearch:
 
 .. note::
 
-   Restart elasticsearch afterwards, or indexes will not be built.
+   Restart Elasticsearch afterwards, or indexes will not be built.
 
 To verify the Elasticsearch installation, you can use the following command:
 
@@ -313,9 +341,7 @@ Step 10: First Login
 
 Now you are ready to login to your system at http://localhost/otrs/index.pl as user ``root@localhost`` with the password that was generated (see above).
 
-.. note::
-
-   Accessing the external interface using http://localhost
+Use http://localhost to access the external interface.
 
 
 Step 11: Setup Systemd Files
@@ -331,12 +357,12 @@ OTRS comes with example systemd configuration files that can be used to make sur
 With this step, the basic system setup is finished.
 
 
-Step 12: Setup Bash Autocompletion (optional)
----------------------------------------------
+Step 12: Setup Bash Auto-Completion (optional)
+----------------------------------------------
 
 All regular OTRS command line operations happen via the OTRS console interface. This provides an auto completion for the bash shell which makes finding the right command and options much easier.
 
-You can activate the bash autocompletion by installing the package ``bash-completion``. It will automatically detect and load the file ``/opt/otrs/.bash_completion`` for the ``otrs`` user.
+You can activate the bash auto-completion by installing the package ``bash-completion``. It will automatically detect and load the file ``/opt/otrs/.bash_completion`` for the ``otrs`` user.
 
 After restarting your shell, you can just type this command followed by TAB, and it will list all available commands:
 
