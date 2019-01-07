@@ -173,24 +173,37 @@ The following steps need to be taken to setup the database for OTRS properly:
 MySQL or MariaDB
 ~~~~~~~~~~~~~~~~
 
-Run the following commands in MySQL as database admin user:
+Log in to MySQL console as database admin user:
 
-.. code-block:: none
+.. code-block:: bash
 
    root> mysql -uroot -p
 
-      # Create database
-      CREATE DATABASE otrs CHARACTER SET utf8;
+Create a database:
 
-      # Create database user
-      # Special handling for MySQL 8, as the default caching_sha2_password can only be used over secure connections.
-      CREATE USER 'otrs'@'localhost' IDENTIFIED WITH mysql_native_password BY 'choose-your-password';
-      # Older mysql versions:
-      CREATE USER 'otrs'@'localhost' IDENTIFIED BY 'choose-your-password';
+.. code-block:: bash
 
-      # Assign user privileges to the new database.
-      GRANT ALL PRIVILEGES ON otrs.* TO 'otrs'@'localhost';
-      FLUSH PRIVILEGES;
+   mysql> CREATE DATABASE otrs CHARACTER SET utf8;
+
+Special database user handling is needed for MySQL 8, as the default ``caching_sha2_password`` can only be used over secure connections. Create a database user in MySQL 8:
+
+.. code-block:: bash
+
+   mysql> CREATE USER 'otrs'@'localhost' IDENTIFIED WITH mysql_native_password BY 'choose-your-password';
+
+Create a database user in older MySQL versions:
+
+.. code-block:: bash
+
+   mysql> CREATE USER 'otrs'@'localhost' IDENTIFIED BY 'choose-your-password';
+
+Assign user privileges to the new database:
+
+.. code-block:: bash
+
+   mysql> GRANT ALL PRIVILEGES ON otrs.* TO 'otrs'@'localhost';
+   mysql> FLUSH PRIVILEGES;
+   mysql> quit
 
 Run the following commands on the shell to create schema and insert data:
 
@@ -228,24 +241,28 @@ PostgreSQL
 
    We assume, that OTRS and PostgreSQL server run on the same machine and PostgreSQL uses *Peer* authentication method. For more information see the `Client Authentication <https://www.postgresql.org/docs/current/client-authentication.html>`__ section in the PostgreSQL manual.
 
-Run these commands as ``postgres`` user:
+Switch to ``postgres`` user:
 
 .. code-block:: bash
 
-   # Switch user
    root> su - postgres
 
-   # Create database user
-   postgres> createuser otrs
-
-   # Create database
-   postgres> createdb --encoding=UTF8 --owner=otrs otrs
-
-Run these commands on the shell as ``otrs`` user.
+Create a database user:
 
 .. code-block:: bash
 
-   # Create schema and insert data.
+   postgres> createuser otrs
+
+Create a database:
+
+.. code-block:: bash
+
+   postgres> createdb --encoding=UTF8 --owner=otrs otrs
+
+Run the following commands on the shell to create schema and insert data:
+
+.. code-block:: bash
+
    otrs> psql < /opt/otrs/scripts/database/otrs-schema.postgresql.sql
    otrs> psql < /opt/otrs/scripts/database/otrs-initial_insert.postgresql.sql
    otrs> psql < /opt/otrs/scripts/database/otrs-schema-post.postgresql.sql
@@ -282,7 +299,7 @@ Once the database is configured correctly, please initialize the system configur
 
 .. note::
 
-   For security reasons, please change the default password of the admin user ``root@localhost`` by generating a random password.
+   For security reasons, please change the default password of the admin user ``root@localhost`` by generating a random password:
 
    .. code-block:: none
 
@@ -290,13 +307,12 @@ Once the database is configured correctly, please initialize the system configur
       Generated password 'rtB98S55kuc9'.
       Successfully set password for user 'root@localhost'.
 
-   You can also choose to set your own password.
+   You can also choose to set your own password:
 
    .. code-block:: none
 
       otrs> /opt/otrs/bin/otrs.Console.pl Admin::User::SetPassword root@localhost your-own-password
       Successfully set password for user 'root@localhost'
-
 
 
 Step 8: Setup Elasticsearch Cluster
@@ -308,7 +324,6 @@ Additionally, OTRS requires plugins to be installed into Elasticsearch:
 
 .. code-block:: bash
 
-   # Install required plugins for elasticsearch.
    root> /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch ingest-attachment
    root> /usr/share/elasticsearch/bin/elasticsearch-plugin install --batch analysis-icu
 
@@ -378,6 +393,7 @@ If you type a few characters of the command name, TAB will show all matching com
    .. code-block:: bash
 
       source /opt/otrs/.bash_completion
+
 
 Step 13: Further Information
 ----------------------------
