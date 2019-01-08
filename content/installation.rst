@@ -120,7 +120,7 @@ There is an OTRS configuration file bundled in ``$OTRS_HOME/Kernel/Config.pm.dis
 Step 5: Configure the Apache Web Server
 ---------------------------------------
 
-OTRS comes with an own built-in web server that is used behind apache as a reverse proxy (or any other reverse proxy server). A few apache modules are needed for correct operation: ``proxy_module``, ``proxy_http_module`` and ``proxy_wstunnel_module``.
+OTRS comes with an own built-in web server that is used behind Apache as a reverse proxy (or any other reverse proxy server). A few Apache modules are needed for correct operation: ``proxy_module``, ``proxy_http_module`` and ``proxy_wstunnel_module``.
 
 On some systems like Debian and SuSE, these modules need to be specifically enabled:
 

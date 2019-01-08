@@ -7,13 +7,13 @@ There is a list of performance enhancing techniques for your OTRS installation, 
 Ticket Index Module
 -------------------
 
-Ticket index module can be set in system configuration setting ``Ticket::IndexModule``. There are two backend modules for the index for the ticket queue view:
+Ticket index module can be set in system configuration setting ``Ticket::IndexModule``. There are two back end modules for the index for the ticket queue view:
 
 ``Kernel::System::Ticket::IndexAccelerator::RuntimeDB``
    This is the default option, and will generate each queue view on the fly from the ticket table. You will not have performance trouble until you have about 60,000 open tickets in your system.
 
 ``Kernel::System::Ticket::IndexAccelerator::StaticDB``
-   The most powerful module, should be used when you have above 80,000 open tickets. It uses an extra ``ticket_index`` table, which will be populated with keywords based on ticket data. Use the following command for generating an initial index after switching backends:
+   The most powerful module, should be used when you have above 80,000 open tickets. It uses an extra ``ticket_index`` table, which will be populated with keywords based on ticket data. Use the following command for generating an initial index after switching back ends:
 
    .. code-block:: bash
 
@@ -38,10 +38,10 @@ To create an initial index, use this command:
 There are some options available for fine tuning the search index:
 
 ``Ticket::SearchIndex::IndexArchivedTickets``
-   Defines if archived tickets will be included in the search index (not enabled by default). This is advisable to keep the index small on large systems with archived tickets. If this is enabled, archived tickets will not be found by full-text searches.
+   Defines if archived tickets will be included in the search index (not enabled by default). This is advisable to keep the index small on large systems with archived tickets. If this is enabled, archived tickets will be found by full-text searches.
 
 ``Ticket::SearchIndex::Attribute``
-   Basic fulltext index settings.
+   Basic full-text index settings.
 
    .. figure:: images/sysconfig-ticket-searchindex-attribute.png
       :alt: ``Ticket::SearchIndex::Attribute`` Setting
@@ -63,7 +63,7 @@ There are some options available for fine tuning the search index:
       Used as word length boundaries. Only words with a length between these two values are stored in the article search index.
 
 ``Ticket::SearchIndex::Filters``
-   Fulltext index regex filters to remove parts of the text.
+   Full-text index regular expression filters to remove parts of the text.
 
    .. figure:: images/sysconfig-ticket-searchIndex-filters.png
       :alt: ``Ticket::SearchIndex::Filters`` Setting
@@ -77,7 +77,7 @@ There are some options available for fine tuning the search index:
    - The third filter strips out words which do not contain a word-character: a-z, A-Z, 0-9, _
 
 ``Ticket::SearchIndex::StopWords``
-   English stop words for fulltext index. These words will be removed from the search index.
+   English stop words for full-text index. These words will be removed from the search index.
 
    .. figure:: images/sysconfig-ticket-searchindex-stopwords.png
       :alt: ``Ticket::SearchIndex::StopWords###en`` Setting
@@ -95,7 +95,7 @@ There are some options available for fine tuning the search index:
 Article Storage
 ---------------
 
-There are two different backend modules for the article storage of phone, email and internal articles. The used article storage can be configured in the setting ``Ticket::Article::Backend::MIMEBase::ArticleStorage``.
+There are two different back end modules for the article storage of phone, email and internal articles. The used article storage can be configured in the setting ``Ticket::Article::Backend::MIMEBase::ArticleStorage``.
 
 ``Kernel::System::Ticket::Article::Backend::MIMEBase::ArticleStorageDB``
    This default module will store attachments in the database. It also works with multiple front end servers, but requires much storage space in the database.
@@ -111,13 +111,13 @@ There are two different backend modules for the article storage of phone, email 
 
       Recommended for large setups.
 
-You can switch from one back-end to the other on the fly. You can switch the backend in the system configuration, and then run this command line utility to put the articles from the database onto the filesystem or the other way around:
+You can switch from one back end to the other on the fly. You can switch the back end in the system configuration, and then run this command line utility to put the articles from the database onto the file system or the other way around:
 
 .. code-block:: bash
 
    otrs> /opt/otrs/bin/otrs.Console.pl Admin::Article::StorageSwitch --target ArticleStorageFS
 
-You can use the ``--target`` option to specify the target backend.
+You can use the ``--target`` option to specify the target back end.
 
 .. note::
 
@@ -137,6 +137,7 @@ To use the archive feature:
 
 1. Activate the ``Ticket::ArchiveSystem`` setting in the system configuration.
 2. Define a generic agent job:
+
    - Click on the *Add Job* button in the *Generic Agent* screen.
    - *Job Settings*: provide a name for the archiving job.
    - *Automatic Execution*: select proper options to schedule this job.
@@ -148,14 +149,14 @@ To use the archive feature:
 
    .. note::
 
-      There is only 5000 tickets can be modified by running this job manually.
+      Up to 5000 tickets can be modified by running this job manually.
 
 When you search for tickets, the system default is to search tickets which are not archived.
 
 To search for archived tickets:
 
 1. Open the ticket search screen.
-2. Set *Archive search* to *Archived tickets* or *All tickets*.
+2. Set *Archive search* to *Unarchived tickets* or *All tickets*.
 3. Perform the search.
 
 
@@ -184,14 +185,14 @@ OTRS caches a lot of temporary data in ``/opt/otrs/var/tmp``. Please make sure t
 
 .. warning::
 
-   This will be a non-permanent storage that will be lost on server reboot. All your sessions (if you store them in the filesystem) and your cache data will be lost.
+   This will be a non-permanent storage that will be lost on server reboot. All your sessions (if you store them in the file system) and your cache data will be lost.
 
 .. seealso::
 
-   There is also a centralized `memcached based cache backend <https://otrs.com/otrs-feature/feature-add-on-cache-memcached-fast/>`__ available for purchase from OTRS Group.
+   There is also a centralized `memcached based cache back end <https://otrs.com/otrs-feature/feature-add-on-cache-memcached-fast/>`__ available for purchase from OTRS Group.
 
 
 Clustering
 ----------
 
-For very high loads, it can be required to operate OTRS on a cluster of multiple front-end servers. This is a complex task with many pitfalls. Therefore, OTRS Group provides support for clusters in its `managed OTRS <https://otrs.com/how-to-buy/>`__ environment exclusively.
+For very high loads, it can be required to operate OTRS on a cluster of multiple front end servers. This is a complex task with many pitfalls. Therefore, OTRS Group provides support for clusters in its `managed OTRS <https://otrs.com/how-to-buy/>`__ environment exclusively.

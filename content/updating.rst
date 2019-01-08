@@ -9,10 +9,10 @@ Updating from an earlier version of OTRS 7
    You can update directly from any previous to the latest available patch level release.
 
 Updating from OTRS 6
-   You can update from any OTRS 6 patch level to the latest available OTRS 7 patch level release.
+   You can update from any OTRS 6 patch level release to the latest available OTRS 7 patch level release.
 
 Updating from OTRS 5 or earlier
-   You cannot update from OTRS 5 or earlier directly to OTRS 7. Full updates to all available minor versions have to be made sequentially instead. For example, if you come from OTRS 4.0, you first have to perform a full update to OTRS 5, then to 6 and finally to OTRS 7.
+   You cannot update from OTRS 5 or earlier directly to OTRS 7. Full updates to all available minor versions have to be made sequentially instead. For example, if you come from OTRS 4, you first have to perform a full update to OTRS 5, then to OTRS 6 and finally to OTRS 7.
 
    .. seealso::
 
@@ -130,17 +130,13 @@ Please execute the following command to set the file and directory permissions f
 Install Required Programs and Perl Modules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Please refer to the `section in the installation guide <#installation-of-perl-modules>`__ that explains how to verify external dependencies such as Perl modules and Node.js.
+Please refer to the section :ref:`Step 2: Install Additional Programs and Perl Modules` in the installation guide that explains how to verify external dependencies such as Perl modules and Node.js.
 
-In addition to that, OTRS 7 also requires an active cluster of Elasticsearch 6.0 or higher. Please refer to the `Setup Elasticsearch Cluster <#installation-setup-elasticsearch-cluster>`__ section in the installation guide.
+In addition to that, OTRS 7 also requires an active cluster of Elasticsearch 6.0 or higher. Please refer to the :ref:`Step 8: Setup Elasticsearch Cluster` section in the installation guide.
 
 
 Step 4: Run the Migration Script
 --------------------------------
-
-.. note::
-
-   If you have any custom Perl or XML configuration files in ``Kernel/Config/Files``, these need to be `converted to the new formats supported by OTRS 7 <http://doc.otrs.com/doc/manual/developer/6.0/en/html/package-porting.html#packge-porting-5-to-6-configuration-files>`__ before running the migration script.
 
 The migration script will perform many checks on your system and give you advice on how to install missing Perl modules etc., if that is required. If all checks succeeded, the necessary migration steps will be performed. Please also run this script in case of patch level updates.
 
@@ -166,7 +162,7 @@ Step 5: Update Installed Packages
 
    Packages for OTRS 6 are not compatible with OTRS 7 and have to be updated.
 
-You can use the command below to update all installed packages. This works for all packages that are available from online repositories. You can update other packages later via the package manager (this requires a running OTRS Daemon).
+You can use the command below to update all installed packages. This works for all packages that are available from online repositories. You can update other packages later via the package manager (this requires a running OTRS daemon).
 
 .. code-block:: bash
 
@@ -176,7 +172,9 @@ You can use the command below to update all installed packages. This works for a
 Step 6: Restart your Services
 -----------------------------
 
-OTRS 7 comes with an own built-in web server that is used behind apache as a reverse proxy (or any other reverse proxy server). For major updates from OTRS 6, the apache configuration must be updated with the new version in ``/opt/otrs/scripts/apache2-httpd.include.conf``, if it was copied and not just linked. Please also note that while ``mod_perl`` is no longer needed, other Apache modules are required now: ``proxy_module``, ``proxy_http_module`` and ``proxy_wstunnel_module``.
+OTRS 7 comes with an own built-in web server that is used behind Apache as a reverse proxy (or any other reverse proxy server). For major update from OTRS 6, the Apache configuration must be updated with the new version in ``/opt/otrs/scripts/apache2-httpd.include.conf``, if it was copied and not just linked.
+
+Please also note that while ``mod_perl`` is no longer needed, other Apache modules are required now: ``proxy_module``, ``proxy_http_module`` and ``proxy_wstunnel_module``.
 
 After that, the services can be restarted. This will depend on your service configuration, here is an example:
 
@@ -187,13 +185,13 @@ After that, the services can be restarted. This will depend on your service conf
 
 .. note::
 
-   The OTRS Daemon is required for correct operation of OTRS such as sending emails. Please activate it as described in the next step.
+   The OTRS daemon is required for correct operation of OTRS such as sending emails. Please activate it as described in the next step.
 
 
 Step 7: Start the OTRS Daemon, Web Server and Cron Job
 ------------------------------------------------------
 
-The OTRS Daemon is responsible for handling any asynchronous and recurring tasks in OTRS. The daemon and its keepalive cron job must be started as the ``otrs`` user. The built-in OTRS web server process handles the web requests handed over from Apache.
+The OTRS daemon is responsible for handling any asynchronous and recurring tasks in OTRS. The daemon and its keepalive cron job must be started as the ``otrs`` user. The built-in OTRS web server process handles the web requests handed over from Apache.
 
 .. code-block:: bash
 
@@ -201,7 +199,7 @@ The OTRS Daemon is responsible for handling any asynchronous and recurring tasks
    otrs> /opt/otrs/bin/Cron.sh start
    otrs> /opt/otrs/bin/otrs.WebServer.pl
 
-OTRS comes with example systemd configuration files that can be used to make sure that the OTRS Daemon and web server are started automatically after the system starts.
+OTRS comes with example systemd configuration files that can be used to make sure that the OTRS daemon and web server are started automatically after the system starts.
 
 .. code-block:: bash
 
@@ -216,11 +214,11 @@ Step 8: Manual Migration Tasks and Changes
 
 .. warning::
 
-   This step is required only for major updates from OTRS 6.
+   This step is required only for major update from OTRS 6.
 
 Since the old customer interface screens are no longer present, some ACLs need to be corrected manually by the administrator. The migration script already informed you if this is the case.
 
-Affected ACLs are those that refer to a non-existing customer interface screen in their ``Action`` setting. This frontend ``Action`` rule needs to be replaced with a corresponding ``Endpoint`` rule. A table with possible mapping is included below.
+Affected ACLs are those that refer to a non-existing customer interface screen in their ``Action`` setting. This front end ``Action`` rule needs to be replaced with a corresponding ``Endpoint`` rule. A table with possible mapping is included below.
 
 +---------------------------+----------------------------------------------+
 | Action                    | Endpoint                                     |
