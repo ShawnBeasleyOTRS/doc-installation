@@ -1,8 +1,11 @@
-.project
-.DS_Store
 .c9
+.DS_Store
+.project
+.vstags
+.vscode
 testbuild
 _build
 _static
 _sphinx-themes
-locale/*/LC_MESSAGES/*.mo
+locale/*.mo
+conf.py
