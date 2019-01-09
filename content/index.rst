@@ -10,9 +10,9 @@ Permission is granted to copy, distribute and/or modify this document under the 
    :maxdepth: 3
    :caption: Contents
 
-   content/introduction
-   content/requirements
-   content/installation
-   content/updating
-   content/backup-restore
-   content/performance-tuning
+   introduction
+   requirements
+   installation
+   updating
+   backup-restore
+   performance-tuning
