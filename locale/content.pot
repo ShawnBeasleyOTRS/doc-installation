@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTRS Installation Guide 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 09:16+0100\n"
+"POT-Creation-Date: 2019-01-10 13:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,1113 +16,1113 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../content/backup-restore.rst:2
+#: ../../content/backup-restore.rst:2
 msgid "Backup and Restore"
 msgstr ""
 
-#: ../content/backup-restore.rst:4
+#: ../../content/backup-restore.rst:4
 msgid "OTRS has built-in scripts for backup and restore. Execute the scripts with ``-h`` option for more information."
 msgstr ""
 
-#: ../content/backup-restore.rst:7
+#: ../../content/backup-restore.rst:7
 msgid "Backup"
 msgstr ""
 
-#: ../content/backup-restore.rst:11
+#: ../../content/backup-restore.rst:11
 msgid "To create a backup, write permission is needed for ``otrs`` user for the destination directory."
 msgstr ""
 
-#: ../content/backup-restore.rst:17
-#: ../content/backup-restore.rst:53
+#: ../../content/backup-restore.rst:17
+#: ../../content/backup-restore.rst:53
 msgid "The output of the script:"
 msgstr ""
 
-#: ../content/backup-restore.rst:47
+#: ../../content/backup-restore.rst:47
 msgid "Restore"
 msgstr ""
 
-#: ../content/index.rst:3
+#: ../../content/index.rst:3
 msgid "OTRS Installation Guide"
 msgstr ""
 
-#: ../content/index.rst:5
+#: ../../content/index.rst:5
 msgid "This work is copyrighted by OTRS AG (https://otrs.com), Zimmersmühlenweg 11, 61440 Oberursel, Germany."
 msgstr ""
 
-#: ../content/index.rst:7
+#: ../../content/index.rst:7
 msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license can be found on the `GNU website <https://www.gnu.org/licenses/fdl-1.3.txt>`__."
 msgstr ""
 
-#: ../content/index.rst:9
+#: ../../content/index.rst:9
 msgid "Contents"
 msgstr ""
 
-#: ../content/installation.rst:2
+#: ../../content/installation.rst:2
 msgid "Installation"
 msgstr ""
 
-#: ../content/installation.rst:4
+#: ../../content/installation.rst:4
 msgid "This chapter describes the installation and basic configuration of the central OTRS framework."
 msgstr ""
 
-#: ../content/installation.rst:6
+#: ../../content/installation.rst:6
 msgid "Follow the detailed steps in this chapter to install OTRS on your server. You can then use its web interface to login and administer the system."
 msgstr ""
 
-#: ../content/installation.rst:10
+#: ../../content/installation.rst:10
 msgid "Preparation: Disable SELinux"
 msgstr ""
 
-#: ../content/installation.rst:14
+#: ../../content/installation.rst:14
 msgid "If your system uses SELinux, you should disable it, otherwise OTRS will not work correctly."
 msgstr ""
 
-#: ../content/installation.rst:16
+#: ../../content/installation.rst:16
 msgid "Here's how to disable SELinux for RHEL/CentOS/Fedora."
 msgstr ""
 
-#: ../content/installation.rst:18
+#: ../../content/installation.rst:18
 msgid "Configure ``SELINUX=disabled`` in the ``/etc/selinux/config`` file:"
 msgstr ""
 
-#: ../content/installation.rst:33
+#: ../../content/installation.rst:33
 msgid "Reboot your system. After reboot, confirm that the ``getenforce`` command returns *Disabled*:"
 msgstr ""
 
-#: ../content/installation.rst:42
+#: ../../content/installation.rst:42
 msgid "Step 1: Unpack and Install the Application"
 msgstr ""
 
-#: ../content/installation.rst:44
-#: ../content/updating.rst:69
+#: ../../content/installation.rst:44
+#: ../../content/updating.rst:69
 msgid "You can obtain either ``otrs-x.y.z.tar.gz`` or ``otrs-x.y.z.tar.bz2``. Unpack the source archive (for example, using ``tar``) into the directory ``/opt``, and create a symbolic link ``/opt/otrs`` that points to ``/opt/otrs-x.y.z``. **Do not forget** to replace the version numbers!"
 msgstr ""
 
-#: ../content/installation.rst:48
-#: ../content/updating.rst:73
+#: ../../content/installation.rst:48
+#: ../../content/updating.rst:73
 msgid "Package ``bzip2`` is not installed in some systems by default. Make sure, that ``bzip2`` is installed before unpacking ``otrs-x.y.z.tar.bz2``."
 msgstr ""
 
-#: ../content/installation.rst:50
-#: ../content/updating.rst:75
+#: ../../content/installation.rst:50
+#: ../../content/updating.rst:75
 msgid "Unpack command for ``otrs-x.y.z.tar.gz``:"
 msgstr ""
 
-#: ../content/installation.rst:56
-#: ../content/updating.rst:81
+#: ../../content/installation.rst:56
+#: ../../content/updating.rst:81
 msgid "Unpack command for ``otrs-x.y.z.tar.bz2``:"
 msgstr ""
 
-#: ../content/installation.rst:62
-#: ../content/updating.rst:87
+#: ../../content/installation.rst:62
+#: ../../content/updating.rst:87
 msgid "It is recommended to create a symbolic link named ``/opt/otrs`` that always points to the latest OTRS version. Using symbolic link makes easy to manage the OTRS updates, because you can leave untouched the directory of the previous version, only the symbolic link needs to change. If you need to revert the update, you can change the target of the symbolic link back."
 msgstr ""
 
-#: ../content/installation.rst:64
-#: ../content/updating.rst:89
+#: ../../content/installation.rst:64
+#: ../../content/updating.rst:89
 msgid "Execute this command to create a symbolic link:"
 msgstr ""
 
-#: ../content/installation.rst:72
+#: ../../content/installation.rst:72
 msgid "Step 2: Install Additional Programs and Perl Modules"
 msgstr ""
 
-#: ../content/installation.rst:74
+#: ../../content/installation.rst:74
 msgid "Use the following script to get an overview of all installed and required CPAN modules and other external dependencies."
 msgstr ""
 
-#: ../content/installation.rst:87
+#: ../../content/installation.rst:87
 msgid "Please note that OTRS requires a working Perl installation with all *core* modules such as the module ``version``. These modules are not explicitly checked by the script. You may need to install a ``perl-core`` package on some systems like RHEL that do not install the Perl core packages by default."
 msgstr ""
 
-#: ../content/installation.rst:89
+#: ../../content/installation.rst:89
 msgid "To install the required and optional packages, you can use either CPAN or the package manager of your Linux distribution."
 msgstr ""
 
-#: ../content/installation.rst:91
+#: ../../content/installation.rst:91
 msgid "Execute this command to get an install command to install the missing dependencies:"
 msgstr ""
 
-#: ../content/installation.rst:97
+#: ../../content/installation.rst:97
 msgid "OTRS requires a supported stable version of Node.js to be installed. Please refer to the `Node.js installation instructions <https://nodejs.org/en/download/package-manager/>`__."
 msgstr ""
 
-#: ../content/installation.rst:101
+#: ../../content/installation.rst:101
 msgid "Step 3: Create the OTRS User"
 msgstr ""
 
-#: ../content/installation.rst:103
+#: ../../content/installation.rst:103
 msgid "Create a dedicated user for OTRS:"
 msgstr ""
 
-#: ../content/installation.rst:111
+#: ../../content/installation.rst:111
 msgid "Step 4: Activate the Default Configuration File"
 msgstr ""
 
-#: ../content/installation.rst:113
+#: ../../content/installation.rst:113
 msgid "There is an OTRS configuration file bundled in ``$OTRS_HOME/Kernel/Config.pm.dist``. You must activate it by copying it without the ``.dist`` filename extension."
 msgstr ""
 
-#: ../content/installation.rst:121
+#: ../../content/installation.rst:121
 msgid "Step 5: Configure the Apache Web Server"
 msgstr ""
 
-#: ../content/installation.rst:123
+#: ../../content/installation.rst:123
 msgid "OTRS comes with an own built-in web server that is used behind Apache as a reverse proxy (or any other reverse proxy server). A few Apache modules are needed for correct operation: ``proxy_module``, ``proxy_http_module`` and ``proxy_wstunnel_module``."
 msgstr ""
 
-#: ../content/installation.rst:125
+#: ../../content/installation.rst:125
 msgid "On some systems like Debian and SuSE, these modules need to be specifically enabled:"
 msgstr ""
 
-#: ../content/installation.rst:133
+#: ../../content/installation.rst:133
 msgid "Most Apache installations have a ``conf.d`` directory included. On Linux systems you can usually find this directory under ``/etc/apache`` or ``/etc/apache2``. Log in as root, change to the ``conf.d`` directory and link the appropriate template in ``/opt/otrs/scripts/apache2-httpd.include.conf`` to a file called ``zzz_otrs.conf`` in the Apache configuration directory (to make sure it is loaded after the other configurations)."
 msgstr ""
 
-#: ../content/installation.rst:142
+#: ../../content/installation.rst:142
 msgid "Now you can restart your web server to load the new configuration settings. On most systems you can do that with the command:"
 msgstr ""
 
-#: ../content/installation.rst:150
+#: ../../content/installation.rst:150
 msgid "Step 6: Set File Permissions"
 msgstr ""
 
-#: ../content/installation.rst:152
-#: ../content/updating.rst:123
+#: ../../content/installation.rst:152
+#: ../../content/updating.rst:123
 msgid "Please execute the following command to set the file and directory permissions for OTRS. It will try to detect the correct user and group settings needed for your setup."
 msgstr ""
 
-#: ../content/installation.rst:160
+#: ../../content/installation.rst:160
 msgid "Step 7: Setup the Database"
 msgstr ""
 
-#: ../content/installation.rst:162
+#: ../../content/installation.rst:162
 msgid "The following steps need to be taken to setup the database for OTRS properly:"
 msgstr ""
 
-#: ../content/installation.rst:164
+#: ../../content/installation.rst:164
 msgid "Create a dedicated database user and database."
 msgstr ""
 
-#: ../content/installation.rst:165
+#: ../../content/installation.rst:165
 msgid "Create the database structure."
 msgstr ""
 
-#: ../content/installation.rst:166
+#: ../../content/installation.rst:166
 msgid "Insert the initial data."
 msgstr ""
 
-#: ../content/installation.rst:167
+#: ../../content/installation.rst:167
 msgid "Configure the database connection in ``Kernel/Config.pm``."
 msgstr ""
 
-#: ../content/installation.rst:171
+#: ../../content/installation.rst:171
 msgid "Please note that OTRS requires ``utf8`` as database storage encoding."
 msgstr ""
 
-#: ../content/installation.rst:174
+#: ../../content/installation.rst:174
 msgid "MySQL or MariaDB"
 msgstr ""
 
-#: ../content/installation.rst:176
+#: ../../content/installation.rst:176
 msgid "Log in to MySQL console as database admin user:"
 msgstr ""
 
-#: ../content/installation.rst:182
-#: ../content/installation.rst:256
+#: ../../content/installation.rst:182
+#: ../../content/installation.rst:256
 msgid "Create a database:"
 msgstr ""
 
-#: ../content/installation.rst:188
+#: ../../content/installation.rst:188
 msgid "Special database user handling is needed for MySQL 8, as the default ``caching_sha2_password`` can only be used over secure connections. Create a database user in MySQL 8:"
 msgstr ""
 
-#: ../content/installation.rst:194
+#: ../../content/installation.rst:194
 msgid "Create a database user in older MySQL versions:"
 msgstr ""
 
-#: ../content/installation.rst:200
+#: ../../content/installation.rst:200
 msgid "Assign user privileges to the new database:"
 msgstr ""
 
-#: ../content/installation.rst:208
-#: ../content/installation.rst:262
+#: ../../content/installation.rst:208
+#: ../../content/installation.rst:262
 msgid "Run the following commands on the shell to create schema and insert data:"
 msgstr ""
 
-#: ../content/installation.rst:216
-#: ../content/installation.rst:270
+#: ../../content/installation.rst:216
+#: ../../content/installation.rst:270
 msgid "Configure database settings in ``Kernel/Config.pm``:"
 msgstr ""
 
-#: ../content/installation.rst:228
+#: ../../content/installation.rst:228
 msgid "The following configuration settings are recommended for MySQL setups. Please add the following lines to ``/etc/my.cnf`` under the ``[mysqld]`` section:"
 msgstr ""
 
-#: ../content/installation.rst:238
+#: ../../content/installation.rst:238
 msgid "PostgreSQL"
 msgstr ""
 
-#: ../content/installation.rst:242
+#: ../../content/installation.rst:242
 msgid "We assume, that OTRS and PostgreSQL server run on the same machine and PostgreSQL uses *Peer* authentication method. For more information see the `Client Authentication <https://www.postgresql.org/docs/current/client-authentication.html>`__ section in the PostgreSQL manual."
 msgstr ""
 
-#: ../content/installation.rst:244
+#: ../../content/installation.rst:244
 msgid "Switch to ``postgres`` user:"
 msgstr ""
 
-#: ../content/installation.rst:250
+#: ../../content/installation.rst:250
 msgid "Create a database user:"
 msgstr ""
 
-#: ../content/installation.rst:282
+#: ../../content/installation.rst:282
 msgid "Finishing the Database Setup"
 msgstr ""
 
-#: ../content/installation.rst:284
+#: ../../content/installation.rst:284
 msgid "To verify your database setup, run the following command:"
 msgstr ""
 
-#: ../content/installation.rst:292
+#: ../../content/installation.rst:292
 msgid "Once the database is configured correctly, please initialize the system configuration with the following command:"
 msgstr ""
 
-#: ../content/installation.rst:302
+#: ../../content/installation.rst:302
 msgid "For security reasons, please change the default password of the admin user ``root@localhost`` by generating a random password:"
 msgstr ""
 
-#: ../content/installation.rst:310
+#: ../../content/installation.rst:310
 msgid "You can also choose to set your own password:"
 msgstr ""
 
-#: ../content/installation.rst:319
+#: ../../content/installation.rst:319
 msgid "Step 8: Setup Elasticsearch Cluster"
 msgstr ""
 
-#: ../content/installation.rst:321
+#: ../../content/installation.rst:321
 msgid "OTRS requires an active cluster of Elasticsearch 6.0 or higher. The easiest way is to `setup Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`__ on the same host as OTRS and binding it to its default port. With that, no further configuration in OTRS is needed."
 msgstr ""
 
-#: ../content/installation.rst:323
+#: ../../content/installation.rst:323
 msgid "Additionally, OTRS requires plugins to be installed into Elasticsearch:"
 msgstr ""
 
-#: ../content/installation.rst:332
+#: ../../content/installation.rst:332
 msgid "Restart Elasticsearch afterwards, or indexes will not be built."
 msgstr ""
 
-#: ../content/installation.rst:334
+#: ../../content/installation.rst:334
 msgid "To verify the Elasticsearch installation, you can use the following command:"
 msgstr ""
 
-#: ../content/installation.rst:344
+#: ../../content/installation.rst:344
 msgid "Step 9: Start the OTRS Daemon and Web Server"
 msgstr ""
 
-#: ../content/installation.rst:346
+#: ../../content/installation.rst:346
 msgid "The new OTRS daemon is responsible for handling any asynchronous and recurring tasks in OTRS. The built-in OTRS web server process handles the web requests handed over from Apache. Both processes must be started from the ``otrs`` user."
 msgstr ""
 
-#: ../content/installation.rst:355
+#: ../../content/installation.rst:355
 msgid "Step 10: First Login"
 msgstr ""
 
-#: ../content/installation.rst:357
+#: ../../content/installation.rst:357
 msgid "Now you are ready to login to your system at http://localhost/otrs/index.pl as user ``root@localhost`` with the password that was generated (see above)."
 msgstr ""
 
-#: ../content/installation.rst:359
+#: ../../content/installation.rst:359
 msgid "Use http://localhost to access the external interface."
 msgstr ""
 
-#: ../content/installation.rst:363
+#: ../../content/installation.rst:363
 msgid "Step 11: Setup Systemd Files"
 msgstr ""
 
-#: ../content/installation.rst:365
-#: ../content/updating.rst:202
+#: ../../content/installation.rst:365
+#: ../../content/updating.rst:202
 msgid "OTRS comes with example systemd configuration files that can be used to make sure that the OTRS daemon and web server are started automatically after the system starts."
 msgstr ""
 
-#: ../content/installation.rst:372
+#: ../../content/installation.rst:372
 msgid "With this step, the basic system setup is finished."
 msgstr ""
 
-#: ../content/installation.rst:376
+#: ../../content/installation.rst:376
 msgid "Step 12: Setup Bash Auto-Completion (optional)"
 msgstr ""
 
-#: ../content/installation.rst:378
+#: ../../content/installation.rst:378
 msgid "All regular OTRS command line operations happen via the OTRS console interface. This provides an auto completion for the bash shell which makes finding the right command and options much easier."
 msgstr ""
 
-#: ../content/installation.rst:380
+#: ../../content/installation.rst:380
 msgid "You can activate the bash auto-completion by installing the package ``bash-completion``. It will automatically detect and load the file ``/opt/otrs/.bash_completion`` for the ``otrs`` user."
 msgstr ""
 
-#: ../content/installation.rst:382
+#: ../../content/installation.rst:382
 msgid "After restarting your shell, you can just type this command followed by TAB, and it will list all available commands:"
 msgstr ""
 
-#: ../content/installation.rst:388
+#: ../../content/installation.rst:388
 msgid "If you type a few characters of the command name, TAB will show all matching commands. After typing a complete command, all possible options and arguments will be shown by pressing TAB."
 msgstr ""
 
-#: ../content/installation.rst:391
+#: ../../content/installation.rst:391
 msgid "By problems you can source it in your ~/.bashrc by adding this line:"
 msgstr ""
 
-#: ../content/installation.rst:399
+#: ../../content/installation.rst:399
 msgid "Step 13: Further Information"
 msgstr ""
 
-#: ../content/installation.rst:401
+#: ../../content/installation.rst:401
 msgid "We advise you to read the OTRS :doc:`performance-tuning` chapter."
 msgstr ""
 
-#: ../content/introduction.rst:2
+#: ../../content/introduction.rst:2
 msgid "Introduction"
 msgstr ""
 
-#: ../content/introduction.rst:4
+#: ../../content/introduction.rst:4
 msgid "OTRS (Open Technology – Real Service) is an open source ticket request system with many features to manage customer telephone calls and emails. It is distributed under the GNU General Public License (GPL) and tested on various Linux platforms. Do you receive many e-mails and want to answer them with a team of agents? You're going to love OTRS!"
 msgstr ""
 
-#: ../content/introduction.rst:8
+#: ../../content/introduction.rst:8
 msgid "About This Manual"
 msgstr ""
 
-#: ../content/introduction.rst:10
+#: ../../content/introduction.rst:10
 msgid "This manual is intended for use by system administrators. The chapters describe the installation and updating of the OTRS software."
 msgstr ""
 
-#: ../content/introduction.rst:12
+#: ../../content/introduction.rst:12
 msgid "There is no graphical user interface for installation and updating. System administrators have to follow the steps described in the following chapters."
 msgstr ""
 
-#: ../content/introduction.rst:14
+#: ../../content/introduction.rst:14
 msgid "All console commands look like ``username> command-to-execute``. Username indicates the user account of the operating system, which need to use to execute the command. If a command starts with ``root>``, you have to execute the command as a user who has root permissions. If a command starts with ``otrs>``, you have to execute the command as the user created for OTRS."
 msgstr ""
 
-#: ../content/introduction.rst:18
+#: ../../content/introduction.rst:18
 msgid "Don't select ``username>`` when you copy the command and paste it to the shell. Otherwise you will get an error."
 msgstr ""
 
-#: ../content/introduction.rst:20
+#: ../../content/introduction.rst:20
 msgid "We supposed that OTRS will be installed to ``/opt/otrs``. If you want to install OTRS to a different directory, then you have to change the path in the commands or create a symbolic link to this directory."
 msgstr ""
 
-#: ../content/performance-tuning.rst:2
+#: ../../content/performance-tuning.rst:2
 msgid "Performance Tuning"
 msgstr ""
 
-#: ../content/performance-tuning.rst:4
+#: ../../content/performance-tuning.rst:4
 msgid "There is a list of performance enhancing techniques for your OTRS installation, including configuration, coding, memory use, and more."
 msgstr ""
 
-#: ../content/performance-tuning.rst:8
+#: ../../content/performance-tuning.rst:8
 msgid "Ticket Index Module"
 msgstr ""
 
-#: ../content/performance-tuning.rst:10
+#: ../../content/performance-tuning.rst:10
 msgid "Ticket index module can be set in system configuration setting ``Ticket::IndexModule``. There are two back end modules for the index for the ticket queue view:"
 msgstr ""
 
-#: ../content/performance-tuning.rst:13
+#: ../../content/performance-tuning.rst:13
 msgid "``Kernel::System::Ticket::IndexAccelerator::RuntimeDB``"
 msgstr ""
 
-#: ../content/performance-tuning.rst:13
+#: ../../content/performance-tuning.rst:13
 msgid "This is the default option, and will generate each queue view on the fly from the ticket table. You will not have performance trouble until you have about 60,000 open tickets in your system."
 msgstr ""
 
-#: ../content/performance-tuning.rst:21
+#: ../../content/performance-tuning.rst:21
 msgid "``Kernel::System::Ticket::IndexAccelerator::StaticDB``"
 msgstr ""
 
-#: ../content/performance-tuning.rst:16
+#: ../../content/performance-tuning.rst:16
 msgid "The most powerful module, should be used when you have above 80,000 open tickets. It uses an extra ``ticket_index`` table, which will be populated with keywords based on ticket data. Use the following command for generating an initial index after switching back ends:"
 msgstr ""
 
-#: ../content/performance-tuning.rst:24
+#: ../../content/performance-tuning.rst:24
 msgid "Ticket Search Index"
 msgstr ""
 
-#: ../content/performance-tuning.rst:26
+#: ../../content/performance-tuning.rst:26
 msgid "OTRS uses a special search index to perform full-text searches across fields in articles from different communication channels."
 msgstr ""
 
-#: ../content/performance-tuning.rst:28
+#: ../../content/performance-tuning.rst:28
 msgid "To create an initial index, use this command:"
 msgstr ""
 
-#: ../content/performance-tuning.rst:36
+#: ../../content/performance-tuning.rst:36
 msgid "Actual article indexing happens via an OTRS daemon job in the background. While articles which were just added in the system are marked for indexing immediately, it could happen their index is available within a few minutes."
 msgstr ""
 
-#: ../content/performance-tuning.rst:38
+#: ../../content/performance-tuning.rst:38
 msgid "There are some options available for fine tuning the search index:"
 msgstr ""
 
-#: ../content/performance-tuning.rst:41
+#: ../../content/performance-tuning.rst:41
 msgid "``Ticket::SearchIndex::IndexArchivedTickets``"
 msgstr ""
 
-#: ../content/performance-tuning.rst:41
+#: ../../content/performance-tuning.rst:41
 msgid "Defines if archived tickets will be included in the search index (not enabled by default). This is advisable to keep the index small on large systems with archived tickets. If this is enabled, archived tickets will be found by full-text searches."
 msgstr ""
 
-#: ../content/performance-tuning.rst:63
+#: ../../content/performance-tuning.rst:63
 msgid "``Ticket::SearchIndex::Attribute``"
 msgstr ""
 
-#: ../content/performance-tuning.rst:44
+#: ../../content/performance-tuning.rst:44
 msgid "Basic full-text index settings."
 msgstr ""
 
-#: ../content/performance-tuning.rst:49
+#: ../../content/performance-tuning.rst:49
 msgid "``Ticket::SearchIndex::Attribute`` Setting"
 msgstr ""
 
-#: ../content/performance-tuning.rst:53
+#: ../../content/performance-tuning.rst:53
 msgid "Run the following command in order to generate a new index:"
 msgstr ""
 
-#: ../content/performance-tuning.rst:60
+#: ../../content/performance-tuning.rst:60
 msgid "``WordCountMax``"
 msgstr ""
 
-#: ../content/performance-tuning.rst:60
+#: ../../content/performance-tuning.rst:60
 msgid "Defines the maximum number of words which will be processed to build up the index. For example only the first 1000 words of an article body are stored in the article search index."
 msgstr ""
 
-#: ../content/performance-tuning.rst:63
+#: ../../content/performance-tuning.rst:63
 msgid "``WordLengthMin`` and ``WordLengthMax``"
 msgstr ""
 
-#: ../content/performance-tuning.rst:63
+#: ../../content/performance-tuning.rst:63
 msgid "Used as word length boundaries. Only words with a length between these two values are stored in the article search index."
 msgstr ""
 
-#: ../content/performance-tuning.rst:77
+#: ../../content/performance-tuning.rst:77
 msgid "``Ticket::SearchIndex::Filters``"
 msgstr ""
 
-#: ../content/performance-tuning.rst:66
+#: ../../content/performance-tuning.rst:66
 msgid "Full-text index regular expression filters to remove parts of the text."
 msgstr ""
 
-#: ../content/performance-tuning.rst:71
+#: ../../content/performance-tuning.rst:71
 msgid "``Ticket::SearchIndex::Filters`` Setting"
 msgstr ""
 
-#: ../content/performance-tuning.rst:73
+#: ../../content/performance-tuning.rst:73
 msgid "There are three default filters defined:"
 msgstr ""
 
-#: ../content/performance-tuning.rst:75
+#: ../../content/performance-tuning.rst:75
 msgid "The first filter strips out special chars like: , & < > ? \" ! * | ; [ ] ( ) + $ ^ ="
 msgstr ""
 
-#: ../content/performance-tuning.rst:76
+#: ../../content/performance-tuning.rst:76
 msgid "The second filter strips out words which begin or ends with one of following chars: ' : ."
 msgstr ""
 
-#: ../content/performance-tuning.rst:77
+#: ../../content/performance-tuning.rst:77
 msgid "The third filter strips out words which do not contain a word-character: a-z, A-Z, 0-9, _"
 msgstr ""
 
-#: ../content/performance-tuning.rst:93
+#: ../../content/performance-tuning.rst:93
 msgid "``Ticket::SearchIndex::StopWords``"
 msgstr ""
 
-#: ../content/performance-tuning.rst:80
+#: ../../content/performance-tuning.rst:80
 msgid "English stop words for full-text index. These words will be removed from the search index."
 msgstr ""
 
-#: ../content/performance-tuning.rst:85
+#: ../../content/performance-tuning.rst:85
 msgid "``Ticket::SearchIndex::StopWords###en`` Setting"
 msgstr ""
 
-#: ../content/performance-tuning.rst:87
+#: ../../content/performance-tuning.rst:87
 msgid "There are so-called stop-words defined for some languages. These stop-words will be skipped while creating the search index."
 msgstr ""
 
-#: ../content/performance-tuning.rst:90
+#: ../../content/performance-tuning.rst:90
 msgid "If your language is not in the system configuration settings or you want to add more words, you can add them to this setting:"
 msgstr ""
 
-#: ../content/performance-tuning.rst:92
+#: ../../content/performance-tuning.rst:92
 msgid "``Ticket::SearchIndex::StopWords###Custom``"
 msgstr ""
 
-#: ../content/performance-tuning.rst:96
+#: ../../content/performance-tuning.rst:96
 msgid "Article Storage"
 msgstr ""
 
-#: ../content/performance-tuning.rst:98
+#: ../../content/performance-tuning.rst:98
 msgid "There are two different back end modules for the article storage of phone, email and internal articles. The used article storage can be configured in the setting ``Ticket::Article::Backend::MIMEBase::ArticleStorage``."
 msgstr ""
 
-#: ../content/performance-tuning.rst:105
+#: ../../content/performance-tuning.rst:105
 msgid "``Kernel::System::Ticket::Article::Backend::MIMEBase::ArticleStorageDB``"
 msgstr ""
 
-#: ../content/performance-tuning.rst:101
+#: ../../content/performance-tuning.rst:101
 msgid "This default module will store attachments in the database. It also works with multiple front end servers, but requires much storage space in the database."
 msgstr ""
 
-#: ../content/performance-tuning.rst:105
+#: ../../content/performance-tuning.rst:105
 msgid "Don't use this with large setups."
 msgstr ""
 
-#: ../content/performance-tuning.rst:112
+#: ../../content/performance-tuning.rst:112
 msgid "``Kernel::System::Ticket::Article::Backend::MIMEBase::ArticleStorageFS``"
 msgstr ""
 
-#: ../content/performance-tuning.rst:108
+#: ../../content/performance-tuning.rst:108
 msgid "Use this module to store attachments on the local file system. It is fast, but if you have multiple front end servers, you must make sure the file system is shared between the servers. Place it on an NFS share or preferably a SAN or similar solution."
 msgstr ""
 
-#: ../content/performance-tuning.rst:112
+#: ../../content/performance-tuning.rst:112
 msgid "Recommended for large setups."
 msgstr ""
 
-#: ../content/performance-tuning.rst:114
+#: ../../content/performance-tuning.rst:114
 msgid "You can switch from one back end to the other on the fly. You can switch the back end in the system configuration, and then run this command line utility to put the articles from the database onto the file system or the other way around:"
 msgstr ""
 
-#: ../content/performance-tuning.rst:120
+#: ../../content/performance-tuning.rst:120
 msgid "You can use the ``--target`` option to specify the target back end."
 msgstr ""
 
-#: ../content/performance-tuning.rst:124
+#: ../../content/performance-tuning.rst:124
 msgid "The entire process can take considerable time to run, depending on the number of articles you have and the available CPU power and/or network capacity."
 msgstr ""
 
-#: ../content/performance-tuning.rst:126
+#: ../../content/performance-tuning.rst:126
 msgid "If you want to keep old attachments in the database, you can activate the system configuration option ``Ticket::Article::Backend::MIMEBase::CheckAllStorageBackends`` to make sure OTRS will still find them."
 msgstr ""
 
-#: ../content/performance-tuning.rst:130
+#: ../../content/performance-tuning.rst:130
 msgid "Archiving Tickets"
 msgstr ""
 
-#: ../content/performance-tuning.rst:132
+#: ../../content/performance-tuning.rst:132
 msgid "As OTRS can be used as an audit-proof system, deleting closed tickets may not be a good idea. Therefore we implemented a feature that allows you to archive tickets."
 msgstr ""
 
-#: ../content/performance-tuning.rst:134
+#: ../../content/performance-tuning.rst:134
 msgid "Tickets that match certain criteria can be marked as archived. These tickets are not accessed if you do a regular ticket search or run a generic agent job. The system itself does not have to deal with a huge amount of tickets any longer as only the latest tickets are taken into consideration when using OTRS. This can result in a huge performance gain on large systems."
 msgstr ""
 
-#: ../content/performance-tuning.rst:136
+#: ../../content/performance-tuning.rst:136
 msgid "To use the archive feature:"
 msgstr ""
 
-#: ../content/performance-tuning.rst:138
+#: ../../content/performance-tuning.rst:138
 msgid "Activate the ``Ticket::ArchiveSystem`` setting in the system configuration."
 msgstr ""
 
-#: ../content/performance-tuning.rst:139
+#: ../../content/performance-tuning.rst:139
 msgid "Define a generic agent job:"
 msgstr ""
 
-#: ../content/performance-tuning.rst:141
+#: ../../content/performance-tuning.rst:141
 msgid "Click on the *Add Job* button in the *Generic Agent* screen."
 msgstr ""
 
-#: ../content/performance-tuning.rst:142
+#: ../../content/performance-tuning.rst:142
 msgid "*Job Settings*: provide a name for the archiving job."
 msgstr ""
 
-#: ../content/performance-tuning.rst:143
+#: ../../content/performance-tuning.rst:143
 msgid "*Automatic Execution*: select proper options to schedule this job."
 msgstr ""
 
-#: ../content/performance-tuning.rst:144
+#: ../../content/performance-tuning.rst:144
 msgid "*Select Tickets*: it might be a good idea to only archive those tickets in a closed state that have been closed a few months before."
 msgstr ""
 
-#: ../content/performance-tuning.rst:145
+#: ../../content/performance-tuning.rst:145
 msgid "*Update/Add Ticket Attributes*: set the field *Archive selected tickets* to *archive tickets*."
 msgstr ""
 
-#: ../content/performance-tuning.rst:146
+#: ../../content/performance-tuning.rst:146
 msgid "Save the job at the end of the page."
 msgstr ""
 
-#: ../content/performance-tuning.rst:147
+#: ../../content/performance-tuning.rst:147
 msgid "Click on the *Run this task* link in the overview table to see the affected tickets."
 msgstr ""
 
-#: ../content/performance-tuning.rst:148
+#: ../../content/performance-tuning.rst:148
 msgid "Click on the *Run Job* button."
 msgstr ""
 
-#: ../content/performance-tuning.rst:152
+#: ../../content/performance-tuning.rst:152
 msgid "Up to 5000 tickets can be modified by running this job manually."
 msgstr ""
 
-#: ../content/performance-tuning.rst:154
+#: ../../content/performance-tuning.rst:154
 msgid "When you search for tickets, the system default is to search tickets which are not archived."
 msgstr ""
 
-#: ../content/performance-tuning.rst:156
+#: ../../content/performance-tuning.rst:156
 msgid "To search for archived tickets:"
 msgstr ""
 
-#: ../content/performance-tuning.rst:158
+#: ../../content/performance-tuning.rst:158
 msgid "Open the ticket search screen."
 msgstr ""
 
-#: ../content/performance-tuning.rst:159
+#: ../../content/performance-tuning.rst:159
 msgid "Set *Archive search* to *Unarchived tickets* or *All tickets*."
 msgstr ""
 
-#: ../content/performance-tuning.rst:160
+#: ../../content/performance-tuning.rst:160
 msgid "Perform the search."
 msgstr ""
 
-#: ../content/performance-tuning.rst:164
+#: ../../content/performance-tuning.rst:164
 msgid "Tuning the Web Server"
 msgstr ""
 
-#: ../content/performance-tuning.rst:166
+#: ../../content/performance-tuning.rst:166
 msgid "The built-in web server of OTRS can handle small and medium setups out of the box. When OTRS serves many users simultaneously, it may be necessary to tweak the web server configuration to increase the number of worker processes, for example."
 msgstr ""
 
-#: ../content/performance-tuning.rst:168
+#: ../../content/performance-tuning.rst:168
 msgid "The web server configuration file is located in ``Kernel/WebApp.conf``, and all settings there are documented. The ``worker`` setting can be increased to deploy more processes for serving HTTP requests on capable servers."
 msgstr ""
 
-#: ../content/performance-tuning.rst:172
+#: ../../content/performance-tuning.rst:172
 msgid "Caching"
 msgstr ""
 
-#: ../content/performance-tuning.rst:174
+#: ../../content/performance-tuning.rst:174
 msgid "OTRS caches a lot of temporary data in ``/opt/otrs/var/tmp``. Please make sure that this uses a high performance file system and storage. If you have enough RAM, you can also try to put this directory on a ramdisk like this:"
 msgstr ""
 
-#: ../content/performance-tuning.rst:184
+#: ../../content/performance-tuning.rst:184
 msgid "Add persistent mount point in ``/etc/fstab``."
 msgstr ""
 
-#: ../content/performance-tuning.rst:188
+#: ../../content/performance-tuning.rst:188
 msgid "This will be a non-permanent storage that will be lost on server reboot. All your sessions (if you store them in the file system) and your cache data will be lost."
 msgstr ""
 
-#: ../content/performance-tuning.rst:192
+#: ../../content/performance-tuning.rst:192
 msgid "There is also a centralized `memcached based cache back end <https://otrs.com/otrs-feature/feature-add-on-cache-memcached-fast/>`__ available for purchase from OTRS Group."
 msgstr ""
 
-#: ../content/performance-tuning.rst:196
+#: ../../content/performance-tuning.rst:196
 msgid "Clustering"
 msgstr ""
 
-#: ../content/performance-tuning.rst:198
+#: ../../content/performance-tuning.rst:198
 msgid "For very high loads, it can be required to operate OTRS on a cluster of multiple front end servers. This is a complex task with many pitfalls. Therefore, OTRS Group provides support for clusters in its `managed OTRS <https://otrs.com/how-to-buy/>`__ environment exclusively."
 msgstr ""
 
-#: ../content/requirements.rst:2
+#: ../../content/requirements.rst:2
 msgid "Hardware and Software Requirements"
 msgstr ""
 
-#: ../content/requirements.rst:4
+#: ../../content/requirements.rst:4
 msgid "OTRS can be installed on Linux and on other Unix derivates (e.g. OpenBSD or FreeBSD). To run OTRS on Microsoft Windows is not possible."
 msgstr ""
 
-#: ../content/requirements.rst:6
+#: ../../content/requirements.rst:6
 msgid "To run OTRS, you'll also need to use a web server as reverse proxy and a database server. Apart from that, you should install Perl and/or install some additional Perl modules on the OTRS machine."
 msgstr ""
 
-#: ../content/requirements.rst:8
+#: ../../content/requirements.rst:8
 msgid "Perl must be installed on the same machine as OTRS. The database back end and the web server may be installed locally or on another host."
 msgstr ""
 
-#: ../content/requirements.rst:10
+#: ../../content/requirements.rst:10
 msgid "For Perl, you will need some additional modules which can be installed either with the Perl shell and CPAN, or via the package manager of your operating system (rpm, yast, apt-get)."
 msgstr ""
 
-#: ../content/requirements.rst:12
+#: ../../content/requirements.rst:12
 msgid "OTRS has a console command to check the environment and the missing modules."
 msgstr ""
 
-#: ../content/requirements.rst:18
+#: ../../content/requirements.rst:18
 msgid "If some packages are missing, you can get an install command for your operating system, if you run the script with ``--list`` option."
 msgstr ""
 
-#: ../content/requirements.rst:24
+#: ../../content/requirements.rst:24
 msgid "If all needed packages are installed, the output of the environment check script shows the installed packages and the version numbers."
 msgstr ""
 
-#: ../content/requirements.rst:74
+#: ../../content/requirements.rst:74
 msgid "Hardware Requirements"
 msgstr ""
 
-#: ../content/requirements.rst:76
+#: ../../content/requirements.rst:76
 msgid "Hardware requirements highly depend on the usage of OTRS. OTRS can be used to process a few tickets per month or to process hundreds of tickets per day. The storage requirement also depends on the number of tickets and size of attachments."
 msgstr ""
 
-#: ../content/requirements.rst:78
+#: ../../content/requirements.rst:78
 msgid "We recommend using a machine with **at least**:"
 msgstr ""
 
-#: ../content/requirements.rst:80
+#: ../../content/requirements.rst:80
 msgid "3 GHz Xeon or comparable CPU"
 msgstr ""
 
-#: ../content/requirements.rst:81
+#: ../../content/requirements.rst:81
 msgid "8 GB RAM"
 msgstr ""
 
-#: ../content/requirements.rst:82
+#: ../../content/requirements.rst:82
 msgid "256 GB storage"
 msgstr ""
 
-#: ../content/requirements.rst:86
+#: ../../content/requirements.rst:86
 msgid "Hardware requirements depend on the usage of OTRS. Please contact your OTRS consultant before deploying a hardware."
 msgstr ""
 
-#: ../content/requirements.rst:90
+#: ../../content/requirements.rst:90
 msgid "Software requirements"
 msgstr ""
 
-#: ../content/requirements.rst:94
+#: ../../content/requirements.rst:94
 msgid "Perl"
 msgstr ""
 
-#: ../content/requirements.rst:93
+#: ../../content/requirements.rst:93
 msgid "Perl 5.16.0 or higher"
 msgstr ""
 
-#: ../content/requirements.rst:94
+#: ../../content/requirements.rst:94
 msgid "Perl packages listed by ``/opt/otrs/bin/otrs.CheckEnvironment.pl`` console command"
 msgstr ""
 
-#: ../content/requirements.rst:99
+#: ../../content/requirements.rst:99
 msgid "Web Servers"
 msgstr ""
 
-#: ../content/requirements.rst:97
+#: ../../content/requirements.rst:97
 msgid "Apache2"
 msgstr ""
 
-#: ../content/requirements.rst:98
+#: ../../content/requirements.rst:98
 msgid "nginx"
 msgstr ""
 
-#: ../content/requirements.rst:99
+#: ../../content/requirements.rst:99
 msgid "Any other web server that can be used as a reverse proxy"
 msgstr ""
 
-#: ../content/requirements.rst:105
+#: ../../content/requirements.rst:105
 msgid "Databases"
 msgstr ""
 
-#: ../content/requirements.rst:102
+#: ../../content/requirements.rst:102
 msgid "MySQL 5.0 or higher"
 msgstr ""
 
-#: ../content/requirements.rst:103
+#: ../../content/requirements.rst:103
 msgid "MariaDB"
 msgstr ""
 
-#: ../content/requirements.rst:104
+#: ../../content/requirements.rst:104
 msgid "PostgreSQL 9.2 or higher"
 msgstr ""
 
-#: ../content/requirements.rst:105
+#: ../../content/requirements.rst:105
 msgid "Oracle 10g or higher"
 msgstr ""
 
-#: ../content/requirements.rst:109
+#: ../../content/requirements.rst:109
 msgid "Other dependencies"
 msgstr ""
 
-#: ../content/requirements.rst:108
+#: ../../content/requirements.rst:108
 msgid "Elasticsearch 6.0 or higher"
 msgstr ""
 
-#: ../content/requirements.rst:109
+#: ../../content/requirements.rst:109
 msgid "Node.js 8.9 or higher"
 msgstr ""
 
-#: ../content/requirements.rst:116
+#: ../../content/requirements.rst:116
 msgid "Web browsers"
 msgstr ""
 
-#: ../content/requirements.rst:112
+#: ../../content/requirements.rst:112
 msgid "Apple Safari version 7 or higher"
 msgstr ""
 
-#: ../content/requirements.rst:113
+#: ../../content/requirements.rst:113
 msgid "Google Chrome"
 msgstr ""
 
-#: ../content/requirements.rst:114
+#: ../../content/requirements.rst:114
 msgid "Microsoft Internet Explorer 11"
 msgstr ""
 
-#: ../content/requirements.rst:115
+#: ../../content/requirements.rst:115
 msgid "Microsoft Edge"
 msgstr ""
 
-#: ../content/requirements.rst:116
+#: ../../content/requirements.rst:116
 msgid "Mozilla Firefox version 32 or higher"
 msgstr ""
 
-#: ../content/requirements.rst:117
+#: ../../content/requirements.rst:117
 msgid "Any other modern web browser with JavaScript support"
 msgstr ""
 
-#: ../content/updating.rst:2
+#: ../../content/updating.rst:2
 msgid "Updating"
 msgstr ""
 
-#: ../content/updating.rst:6
+#: ../../content/updating.rst:6
 msgid "It is highly recommended to perform a test update on a separate testing machine first."
 msgstr ""
 
-#: ../content/updating.rst:9
+#: ../../content/updating.rst:9
 msgid "Updating from an earlier version of OTRS 7"
 msgstr ""
 
-#: ../content/updating.rst:9
+#: ../../content/updating.rst:9
 msgid "You can update directly from any previous to the latest available patch level release."
 msgstr ""
 
-#: ../content/updating.rst:12
+#: ../../content/updating.rst:12
 msgid "Updating from OTRS 6"
 msgstr ""
 
-#: ../content/updating.rst:12
+#: ../../content/updating.rst:12
 msgid "You can update from any OTRS 6 patch level release to the latest available OTRS 7 patch level release."
 msgstr ""
 
-#: ../content/updating.rst:20
+#: ../../content/updating.rst:20
 msgid "Updating from OTRS 5 or earlier"
 msgstr ""
 
-#: ../content/updating.rst:15
+#: ../../content/updating.rst:15
 msgid "You cannot update from OTRS 5 or earlier directly to OTRS 7. Full updates to all available minor versions have to be made sequentially instead. For example, if you come from OTRS 4, you first have to perform a full update to OTRS 5, then to OTRS 6 and finally to OTRS 7."
 msgstr ""
 
-#: ../content/updating.rst:19
+#: ../../content/updating.rst:19
 msgid "See the admin manual of the previous versions of OTRS for the update instructions."
 msgstr ""
 
-#: ../content/updating.rst:23
+#: ../../content/updating.rst:23
 msgid "Step 1: Stop All Relevant Services and the OTRS Daemon"
 msgstr ""
 
-#: ../content/updating.rst:25
+#: ../../content/updating.rst:25
 msgid "Please make sure there are no more running services or cron jobs that try to access OTRS. This will depend on your service configuration and OTRS version."
 msgstr ""
 
-#: ../content/updating.rst:32
+#: ../../content/updating.rst:32
 msgid "If you do a major update form OTRS 6, you need to stop the old OTRS cron jobs and daemon (in this order):"
 msgstr ""
 
-#: ../content/updating.rst:39
+#: ../../content/updating.rst:39
 msgid "If you do a patch level update within OTRS 7 (using the new systemd files), stop the OTRS services via systemd:"
 msgstr ""
 
-#: ../content/updating.rst:48
+#: ../../content/updating.rst:48
 msgid "Step 2: Backup Files and Database"
 msgstr ""
 
-#: ../content/updating.rst:50
+#: ../../content/updating.rst:50
 msgid "Create a backup of the following files and folders:"
 msgstr ""
 
-#: ../content/updating.rst:52
-#: ../content/updating.rst:99
+#: ../../content/updating.rst:52
+#: ../../content/updating.rst:99
 msgid "``Kernel/Config.pm``"
 msgstr ""
 
-#: ../content/updating.rst:53
-#: ../content/updating.rst:100
+#: ../../content/updating.rst:53
+#: ../../content/updating.rst:100
 msgid "``Kernel/WebApp.conf`` (only in case of a patch level update of OTRS 7, and only if the file was modified)"
 msgstr ""
 
-#: ../content/updating.rst:54
+#: ../../content/updating.rst:54
 msgid "``var/*``"
 msgstr ""
 
-#: ../content/updating.rst:55
+#: ../../content/updating.rst:55
 msgid "as well as the database"
 msgstr ""
 
-#: ../content/updating.rst:59
+#: ../../content/updating.rst:59
 msgid "Don't proceed without a complete backup of your system. Use the :ref:`backup` script for this."
 msgstr ""
 
-#: ../content/updating.rst:63
+#: ../../content/updating.rst:63
 msgid "Step 3: Install the New Release"
 msgstr ""
 
-#: ../content/updating.rst:67
+#: ../../content/updating.rst:67
 msgid "With OTRS 7 RPMs are no longer provided. RPM based installations need to switch by uninstalling the RPM (this will not drop your database) and using the source archives instead."
 msgstr ""
 
-#: ../content/updating.rst:97
+#: ../../content/updating.rst:97
 msgid "Restore Old Configuration Files"
 msgstr ""
 
-#: ../content/updating.rst:104
+#: ../../content/updating.rst:104
 msgid "Restore Article Data"
 msgstr ""
 
-#: ../content/updating.rst:106
+#: ../../content/updating.rst:106
 msgid "If you configured OTRS to store article data in the file system you have to restore the ``article`` folder to ``/opt/otrs/var/`` or the folder specified in the system configuration."
 msgstr ""
 
-#: ../content/updating.rst:110
+#: ../../content/updating.rst:110
 msgid "Restore Already Installed Default Statistics"
 msgstr ""
 
-#: ../content/updating.rst:112
+#: ../../content/updating.rst:112
 msgid "If you have additional packages with default statistics you have to restore the stats XML files with the suffix ``*.installed`` to ``/opt/otrs/var/stats``."
 msgstr ""
 
-#: ../content/updating.rst:121
+#: ../../content/updating.rst:121
 msgid "Set File Permissions"
 msgstr ""
 
-#: ../content/updating.rst:131
+#: ../../content/updating.rst:131
 msgid "Install Required Programs and Perl Modules"
 msgstr ""
 
-#: ../content/updating.rst:133
+#: ../../content/updating.rst:133
 msgid "Please refer to the section :ref:`Step 2: Install Additional Programs and Perl Modules` in the installation guide that explains how to verify external dependencies such as Perl modules and Node.js."
 msgstr ""
 
-#: ../content/updating.rst:135
+#: ../../content/updating.rst:135
 msgid "In addition to that, OTRS 7 also requires an active cluster of Elasticsearch 6.0 or higher. Please refer to the :ref:`Step 8: Setup Elasticsearch Cluster` section in the installation guide."
 msgstr ""
 
-#: ../content/updating.rst:139
+#: ../../content/updating.rst:139
 msgid "Step 4: Run the Migration Script"
 msgstr ""
 
-#: ../content/updating.rst:141
+#: ../../content/updating.rst:141
 msgid "The migration script will perform many checks on your system and give you advice on how to install missing Perl modules etc., if that is required. If all checks succeeded, the necessary migration steps will be performed. Please also run this script in case of patch level updates."
 msgstr ""
 
-#: ../content/updating.rst:143
+#: ../../content/updating.rst:143
 msgid "Run the migration script:"
 msgstr ""
 
-#: ../content/updating.rst:151
+#: ../../content/updating.rst:151
 msgid "Do not continue the upgrading process if this script did not work properly for you. Otherwise malfunction or data loss may occur."
 msgstr ""
 
-#: ../content/updating.rst:153
+#: ../../content/updating.rst:153
 msgid "The migration script also checks if ACLs and system configuration settings are correct. In case of an invalid system configuration setting, script will offer you an opportunity to fix it by choosing from a list of possible values. In case the script runs in a non-interactive mode, it will try to automatically fix invalid settings. If this fails, you will be asked to manually update the setting after the migration."
 msgstr ""
 
-#: ../content/updating.rst:155
+#: ../../content/updating.rst:155
 msgid "If there are outdated ACLs, the system will not be able to fix them automatically, and they need to be corrected by the administrator. Please see the last step for manual changes for details."
 msgstr ""
 
-#: ../content/updating.rst:159
+#: ../../content/updating.rst:159
 msgid "Step 5: Update Installed Packages"
 msgstr ""
 
-#: ../content/updating.rst:163
+#: ../../content/updating.rst:163
 msgid "Packages for OTRS 6 are not compatible with OTRS 7 and have to be updated."
 msgstr ""
 
-#: ../content/updating.rst:165
+#: ../../content/updating.rst:165
 msgid "You can use the command below to update all installed packages. This works for all packages that are available from online repositories. You can update other packages later via the package manager (this requires a running OTRS daemon)."
 msgstr ""
 
-#: ../content/updating.rst:173
+#: ../../content/updating.rst:173
 msgid "Step 6: Restart your Services"
 msgstr ""
 
-#: ../content/updating.rst:175
+#: ../../content/updating.rst:175
 msgid "OTRS 7 comes with an own built-in web server that is used behind Apache as a reverse proxy (or any other reverse proxy server). For major update from OTRS 6, the Apache configuration must be updated with the new version in ``/opt/otrs/scripts/apache2-httpd.include.conf``, if it was copied and not just linked."
 msgstr ""
 
-#: ../content/updating.rst:177
+#: ../../content/updating.rst:177
 msgid "Please also note that while ``mod_perl`` is no longer needed, other Apache modules are required now: ``proxy_module``, ``proxy_http_module`` and ``proxy_wstunnel_module``."
 msgstr ""
 
-#: ../content/updating.rst:179
+#: ../../content/updating.rst:179
 msgid "After that, the services can be restarted. This will depend on your service configuration, here is an example:"
 msgstr ""
 
-#: ../content/updating.rst:188
+#: ../../content/updating.rst:188
 msgid "The OTRS daemon is required for correct operation of OTRS such as sending emails. Please activate it as described in the next step."
 msgstr ""
 
-#: ../content/updating.rst:192
+#: ../../content/updating.rst:192
 msgid "Step 7: Start the OTRS Daemon, Web Server and Cron Job"
 msgstr ""
 
-#: ../content/updating.rst:194
+#: ../../content/updating.rst:194
 msgid "The OTRS daemon is responsible for handling any asynchronous and recurring tasks in OTRS. The daemon and its keepalive cron job must be started as the ``otrs`` user. The built-in OTRS web server process handles the web requests handed over from Apache."
 msgstr ""
 
-#: ../content/updating.rst:209
+#: ../../content/updating.rst:209
 msgid "Now you can log into your system."
 msgstr ""
 
-#: ../content/updating.rst:213
+#: ../../content/updating.rst:213
 msgid "Step 8: Manual Migration Tasks and Changes"
 msgstr ""
 
-#: ../content/updating.rst:217
+#: ../../content/updating.rst:217
 msgid "This step is required only for major update from OTRS 6."
 msgstr ""
 
-#: ../content/updating.rst:219
+#: ../../content/updating.rst:219
 msgid "Since the old customer interface screens are no longer present, some ACLs need to be corrected manually by the administrator. The migration script already informed you if this is the case."
 msgstr ""
 
-#: ../content/updating.rst:221
+#: ../../content/updating.rst:221
 msgid "Affected ACLs are those that refer to a non-existing customer interface screen in their ``Action`` setting. This front end ``Action`` rule needs to be replaced with a corresponding ``Endpoint`` rule. A table with possible mapping is included below."
 msgstr ""
 
-#: ../content/updating.rst:224
+#: ../../content/updating.rst:224
 msgid "Action"
 msgstr ""
 
-#: ../content/updating.rst:224
+#: ../../content/updating.rst:224
 msgid "Endpoint"
 msgstr ""
 
-#: ../content/updating.rst:226
+#: ../../content/updating.rst:226
 msgid "``CustomerTicketPrint``"
 msgstr ""
 
-#: ../content/updating.rst:226
+#: ../../content/updating.rst:226
 msgid "No replacement (feature dropped)"
 msgstr ""
 
-#: ../content/updating.rst:228
+#: ../../content/updating.rst:228
 msgid "``CustomerTicketZoom``"
 msgstr ""
 
-#: ../content/updating.rst:228
+#: ../../content/updating.rst:228
 msgid "``ExternalFrontend::TicketDetailView``"
 msgstr ""
 
-#: ../content/updating.rst:230
+#: ../../content/updating.rst:230
 msgid "``CustomerTicketProcess``"
 msgstr ""
 
-#: ../content/updating.rst:230
+#: ../../content/updating.rst:230
 msgid "``ExternalFrontend::ProcessTicketCreate`` or ``ExternalFrontend::ProcessTicketNextStep``"
 msgstr ""
 
-#: ../content/updating.rst:233
+#: ../../content/updating.rst:233
 msgid "``CustomerTicketMessage``"
 msgstr ""
 
-#: ../content/updating.rst:233
+#: ../../content/updating.rst:233
 msgid "``ExternalFrontend::TicketCreate``"
 msgstr ""
 
