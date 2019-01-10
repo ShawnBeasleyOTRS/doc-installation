@@ -1,0 +1,1875 @@
+# Hungarian translations for OTRS Installation Guide.
+# Copyright (C) 2001-2019 OTRS AG, https://otrs.com/
+# This file is distributed under the same license as the OTRS Installation
+# Guide package.
+#
+# Balázs Úr <balazs.ur@otrs.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: OTRS Installation Guide 7.0\n"
+"Report-Msgid-Bugs-To: https://bugs.otrs.org/\n"
+"POT-Creation-Date: 2019-01-10 09:16+0100\n"
+"PO-Revision-Date: 2019-01-10 09:19+0100\n"
+"Last-Translator: Balázs Úr <balazs.ur@otrs.com>\n"
+"Language: hu\n"
+"Language-Team: Hungarian (http://www.transifex.com/otrs/OTRS/language/hu/)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: ../content/backup-restore.rst:2
+msgid "Backup and Restore"
+msgstr "Biztonsági mentés és visszaállítás"
+
+#: ../content/backup-restore.rst:4
+msgid ""
+"OTRS has built-in scripts for backup and restore. Execute the scripts "
+"with ``-h`` option for more information."
+msgstr ""
+"Az OTRS tartalmaz beépített parancsfájlokat a biztonsági mentéshez és "
+"visszaállításhoz. További információkért futtassa a parancsfájlokat a "
+"``-h`` kapcsolóval."
+
+#: ../content/backup-restore.rst:7
+msgid "Backup"
+msgstr "Biztonsági mentés"
+
+#: ../content/backup-restore.rst:11
+msgid ""
+"To create a backup, write permission is needed for ``otrs`` user for the "
+"destination directory."
+msgstr ""
+"Biztonsági mentés készítéséhez írási jogosultságra van szüksége az "
+"``otrs`` felhasználónak a célkönyvtárra."
+
+#: ../content/backup-restore.rst:17 ../content/backup-restore.rst:53
+msgid "The output of the script:"
+msgstr "A parancsfájl kimenete:"
+
+#: ../content/backup-restore.rst:47
+msgid "Restore"
+msgstr "Visszaállítás"
+
+#: ../content/index.rst:3
+msgid "OTRS Installation Guide"
+msgstr "OTRS telepítési útmutató"
+
+#: ../content/index.rst:5
+msgid ""
+"This work is copyrighted by OTRS AG (https://otrs.com), Zimmersmühlenweg "
+"11, 61440 Oberursel, Germany."
+msgstr ""
+"Ez a mű az OTRS AG (https://otrs.com), Zimmersmühlenweg 11, 61440 Oberursel,"
+" Németország szerzői joga alatt áll."
+
+#: ../content/index.rst:7
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document "
+"under the terms of the GNU Free Documentation License, Version 1.3 or any"
+" later version published by the Free Software Foundation; with no "
+"Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy"
+" of the license can be found on the `GNU website "
+"<https://www.gnu.org/licenses/fdl-1.3.txt>`__."
+msgstr ""
+"Engedélyt adunk Önnek a jelen dokumentum sokszorosítására, terjesztésére"
+" és/vagy módosítására a Free Software Foundation által kiadott GNU Free"
+" Documentation License 1.3-as, vagy bármely azt követő verziójának feltételei"
+" alapján. Nincs Nem Változtatható szakasz, nincs Címlapszöveg, nincs"
+" Hátlapszöveg. A jelen licenc egy példányát a `GNU weboldalán <"
+"https://www.gnu.org/licenses/fdl-1.3.txt>`__ találja."
+
+#: ../content/index.rst:9
+msgid "Contents"
+msgstr "Tartalom"
+
+#: ../content/installation.rst:2
+msgid "Installation"
+msgstr "Telepítés"
+
+#: ../content/installation.rst:4
+msgid ""
+"This chapter describes the installation and basic configuration of the "
+"central OTRS framework."
+msgstr ""
+"Ez a fejezet a központi OTRS keretrendszer telepítését és alapvető "
+"beállítását mutatja be."
+
+#: ../content/installation.rst:6
+msgid ""
+"Follow the detailed steps in this chapter to install OTRS on your server."
+" You can then use its web interface to login and administer the system."
+msgstr ""
+"Kövesse az ebben a fejezetben lévő részletes lépéseket az OTRS "
+"telepítéséhez a kiszolgálóra. Ezután használhatja a webes felületét a "
+"bejelentkezéshez és a rendszer adminisztrálásához."
+
+#: ../content/installation.rst:10
+msgid "Preparation: Disable SELinux"
+msgstr "Előkészítés: SELinux letiltása"
+
+#: ../content/installation.rst:14
+msgid ""
+"If your system uses SELinux, you should disable it, otherwise OTRS will "
+"not work correctly."
+msgstr ""
+"Ha a rendszere SELinuxot használ, akkor le kell tiltania azt, különben az"
+" OTRS nem fog megfelelően működni."
+
+#: ../content/installation.rst:16
+msgid "Here's how to disable SELinux for RHEL/CentOS/Fedora."
+msgstr ""
+"Itt láthatja, hogyan kell letiltani a SELinuxot RHEL/CentOS/Fedora "
+"rendszereken."
+
+#: ../content/installation.rst:18
+msgid "Configure ``SELINUX=disabled`` in the ``/etc/selinux/config`` file:"
+msgstr ""
+"Állítsa be a ``SELINUX=disabled`` értéket az ``/etc/selinux/config`` "
+"fájlban:"
+
+#: ../content/installation.rst:33
+msgid ""
+"Reboot your system. After reboot, confirm that the ``getenforce`` command"
+" returns *Disabled*:"
+msgstr ""
+"Indítsa újra a rendszert. Újraindítás után ellenőrizze, hogy a "
+"``getenforce`` parancs *Disabled* értéket ad-e vissza:"
+
+#: ../content/installation.rst:42
+msgid "Step 1: Unpack and Install the Application"
+msgstr "1. lépés: az alkalmazás kibontása és telepítése"
+
+#: ../content/installation.rst:44 ../content/updating.rst:69
+msgid ""
+"You can obtain either ``otrs-x.y.z.tar.gz`` or ``otrs-x.y.z.tar.bz2``. "
+"Unpack the source archive (for example, using ``tar``) into the directory"
+" ``/opt``, and create a symbolic link ``/opt/otrs`` that points to "
+"``/opt/otrs-x.y.z``. **Do not forget** to replace the version numbers!"
+msgstr ""
+"Beszerezheti akár az ``otrs-x.y.z.tar.gz`` vagy az ``otrs-x.y.z.tar.bz2``"
+" fájlt is. Bontsa ki a forrásarchívumot (például a ``tar`` használatával)"
+" az ``/opt`` könyvtárba, és hozzon létre egy ``/opt/otrs`` szimbolikus "
+"hivatkozást, amely az ``/opt/otrs-x.y.z`` helyre mutat. **Ne felejtse "
+"el** kicserélni a verziószámokat!"
+
+#: ../content/installation.rst:48 ../content/updating.rst:73
+msgid ""
+"Package ``bzip2`` is not installed in some systems by default. Make sure,"
+" that ``bzip2`` is installed before unpacking ``otrs-x.y.z.tar.bz2``."
+msgstr ""
+"A ``bzip2`` csomag néhány rendszeren nincs alapértelmezetten telepítve. "
+"Győződjön meg arról, hogy a ``bzip2`` telepítve van-e, mielőtt az "
+"``otrs-x.y.z.tar.bz2`` fájlt kibontaná."
+
+#: ../content/installation.rst:50 ../content/updating.rst:75
+msgid "Unpack command for ``otrs-x.y.z.tar.gz``:"
+msgstr "Kibontási parancs az ``otrs-x.y.z.tar.gz`` fájlhoz:"
+
+#: ../content/installation.rst:56 ../content/updating.rst:81
+msgid "Unpack command for ``otrs-x.y.z.tar.bz2``:"
+msgstr "Kibontási parancs az ``otrs-x.y.z.tar.bz2`` fájlhoz:"
+
+#: ../content/installation.rst:62 ../content/updating.rst:87
+msgid ""
+"It is recommended to create a symbolic link named ``/opt/otrs`` that "
+"always points to the latest OTRS version. Using symbolic link makes easy "
+"to manage the OTRS updates, because you can leave untouched the directory"
+" of the previous version, only the symbolic link needs to change. If you "
+"need to revert the update, you can change the target of the symbolic link"
+" back."
+msgstr ""
+"Ajánlott egy ``/opt/otrs`` nevű szimbolikus hivatkozást létrehozni, amely"
+" mindig a legújabb OTRS verzióra mutat. A szimbolikus hivatkozás "
+"használata egyszerűvé teszi az OTRS frissítések kezelését, mert így "
+"érintetlenül hagyhatja az előző verzió könyvtárát, mindössze a "
+"szimbolikus hivatkozást kell megváltoztatni. Ha vissza kell vonnia a "
+"frissítést, akkor visszaváltoztathatja a szimbolikus hivatkozás célját a "
+"korábbi könyvtárra."
+
+#: ../content/installation.rst:64 ../content/updating.rst:89
+msgid "Execute this command to create a symbolic link:"
+msgstr "Futtassa ez a parancsot egy szimbolikus hivatkozás létrehozásához:"
+
+#: ../content/installation.rst:72
+msgid "Step 2: Install Additional Programs and Perl Modules"
+msgstr "2. lépés: további programok és Perl-modulok telepítése"
+
+#: ../content/installation.rst:74
+msgid ""
+"Use the following script to get an overview of all installed and required"
+" CPAN modules and other external dependencies."
+msgstr ""
+"Használja a következő parancsfájlt, hogy áttekintést kapjon az összes "
+"telepített és szükséges CPAN-modulról és egyéb külső függőségekről."
+
+#: ../content/installation.rst:87
+msgid ""
+"Please note that OTRS requires a working Perl installation with all "
+"*core* modules such as the module ``version``. These modules are not "
+"explicitly checked by the script. You may need to install a ``perl-core``"
+" package on some systems like RHEL that do not install the Perl core "
+"packages by default."
+msgstr ""
+"Ne feledje, hogy az OTRS-hez működő Perl-telepítés szükséges az összes "
+"*alapvető* modullal, mint például a ``version`` modul. Ezeket a modulokat"
+" közvetlenül nem ellenőrzi a parancsfájl. Esetleg telepítenie kell egy "
+"``perl-core`` csomagot néhány olyan rendszeren, mint például a RHEL, "
+"amely nem telepíti az alapvető Perl-csomagokat alapértelmezetten."
+
+#: ../content/installation.rst:89
+msgid ""
+"To install the required and optional packages, you can use either CPAN or"
+" the package manager of your Linux distribution."
+msgstr ""
+"A szükséges és választható csomagok telepítéséhez használhatja a CPAN-t "
+"vagy a Linux disztribúciója csomagkezelőjét is."
+
+#: ../content/installation.rst:91
+msgid ""
+"Execute this command to get an install command to install the missing "
+"dependencies:"
+msgstr ""
+"Futtassa ezt a parancsot, hogy megkapjon egy telepítési parancsot a "
+"hiányzó függőségek telepítéséhez:"
+
+#: ../content/installation.rst:97
+msgid ""
+"OTRS requires a supported stable version of Node.js to be installed. "
+"Please refer to the `Node.js installation instructions "
+"<https://nodejs.org/en/download/package-manager/>`__."
+msgstr ""
+"Az OTRS-hez szükséges, hogy a Node.js egy támogatott stabil verziója "
+"telepítve legyen. Nézze meg a `Node.js telepítési utasításait "
+"<https://nodejs.org/en/download/package-manager/>`__."
+
+#: ../content/installation.rst:101
+msgid "Step 3: Create the OTRS User"
+msgstr "3. lépés: az OTRS Felhasználó létrehozása"
+
+#: ../content/installation.rst:103
+msgid "Create a dedicated user for OTRS:"
+msgstr "Hozzon létre egy dedikált felhasználót az OTRS-hez:"
+
+#: ../content/installation.rst:111
+msgid "Step 4: Activate the Default Configuration File"
+msgstr "4. lépés: az alapértelmezett beállítófájl aktiválása"
+
+#: ../content/installation.rst:113
+msgid ""
+"There is an OTRS configuration file bundled in "
+"``$OTRS_HOME/Kernel/Config.pm.dist``. You must activate it by copying it "
+"without the ``.dist`` filename extension."
+msgstr ""
+"Van egy OTRS beállítófájl az ``$OTRS_HOME/Kernel/Config.pm.dist`` fájlba "
+"csomagolva. Aktiválnia kell a ``.dist`` fájlnévkiterjesztés nélkül "
+"történő lemásolással."
+
+#: ../content/installation.rst:121
+msgid "Step 5: Configure the Apache Web Server"
+msgstr "5. lépés: az Apache webkiszolgáló beállítása"
+
+#: ../content/installation.rst:123
+msgid ""
+"OTRS comes with an own built-in web server that is used behind Apache as "
+"a reverse proxy (or any other reverse proxy server). A few Apache modules"
+" are needed for correct operation: ``proxy_module``, "
+"``proxy_http_module`` and ``proxy_wstunnel_module``."
+msgstr ""
+"Az OTRS saját beépített webkiszolgálóval érkezik, amely az Apache "
+"fordított proxyként (vagy bármely más fordított proxy kiszolgálóként) "
+"történő használata mögött található. Néhány Apache-modul szükséges a "
+"helyes működéshez: ``proxy_module``, ``proxy_http_module`` és "
+"``proxy_wstunnel_module``."
+
+#: ../content/installation.rst:125
+msgid ""
+"On some systems like Debian and SuSE, these modules need to be "
+"specifically enabled:"
+msgstr ""
+"Néhány rendszeren, mint például Debian és SuSE használatakor, ezeket a "
+"modulokat kifejezetten engedélyezni kell:"
+
+#: ../content/installation.rst:133
+msgid ""
+"Most Apache installations have a ``conf.d`` directory included. On Linux "
+"systems you can usually find this directory under ``/etc/apache`` or "
+"``/etc/apache2``. Log in as root, change to the ``conf.d`` directory and "
+"link the appropriate template in "
+"``/opt/otrs/scripts/apache2-httpd.include.conf`` to a file called "
+"``zzz_otrs.conf`` in the Apache configuration directory (to make sure it "
+"is loaded after the other configurations)."
+msgstr ""
+"A legtöbb Apache telepítés rendelkezik egy ``conf.d`` könyvtárral. A "
+"Linux rendszereken általában az ``/etc/apache`` vagy ``/etc/apache2`` "
+"könyvtárakban találja meg ezt a könyvtárat. Jelentkezzen be "
+"rendszergazdaként, lépje be a ``conf.d`` könyvtárba, és linkelje a "
+"megfelelő sablonokat az ``/opt/otrs/scripts/apache2-httpd.include.conf`` "
+"fájlban a ``zzz_otrs.conf`` nevű fájlra az Apache beállítási könyvtárában"
+" (hogy biztos legyen abban, hogy betöltődnek az egyéb beállítások után)."
+
+#: ../content/installation.rst:142
+msgid ""
+"Now you can restart your web server to load the new configuration "
+"settings. On most systems you can do that with the command:"
+msgstr ""
+"Most már újraindíthatja a webkiszolgálót az új konfigurációs beállítások "
+"betöltéséhez. A legtöbb rendszeren ezt ezzel a paranccsal teheti meg:"
+
+#: ../content/installation.rst:150
+msgid "Step 6: Set File Permissions"
+msgstr "6. lépés: fájljogosultságok beállítása"
+
+#: ../content/installation.rst:152 ../content/updating.rst:123
+msgid ""
+"Please execute the following command to set the file and directory "
+"permissions for OTRS. It will try to detect the correct user and group "
+"settings needed for your setup."
+msgstr ""
+"Futtassa a következő parancsot a fájl- és könyvtárjogosultságok "
+"beállításához az OTRS számára. Megpróbálja felismerni a beállításhoz "
+"szükséges helyes felhasználó- és csoportbeállításokat."
+
+#: ../content/installation.rst:160
+msgid "Step 7: Setup the Database"
+msgstr "7. lépés: az adatbázis beállítása"
+
+#: ../content/installation.rst:162
+msgid ""
+"The following steps need to be taken to setup the database for OTRS "
+"properly:"
+msgstr ""
+"A következő lépéseket szükséges elvégezni az adatbázis megfelelő "
+"beállításához az OTRS számára:"
+
+#: ../content/installation.rst:164
+msgid "Create a dedicated database user and database."
+msgstr "Hozzon létre egy dedikált adatbázis-felhasználót és adatbázist."
+
+#: ../content/installation.rst:165
+msgid "Create the database structure."
+msgstr "Hozza létre az adatbázis szerkezetét."
+
+#: ../content/installation.rst:166
+msgid "Insert the initial data."
+msgstr "Szúrja be a kezdeti adatokat."
+
+#: ../content/installation.rst:167
+msgid "Configure the database connection in ``Kernel/Config.pm``."
+msgstr "Állítsa be az adatbázis-kapcsolatot a ``Kernel/Config.pm`` fájlban."
+
+#: ../content/installation.rst:171
+msgid "Please note that OTRS requires ``utf8`` as database storage encoding."
+msgstr ""
+"Ne feledje, hogy az OTRS-nek ``utf8`` adatbázistároló-kódolásra van "
+"szüksége."
+
+#: ../content/installation.rst:174
+msgid "MySQL or MariaDB"
+msgstr "MySQL vagy MariaDB"
+
+#: ../content/installation.rst:176
+msgid "Log in to MySQL console as database admin user:"
+msgstr "Lépjen be a MySQL konzolba adatbázis-adminisztrátor felhasználóként:"
+
+#: ../content/installation.rst:182 ../content/installation.rst:256
+msgid "Create a database:"
+msgstr "Hozzon létre egy adatbázist:"
+
+#: ../content/installation.rst:188
+msgid ""
+"Special database user handling is needed for MySQL 8, as the default "
+"``caching_sha2_password`` can only be used over secure connections. "
+"Create a database user in MySQL 8:"
+msgstr ""
+"Különleges adatbázisfelhasználó-kezelés szükséges a MySQL 8-nál, mivel az"
+" alapértelmezett ``caching_sha2_password`` csak biztonságos kapcsolatokon"
+" keresztül használható. Hozzon létre egy adatbázis-felhasználót a MySQL "
+"8-ban:"
+
+#: ../content/installation.rst:194
+msgid "Create a database user in older MySQL versions:"
+msgstr "Hozzon létre egy adatbázis-felhasználót a régebbi MySQL verziókban:"
+
+#: ../content/installation.rst:200
+msgid "Assign user privileges to the new database:"
+msgstr "Rendeljen felhasználói jogosultságokat az új adatbázishoz:"
+
+#: ../content/installation.rst:208 ../content/installation.rst:262
+msgid ""
+"Run the following commands on the shell to create schema and insert data:"
+msgstr ""
+"Futtassa a következő parancsokat a parancsértelmezőben a séma "
+"létrehozásához és az adatok beszúrásához:"
+
+#: ../content/installation.rst:216 ../content/installation.rst:270
+msgid "Configure database settings in ``Kernel/Config.pm``:"
+msgstr "Állítsa be az adatbázis beállításait a ``Kernel/Config.pm`` fájlban:"
+
+#: ../content/installation.rst:228
+msgid ""
+"The following configuration settings are recommended for MySQL setups. "
+"Please add the following lines to ``/etc/my.cnf`` under the ``[mysqld]`` "
+"section:"
+msgstr ""
+"A következő konfigurációs beállítások ajánlottak a MySQL telepítéseknél. "
+"Adja hozzá a következő sorokat az ``/etc/my.cnf`` fájlhoz a ``[mysqld]`` "
+"szakasz alá:"
+
+#: ../content/installation.rst:238
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#: ../content/installation.rst:242
+msgid ""
+"We assume, that OTRS and PostgreSQL server run on the same machine and "
+"PostgreSQL uses *Peer* authentication method. For more information see "
+"the `Client Authentication <https://www.postgresql.org/docs/current"
+"/client-authentication.html>`__ section in the PostgreSQL manual."
+msgstr ""
+"Feltételezzük, hogy az OTRS és a PostgreSQL kiszolgáló ugyanazon a gépen "
+"fut, és a PostgreSQL *Peer* hitelesítési módszert használ. További "
+"információkért nézze meg a `Client Authentication "
+"<https://www.postgresql.org/docs/current/client-authentication.html>`__ "
+"szakaszt a PostgreSQL kézikönyvében."
+
+#: ../content/installation.rst:244
+msgid "Switch to ``postgres`` user:"
+msgstr "Lépjen át a ``postgres`` felhasználóra:"
+
+#: ../content/installation.rst:250
+msgid "Create a database user:"
+msgstr "Hozzon létre egy adatbázis-felhasználót:"
+
+#: ../content/installation.rst:282
+msgid "Finishing the Database Setup"
+msgstr "Az adatbázis-beállítás befejezése"
+
+#: ../content/installation.rst:284
+msgid "To verify your database setup, run the following command:"
+msgstr "Az adatbázis-beállítás ellenőrzéséhez futtassa a következő parancsot:"
+
+#: ../content/installation.rst:292
+msgid ""
+"Once the database is configured correctly, please initialize the system "
+"configuration with the following command:"
+msgstr ""
+"Amikor az adatbázis megfelelően be lett állítva, készítse elő a "
+"rendszerbeállításokat a következő paranccsal:"
+
+#: ../content/installation.rst:302
+msgid ""
+"For security reasons, please change the default password of the admin "
+"user ``root@localhost`` by generating a random password:"
+msgstr ""
+"Biztonsági okokból változtassa meg a ``root@localhost`` adminisztrátor "
+"felhasználó jelszavát egy véletlen jelszó előállításával:"
+
+#: ../content/installation.rst:310
+msgid "You can also choose to set your own password:"
+msgstr "Választhatja azt is, hogy saját jelszót állít be:"
+
+#: ../content/installation.rst:319
+msgid "Step 8: Setup Elasticsearch Cluster"
+msgstr "8. lépés: az Elasticsearch-fürt beállítása"
+
+#: ../content/installation.rst:321
+msgid ""
+"OTRS requires an active cluster of Elasticsearch 6.0 or higher. The "
+"easiest way is to `setup Elasticsearch "
+"<https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html"
+">`__"
+" on the same host as OTRS and binding it to its default port. With that, "
+"no further configuration in OTRS is needed."
+msgstr ""
+"Az OTRS-hez egy aktív Elasticsearch-fürt 6.0 vagy újabb szükséges. A "
+"legegyszerűbb mód az `Elasticsearch beállítása "
+"<https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html"
+">`__"
+" ugyanarra a gépre, amelyen az OTRS van, és hozzákapcsolni azt az "
+"alapértelmezett porthoz. Ezzel az OTRS-ben nincs szükség további "
+"beállításokra."
+
+#: ../content/installation.rst:323
+msgid "Additionally, OTRS requires plugins to be installed into Elasticsearch:"
+msgstr ""
+"Továbbá az OTRS-nek szüksége van bővítmények telepítésére az "
+"Elasticsearch-fürtbe:"
+
+#: ../content/installation.rst:332
+msgid "Restart Elasticsearch afterwards, or indexes will not be built."
+msgstr ""
+"Ezután indítsa újra az Elasticsearch programot, különben az indexek nem "
+"lesznek felépítve."
+
+#: ../content/installation.rst:334
+msgid ""
+"To verify the Elasticsearch installation, you can use the following "
+"command:"
+msgstr ""
+"Az Elasticsearch telepítés ellenőrzéséhez használhatja a következő "
+"parancsot:"
+
+#: ../content/installation.rst:344
+msgid "Step 9: Start the OTRS Daemon and Web Server"
+msgstr "9. lépés: az OTRS démon és webkiszolgáló elindítása"
+
+#: ../content/installation.rst:346
+msgid ""
+"The new OTRS daemon is responsible for handling any asynchronous and "
+"recurring tasks in OTRS. The built-in OTRS web server process handles the"
+" web requests handed over from Apache. Both processes must be started "
+"from the ``otrs`` user."
+msgstr ""
+"Az új OTRS démon felelős minden aszinkron és ismétlődő feladat "
+"kezeléséért az OTRS-ben. A beépített OTRS webkiszolgáló-folyamat kezeli "
+"az Apache által átadott webkéréseket. Mindkét folyamatot az ``otrs`` "
+"felhasználónak kell elindítania."
+
+#: ../content/installation.rst:355
+msgid "Step 10: First Login"
+msgstr "10. lépés: első bejelentkezés"
+
+#: ../content/installation.rst:357
+msgid ""
+"Now you are ready to login to your system at "
+"http://localhost/otrs/index.pl as user ``root@localhost`` with the "
+"password that was generated (see above)."
+msgstr ""
+"Most már készen áll, hogy bejelentkezzen a rendszerbe a "
+"http://localhost/otrs/index.pl címen a ``root@localhost`` felhasználóval "
+"és előállított jelszóval (lásd fentebb)."
+
+#: ../content/installation.rst:359
+msgid "Use http://localhost to access the external interface."
+msgstr "Használja a http://localhost címet a külső felület eléréséhez."
+
+#: ../content/installation.rst:363
+msgid "Step 11: Setup Systemd Files"
+msgstr "11. lépés: systemd fájlok beállítása"
+
+#: ../content/installation.rst:365 ../content/updating.rst:202
+msgid ""
+"OTRS comes with example systemd configuration files that can be used to "
+"make sure that the OTRS daemon and web server are started automatically "
+"after the system starts."
+msgstr ""
+"Az OTRS példa systemd beállítófájlokkal érkezik, amelyek ahhoz "
+"használhatók, hogy biztosítva legyen az OTRS démon és webkiszolgáló "
+"automatikus elindítása, miután a rendszer elindul."
+
+#: ../content/installation.rst:372
+msgid "With this step, the basic system setup is finished."
+msgstr "Ezzel a lépéssel az alapvető rendszerbeállítás befejeződött."
+
+#: ../content/installation.rst:376
+msgid "Step 12: Setup Bash Auto-Completion (optional)"
+msgstr "12. lépés: bash automatikus kiegészítés beállítása (kihagyható)"
+
+#: ../content/installation.rst:378
+msgid ""
+"All regular OTRS command line operations happen via the OTRS console "
+"interface. This provides an auto completion for the bash shell which "
+"makes finding the right command and options much easier."
+msgstr ""
+"Az összes szokásos OTRS parancssori művelet az OTRS konzolfelületén "
+"keresztül történik. Ez automatikus kiegészítést biztosít a bash "
+"parancsértelmezőhöz, amely sokkal egyszerűbbé teszi a megfelelő parancs "
+"és kapcsolók megtalálását."
+
+#: ../content/installation.rst:380
+msgid ""
+"You can activate the bash auto-completion by installing the package "
+"``bash-completion``. It will automatically detect and load the file "
+"``/opt/otrs/.bash_completion`` for the ``otrs`` user."
+msgstr ""
+"Aktiválhatja a bash automatikus kiegészítését a ``bash-completion`` "
+"csomag telepítésével. Ez automatikusan felismeri és betölti az "
+"``/opt/otrs/.bash_completion`` fájlt az ``otrs`` felhasználó számára."
+
+#: ../content/installation.rst:382
+msgid ""
+"After restarting your shell, you can just type this command followed by "
+"TAB, and it will list all available commands:"
+msgstr ""
+"A parancsértelmező újraindítása után egyszerűen gépelje be ezt a "
+"parancsot, és utána nyomja le a TAB billentyűt, hogy felsorolja az összes"
+" elérhető parancsot:"
+
+#: ../content/installation.rst:388
+msgid ""
+"If you type a few characters of the command name, TAB will show all "
+"matching commands. After typing a complete command, all possible options "
+"and arguments will be shown by pressing TAB."
+msgstr ""
+"Ha a parancs nevének csak néhány karakterét gépeli be, a TAB billentyű "
+"meg fogja jeleníteni az összes egyező parancsot. Egy teljes parancs "
+"begépelése után az összes lehetséges kapcsoló és argumentum meg fog "
+"jelenni a TAB billentyű lenyomásakor."
+
+#: ../content/installation.rst:391
+msgid "By problems you can source it in your ~/.bashrc by adding this line:"
+msgstr ""
+"Probléma esetén hozzáadhatja a fájlt a ~/.bashrc fájlhoz ennek a sornak a"
+" hozzáadásával:"
+
+#: ../content/installation.rst:399
+msgid "Step 13: Further Information"
+msgstr "13. lépés: további információk"
+
+#: ../content/installation.rst:401
+msgid "We advise you to read the OTRS :doc:`performance-tuning` chapter."
+msgstr ""
+"Javasoljuk az OTRS :doc:`performance-tuning` fejezetének elolvasását is."
+
+#: ../content/introduction.rst:2
+msgid "Introduction"
+msgstr "Bevezetés"
+
+#: ../content/introduction.rst:4
+msgid ""
+"OTRS (Open Technology – Real Service) is an open source ticket request "
+"system with many features to manage customer telephone calls and emails. "
+"It is distributed under the GNU General Public License (GPL) and tested "
+"on various Linux platforms. Do you receive many e-mails and want to "
+"answer them with a team of agents? You're going to love OTRS!"
+msgstr ""
+"Az OTRS (Open Technology – Real Service) egy sok funkcióval rendelkező "
+"nyílt forráskódú jegykezelő rendszer az ügyfelek telefonhívásainak és "
+"e-mailjeinek kezeléséhez. A GNU General Public License (GPL) feltételei "
+"szerint terjeszthető, és számos Linux platformon próbálták ki. Rengeteg "
+"e-mailt kap és egy ügyintézőcsapattal szeretné megválaszolni azokat? "
+"Akkor imádni fogja az OTRS-t!"
+
+#: ../content/introduction.rst:8
+msgid "About This Manual"
+msgstr "Erről a kézikönyvről"
+
+#: ../content/introduction.rst:10
+msgid ""
+"This manual is intended for use by system administrators. The chapters "
+"describe the installation and updating of the OTRS software."
+msgstr ""
+"Ezt a kézikönyvet a rendszer-adminisztrátorok általi használatra szánták."
+" A fejezetek az OTRS szoftver telepítését és frissítését írják le."
+
+#: ../content/introduction.rst:12
+msgid ""
+"There is no graphical user interface for installation and updating. "
+"System administrators have to follow the steps described in the following"
+" chapters."
+msgstr ""
+"Nincs grafikus felhasználói felület a telepítéshez és a frissítéshez. A "
+"rendszer-adminisztrátoroknak a következő fejezetekben leírt lépéseket "
+"kell követniük."
+
+#: ../content/introduction.rst:14
+msgid ""
+"All console commands look like ``username> command-to-execute``. Username"
+" indicates the user account of the operating system, which need to use to"
+" execute the command. If a command starts with ``root>``, you have to "
+"execute the command as a user who has root permissions. If a command "
+"starts with ``otrs>``, you have to execute the command as the user "
+"created for OTRS."
+msgstr ""
+"Az összes konzolparancs ``felhasználónév> végrehajtandó-parancs`` "
+"formában van megadva. A felhasználónév jelzi az operációs rendszernek azt"
+" a felhasználói fiókját, amelyet a parancs futtatásához használni kell. "
+"Ha egy parancs ``root>`` felhasználóval kezdődik, akkor a parancsot olyan"
+" felhasználóval kell végrehajtania, akinek rendszergazdai jogosultságai "
+"vannak. Ha egy parancs ``otrs>`` felhasználóval kezdődik, akkor a "
+"parancsot olyan felhasználóval kell végrehajtania, akit az OTRS-hez "
+"hoztak létre."
+
+#: ../content/introduction.rst:18
+msgid ""
+"Don't select ``username>`` when you copy the command and paste it to the "
+"shell. Otherwise you will get an error."
+msgstr ""
+"Ne jelölje ki a ``felhasználónév>`` előtagot, amikor lemásolja a "
+"parancsot és beilleszti a parancsértelmezőbe. Különben hibát fog kapni."
+
+#: ../content/introduction.rst:20
+msgid ""
+"We supposed that OTRS will be installed to ``/opt/otrs``. If you want to "
+"install OTRS to a different directory, then you have to change the path "
+"in the commands or create a symbolic link to this directory."
+msgstr ""
+"Feltételezzük, hogy az OTRS az ``/opt/otrs`` könyvtárba lesz telepítve. "
+"Ha egy másik könyvtárba szeretné telepíteni az OTRS-t, akkor ki kell "
+"cserélnie az útvonalat a parancsokban, vagy létre kell hoznia egy "
+"szimbolikus hivatkozást arra a könyvtárra."
+
+#: ../content/performance-tuning.rst:2
+msgid "Performance Tuning"
+msgstr "Teljesítmény hangolás"
+
+#: ../content/performance-tuning.rst:4
+msgid ""
+"There is a list of performance enhancing techniques for your OTRS "
+"installation, including configuration, coding, memory use, and more."
+msgstr ""
+"Létezik egy sor teljesítmény-javító technika az OTRS telepítéséhez, "
+"beleértve a beállítást, a kódolást, a memóriahasználatot és egyebeket."
+
+#: ../content/performance-tuning.rst:8
+msgid "Ticket Index Module"
+msgstr "Jegyindexelő modul"
+
+#: ../content/performance-tuning.rst:10
+msgid ""
+"Ticket index module can be set in system configuration setting "
+"``Ticket::IndexModule``. There are two back end modules for the index for"
+" the ticket queue view:"
+msgstr ""
+"A jegyindexelő modul a ``Ticket::IndexModule`` rendszerbeállítási "
+"lehetőségben állítható be. Két háttérprogram-modul létezik a jegy "
+"várólista nézetének indexeléséhez:"
+
+#: ../content/performance-tuning.rst:13
+msgid "``Kernel::System::Ticket::IndexAccelerator::RuntimeDB``"
+msgstr "``Kernel::System::Ticket::IndexAccelerator::RuntimeDB``"
+
+#: ../content/performance-tuning.rst:13
+msgid ""
+"This is the default option, and will generate each queue view on the fly "
+"from the ticket table. You will not have performance trouble until you "
+"have about 60,000 open tickets in your system."
+msgstr ""
+"Ez az alapértelmezett beállítás, és minden egyes várólista nézetet "
+"röptében állít elő a jegytáblából. Nem lesz teljesítmény problémája, amíg"
+" nincs körülbelül 60 000 nyitott jegye a rendszeren."
+
+#: ../content/performance-tuning.rst:21
+msgid "``Kernel::System::Ticket::IndexAccelerator::StaticDB``"
+msgstr "``Kernel::System::Ticket::IndexAccelerator::StaticDB``"
+
+#: ../content/performance-tuning.rst:16
+msgid ""
+"The most powerful module, should be used when you have above 80,000 open "
+"tickets. It uses an extra ``ticket_index`` table, which will be populated"
+" with keywords based on ticket data. Use the following command for "
+"generating an initial index after switching back ends:"
+msgstr ""
+"A legerőteljesebb modul, amelyet akkor kell használnia, ha több mint 80 "
+"000 nyitott jegye van. Ez egy további ``ticket_index`` táblát használ, "
+"amely kulcsszavakkal lesz feltöltve a jegyadatok alapján. Használja a "
+"következő parancsot egy kezdeti index előállításához a háttérprogramok "
+"átkapcsolása után:"
+
+#: ../content/performance-tuning.rst:24
+msgid "Ticket Search Index"
+msgstr "Jegykeresési index"
+
+#: ../content/performance-tuning.rst:26
+msgid ""
+"OTRS uses a special search index to perform full-text searches across "
+"fields in articles from different communication channels."
+msgstr ""
+"Az OTRS egy különleges keresési indexet használ a szabad-szavas keresések"
+" végrehajtásához a különböző kommunikációs csatornákból érkező "
+"bejegyzések mezőiben."
+
+#: ../content/performance-tuning.rst:28
+msgid "To create an initial index, use this command:"
+msgstr "Egy kezdeti index létrehozásához használja ezt a parancsot:"
+
+#: ../content/performance-tuning.rst:36
+msgid ""
+"Actual article indexing happens via an OTRS daemon job in the background."
+" While articles which were just added in the system are marked for "
+"indexing immediately, it could happen their index is available within a "
+"few minutes."
+msgstr ""
+"A tényleges bejegyzésindexelés egy OTRS démonfeladaton keresztül történik"
+" a háttérben. Mivel a rendszerhez éppen hozzáadott bejegyzések azonnal "
+"meg lesznek jelölve indexelésre, így megtörténhet, hogy az indexük néhány"
+" percen belül elérhető lesz."
+
+#: ../content/performance-tuning.rst:38
+msgid "There are some options available for fine tuning the search index:"
+msgstr "Elérhető néhány beállítás a keresési index finomhangolásához:"
+
+#: ../content/performance-tuning.rst:41
+msgid "``Ticket::SearchIndex::IndexArchivedTickets``"
+msgstr "``Ticket::SearchIndex::IndexArchivedTickets``"
+
+#: ../content/performance-tuning.rst:41
+msgid ""
+"Defines if archived tickets will be included in the search index (not "
+"enabled by default). This is advisable to keep the index small on large "
+"systems with archived tickets. If this is enabled, archived tickets will "
+"be found by full-text searches."
+msgstr ""
+"Meghatározza, hogy az archivált jegyek fel legyenek-e véve a keresési "
+"indexbe (alapértelmezetten nincs engedélyezve). Ajánlott az indexet kis "
+"méretűként tartani archivált jegyekkel rendelkező nagy rendszereken. Ha "
+"ez engedélyezve, akkor az archivált jegyek megtalálhatók lesznek a "
+"szabad-szavas keresésekkel."
+
+#: ../content/performance-tuning.rst:63
+msgid "``Ticket::SearchIndex::Attribute``"
+msgstr "``Ticket::SearchIndex::Attribute``"
+
+#: ../content/performance-tuning.rst:44
+msgid "Basic full-text index settings."
+msgstr "Alapvető szabad-szavas index beállítások."
+
+#: ../content/performance-tuning.rst:49
+msgid "``Ticket::SearchIndex::Attribute`` Setting"
+msgstr "A ``Ticket::SearchIndex::Attribute`` beállítás"
+
+#: ../content/performance-tuning.rst:53
+msgid "Run the following command in order to generate a new index:"
+msgstr "Futtassa a következő parancsot egy új index előállításának érdekében:"
+
+#: ../content/performance-tuning.rst:60
+msgid "``WordCountMax``"
+msgstr "``WordCountMax``"
+
+#: ../content/performance-tuning.rst:60
+msgid ""
+"Defines the maximum number of words which will be processed to build up "
+"the index. For example only the first 1000 words of an article body are "
+"stored in the article search index."
+msgstr ""
+"Meghatározza azon szavak legnagyobb számát, amelyek feldolgozásra "
+"kerülnek az index felépítéséhez. Például egy bejegyzés törzsének csak az "
+"első 1000 szava legyen eltárolva a bejegyzés keresési indexében."
+
+#: ../content/performance-tuning.rst:63
+msgid "``WordLengthMin`` and ``WordLengthMax``"
+msgstr "``WordLengthMin`` és ``WordLengthMax``"
+
+#: ../content/performance-tuning.rst:63
+msgid ""
+"Used as word length boundaries. Only words with a length between these "
+"two values are stored in the article search index."
+msgstr ""
+"Szóhossz határokként vannak használva. Csak azok a szavak vannak "
+"eltárolva a bejegyzés keresési indexében, amelyek hossza ezen két érték "
+"közé esik."
+
+#: ../content/performance-tuning.rst:77
+msgid "``Ticket::SearchIndex::Filters``"
+msgstr "``Ticket::SearchIndex::Filters``"
+
+#: ../content/performance-tuning.rst:66
+msgid "Full-text index regular expression filters to remove parts of the text."
+msgstr ""
+"Szabad-szavas index reguláris kifejezés szűrők a szöveg részeinek "
+"eltávolításához."
+
+#: ../content/performance-tuning.rst:71
+msgid "``Ticket::SearchIndex::Filters`` Setting"
+msgstr "``Ticket::SearchIndex::Filters`` Setting"
+
+#: ../content/performance-tuning.rst:73
+msgid "There are three default filters defined:"
+msgstr "Három alapértelmezett szűrő van meghatározva:"
+
+#: ../content/performance-tuning.rst:75
+msgid ""
+"The first filter strips out special chars like: , & < > ? \" ! * | ; [ ] "
+"( ) + $ ^ ="
+msgstr ""
+"Az első szűrő eltávolítja a különleges karaktereket, mint például: , & < "
+"> ? \" ! * | ; [ ] ( ) + $ ^ ="
+
+#: ../content/performance-tuning.rst:76
+msgid ""
+"The second filter strips out words which begin or ends with one of "
+"following chars: ' : ."
+msgstr ""
+"A második szűrő eltávolítja azokat a szavakat, amelyek a következő "
+"karakterek egyikével kezdődnek vagy végződnek: ' : ."
+
+#: ../content/performance-tuning.rst:77
+msgid ""
+"The third filter strips out words which do not contain a word-character: "
+"a-z, A-Z, 0-9, _"
+msgstr ""
+"A harmadik szűrő eltávolítja azokat a szavakat, amelyek nem tartalmaznak "
+"egy szókaraktert: a-z, A-Z, 0-9, _"
+
+#: ../content/performance-tuning.rst:93
+msgid "``Ticket::SearchIndex::StopWords``"
+msgstr "``Ticket::SearchIndex::StopWords``"
+
+#: ../content/performance-tuning.rst:80
+msgid ""
+"English stop words for full-text index. These words will be removed from "
+"the search index."
+msgstr ""
+"Angol kiszűrendő szavak a szabad-szavas indexnél. Ezek a szavak el "
+"lesznek távolítva a keresési indexből."
+
+#: ../content/performance-tuning.rst:85
+msgid "``Ticket::SearchIndex::StopWords###en`` Setting"
+msgstr "A ``Ticket::SearchIndex::StopWords###en`` beállítás"
+
+#: ../content/performance-tuning.rst:87
+msgid ""
+"There are so-called stop-words defined for some languages. These stop-"
+"words will be skipped while creating the search index."
+msgstr ""
+"Úgynevezett kiszűrendő szavak vannak meghatározva néhány nyelvnél. Ezek a"
+" kiszűrendő szavak ki lesznek hagyva a keresési index létrehozásakor."
+
+#: ../content/performance-tuning.rst:90
+msgid ""
+"If your language is not in the system configuration settings or you want "
+"to add more words, you can add them to this setting:"
+msgstr ""
+"Ha az Ön nyelve nincs benne a rendszerbeállítási lehetőségekben vagy több"
+" szót szeretne hozzáadni, akkor hozzáadhatja azokat ehhez a beállításhoz:"
+
+#: ../content/performance-tuning.rst:92
+msgid "``Ticket::SearchIndex::StopWords###Custom``"
+msgstr "``Ticket::SearchIndex::StopWords###Custom``"
+
+#: ../content/performance-tuning.rst:96
+msgid "Article Storage"
+msgstr "Bejegyzéstárolás"
+
+#: ../content/performance-tuning.rst:98
+msgid ""
+"There are two different back end modules for the article storage of "
+"phone, email and internal articles. The used article storage can be "
+"configured in the setting "
+"``Ticket::Article::Backend::MIMEBase::ArticleStorage``."
+msgstr ""
+"Két különböző háttérprogram-modul létezik a telefonos, e-mail és belső "
+"bejegyzések bejegyzéstárolásához. A használt bejegyzéstároló a "
+"``Ticket::Article::Backend::MIMEBase::ArticleStorage`` beállításban "
+"állítható be."
+
+#: ../content/performance-tuning.rst:105
+msgid ""
+"``Kernel::System::Ticket::Article::Backend::MIMEBase::ArticleStorageDB``"
+msgstr ""
+"``Kernel::System::Ticket::Article::Backend::MIMEBase::ArticleStorageDB``"
+
+#: ../content/performance-tuning.rst:101
+msgid ""
+"This default module will store attachments in the database. It also works"
+" with multiple front end servers, but requires much storage space in the "
+"database."
+msgstr ""
+"Ez az alapértelmezett modul a mellékleteket az adatbázisban fogja "
+"eltárolni. Működik több előtétprogramos kiszolgálókkal is, de több "
+"tárolóhelyet igényel az adatbázisban."
+
+#: ../content/performance-tuning.rst:105
+msgid "Don't use this with large setups."
+msgstr "Ne használja ezt nagy rendszereknél."
+
+#: ../content/performance-tuning.rst:112
+msgid ""
+"``Kernel::System::Ticket::Article::Backend::MIMEBase::ArticleStorageFS``"
+msgstr ""
+"``Kernel::System::Ticket::Article::Backend::MIMEBase::ArticleStorageFS``"
+
+#: ../content/performance-tuning.rst:108
+msgid ""
+"Use this module to store attachments on the local file system. It is "
+"fast, but if you have multiple front end servers, you must make sure the "
+"file system is shared between the servers. Place it on an NFS share or "
+"preferably a SAN or similar solution."
+msgstr ""
+"Használja ezt a modult a mellékletek helyi fájlrendszeren történő "
+"tárolásához. Ez gyors, de ha több előtétprogramos kiszolgálói vannak, "
+"akkor meg kell győződnie arról, hogy a fájlrendszer meg van-e osztva a "
+"kiszolgálók között. Helyezze azt egy NFS megosztásra vagy inkább egy SAN "
+"vagy hasonló megoldásra."
+
+#: ../content/performance-tuning.rst:112
+msgid "Recommended for large setups."
+msgstr "Ajánlott nagy rendszereknél."
+
+#: ../content/performance-tuning.rst:114
+msgid ""
+"You can switch from one back end to the other on the fly. You can switch "
+"the back end in the system configuration, and then run this command line "
+"utility to put the articles from the database onto the file system or the"
+" other way around:"
+msgstr ""
+"Átkapcsolhat menet közben az egyik háttérprogramról a másikra. A "
+"háttérprogramot a rendszerbeállításokban kapcsolhatja át, és azután "
+"futtassa le ezt a parancssori segédprogramot a bejegyzések átrakásához az"
+" adatbázisból a fájlrendszerre vagy fordítva."
+
+#: ../content/performance-tuning.rst:120
+msgid "You can use the ``--target`` option to specify the target back end."
+msgstr "A ``--target`` kapcsolót használhatja a cél háttérprogram megadásához."
+
+#: ../content/performance-tuning.rst:124
+msgid ""
+"The entire process can take considerable time to run, depending on the "
+"number of articles you have and the available CPU power and/or network "
+"capacity."
+msgstr ""
+"A teljes folyamat futtatása számottevő ideig eltarthat a meglévő "
+"bejegyzések számától és az elérhető processzorteljesítménytől és/vagy "
+"hálózati kapacitástól függően."
+
+#: ../content/performance-tuning.rst:126
+msgid ""
+"If you want to keep old attachments in the database, you can activate the"
+" system configuration option "
+"``Ticket::Article::Backend::MIMEBase::CheckAllStorageBackends`` to make "
+"sure OTRS will still find them."
+msgstr ""
+"Ha a régi mellékleteket az adatbázisban szeretné tartani, akkor "
+"bekapcsolhatja a "
+"``Ticket::Article::Backend::MIMEBase::CheckAllStorageBackends`` "
+"rendszerbeállítási lehetőséget annak biztosításához, hogy az OTRS "
+"továbbra is megtalálja azokat."
+
+#: ../content/performance-tuning.rst:130
+msgid "Archiving Tickets"
+msgstr "Jegyek archiválása"
+
+#: ../content/performance-tuning.rst:132
+msgid ""
+"As OTRS can be used as an audit-proof system, deleting closed tickets may"
+" not be a good idea. Therefore we implemented a feature that allows you "
+"to archive tickets."
+msgstr ""
+"Mivel az OTRS használható vizsgálatigazoló rendszerként, emiatt a lezárt "
+"jegyek törlése nem lenne jó ötlet. Ezért megvalósítottunk egy olyan "
+"szolgáltatást, amely lehetővé teszi a jegyek archiválását."
+
+#: ../content/performance-tuning.rst:134
+msgid ""
+"Tickets that match certain criteria can be marked as archived. These "
+"tickets are not accessed if you do a regular ticket search or run a "
+"generic agent job. The system itself does not have to deal with a huge "
+"amount of tickets any longer as only the latest tickets are taken into "
+"consideration when using OTRS. This can result in a huge performance gain"
+" on large systems."
+msgstr ""
+"Azok a jegyek, amelyek bizonyos feltételekre illeszkednek, megjelölhetők "
+"archiváltként. Ezek a jegyek nem lesznek hozzáférhetők, ha egy szabályos "
+"jegykeresést hajt végre, vagy egy általános ügyintéző feladatot futtat. "
+"Magának a rendszernek többé nem kell foglalkoznia a jegyek hatalmas "
+"mennyiségével, mivel csak a legújabb jegyeket kell figyelembe venni az "
+"OTRS használatakor. Ez egy hatalmas teljesítménynövekedést eredményezhet "
+"nagy rendszereknél."
+
+#: ../content/performance-tuning.rst:136
+msgid "To use the archive feature:"
+msgstr "Az archiválás funkció használatához:"
+
+#: ../content/performance-tuning.rst:138
+msgid ""
+"Activate the ``Ticket::ArchiveSystem`` setting in the system "
+"configuration."
+msgstr ""
+"Kapcsolja be a ``Ticket::ArchiveSystem`` beállítást a "
+"rendszerbeállításokban."
+
+#: ../content/performance-tuning.rst:139
+msgid "Define a generic agent job:"
+msgstr "Határozzon meg egy általános ügyintéző feladatot:"
+
+#: ../content/performance-tuning.rst:141
+msgid "Click on the *Add Job* button in the *Generic Agent* screen."
+msgstr ""
+"Kattintson a *Feladat hozzáadása* gombra az *Általános ügyintéző* "
+"képernyőn."
+
+#: ../content/performance-tuning.rst:142
+msgid "*Job Settings*: provide a name for the archiving job."
+msgstr "*Feladat beállításai*: adjon egy nevet az archiváló feladatnak."
+
+#: ../content/performance-tuning.rst:143
+msgid "*Automatic Execution*: select proper options to schedule this job."
+msgstr ""
+"*Automatikus végrehajtás*: válassza ki a megfelelő beállításokat a "
+"feladat ütemezéséhez."
+
+#: ../content/performance-tuning.rst:144
+msgid ""
+"*Select Tickets*: it might be a good idea to only archive those tickets "
+"in a closed state that have been closed a few months before."
+msgstr ""
+"*Jegyek kijelölése*: jó ötletnek tűnik csak azokat a lezárt állapotú "
+"jegyeket archiválni, amelyeket néhány hónappal ezelőtt zártak el."
+
+#: ../content/performance-tuning.rst:145
+msgid ""
+"*Update/Add Ticket Attributes*: set the field *Archive selected tickets* "
+"to *archive tickets*."
+msgstr ""
+"*Jegyjellemzők frissítése/hozzáadása*: állítsa be az *Kijelölt jegyek "
+"archiválása* mezőt *jegyek archiválása* értékre."
+
+#: ../content/performance-tuning.rst:146
+msgid "Save the job at the end of the page."
+msgstr "Mentse el a feladatot az oldal alján."
+
+#: ../content/performance-tuning.rst:147
+msgid ""
+"Click on the *Run this task* link in the overview table to see the "
+"affected tickets."
+msgstr ""
+"Kattintson a *Feladat futtatása* hivatkozásra az áttekintő táblázatban az"
+" érintett jegyek megtekintéséhez."
+
+#: ../content/performance-tuning.rst:148
+msgid "Click on the *Run Job* button."
+msgstr "Kattintson a *Feladat futtatása* gombra."
+
+#: ../content/performance-tuning.rst:152
+msgid "Up to 5000 tickets can be modified by running this job manually."
+msgstr ""
+"Legfeljebb 5000 jegyet lehet módosítani a feladat kézzel történő "
+"futtatásakor."
+
+#: ../content/performance-tuning.rst:154
+msgid ""
+"When you search for tickets, the system default is to search tickets "
+"which are not archived."
+msgstr ""
+"Amikor rákeres a jegyekre, akkor a rendszer alapértelmezetten csak azokra"
+" a jegyekre keres rá, amelyek nincsenek archiválva."
+
+#: ../content/performance-tuning.rst:156
+msgid "To search for archived tickets:"
+msgstr "Az archivált jegyek kereséséhez:"
+
+#: ../content/performance-tuning.rst:158
+msgid "Open the ticket search screen."
+msgstr "Nyissa meg a jegykeresés képernyőt."
+
+#: ../content/performance-tuning.rst:159
+msgid "Set *Archive search* to *Unarchived tickets* or *All tickets*."
+msgstr ""
+"Állítsa át az *Archívum keresés* mezőt *Archiválatlan jegyek* értékről "
+"*Összes jegy* értékre."
+
+#: ../content/performance-tuning.rst:160
+msgid "Perform the search."
+msgstr "Hajtsa végre a keresést."
+
+#: ../content/performance-tuning.rst:164
+msgid "Tuning the Web Server"
+msgstr "A webkiszolgáló finomhangolása"
+
+#: ../content/performance-tuning.rst:166
+msgid ""
+"The built-in web server of OTRS can handle small and medium setups out of"
+" the box. When OTRS serves many users simultaneously, it may be necessary"
+" to tweak the web server configuration to increase the number of worker "
+"processes, for example."
+msgstr ""
+"Az OTRS beépített webkiszolgálója további beállítások nélkül képes "
+"kezelni a kicsi és közepes telepítéseket. Amikor az OTRS több "
+"felhasználót egyidejűleg szolgál ki, akkor szükséges lehet a "
+"webkiszolgáló beállításainak finomhangolása, például a munkavégző "
+"folyamatok számának növelése."
+
+#: ../content/performance-tuning.rst:168
+msgid ""
+"The web server configuration file is located in ``Kernel/WebApp.conf``, "
+"and all settings there are documented. The ``worker`` setting can be "
+"increased to deploy more processes for serving HTTP requests on capable "
+"servers."
+msgstr ""
+"A webkiszolgáló beállítófájlja a ``Kernel/WebApp.conf`` fájlban "
+"található, és az összes beállítás dokumentálva van. A ``worker`` "
+"beállítás növelhető több folyamat üzembe állításához a HTTP-kérések "
+"kiszolgálásánál az erre alkalmas kiszolgálókon."
+
+#: ../content/performance-tuning.rst:172
+msgid "Caching"
+msgstr "Gyorsítótárazás"
+
+#: ../content/performance-tuning.rst:174
+msgid ""
+"OTRS caches a lot of temporary data in ``/opt/otrs/var/tmp``. Please make"
+" sure that this uses a high performance file system and storage. If you "
+"have enough RAM, you can also try to put this directory on a ramdisk like"
+" this:"
+msgstr ""
+"Az OTRS rengeteg átmeneti adatot gyorsítótáraz az ``/opt/otrs/var/tmp`` "
+"könyvtárban. Győződjön meg arról, hogy ez egy nagy teljesítményű "
+"fájlrendszert és tárolót használ-e. Ha elegendő RAM van a gépben, akkor "
+"megpróbálhatja ezt a könyvtárat egy memórialemezre áttenni ehhez "
+"hasonlóan:"
+
+#: ../content/performance-tuning.rst:184
+msgid "Add persistent mount point in ``/etc/fstab``."
+msgstr "Adjon meg állandó csatolási pontot az ``/etc/fstab`` fájlban."
+
+#: ../content/performance-tuning.rst:188
+msgid ""
+"This will be a non-permanent storage that will be lost on server reboot. "
+"All your sessions (if you store them in the file system) and your cache "
+"data will be lost."
+msgstr ""
+"Ez egy nem állandó tároló lesz, amely el fog veszi a kiszolgáló "
+"újraindításakor. Az összes munkamenete (ha a fájlrendszeren tárolja "
+"azokat) és a gyorsítótárazott adatok el fognak veszni."
+
+#: ../content/performance-tuning.rst:192
+msgid ""
+"There is also a centralized `memcached based cache back end "
+"<https://otrs.com/otrs-feature/feature-add-on-cache-memcached-fast/>`__ "
+"available for purchase from OTRS Group."
+msgstr ""
+"Elérhető egy központosított `memcached alapú gyorsítótár háttérprogram "
+"<https://otrs.com/otrs-feature/feature-add-on-cache-memcached-fast/>`__  "
+"is, amely megvásárolható az OTRS csoporttól."
+
+#: ../content/performance-tuning.rst:196
+msgid "Clustering"
+msgstr "Fürtözés"
+
+#: ../content/performance-tuning.rst:198
+msgid ""
+"For very high loads, it can be required to operate OTRS on a cluster of "
+"multiple front end servers. This is a complex task with many pitfalls. "
+"Therefore, OTRS Group provides support for clusters in its `managed OTRS "
+"<https://otrs.com/how-to-buy/>`__ environment exclusively."
+msgstr ""
+"Nagyon magas terhelésnél szükséges lehet az OTRS-t egy több "
+"előtétprogramos kiszolgálóból álló fürtön működtetni. Ez egy bonyolult "
+"feladat sok buktatóval. Emiatt az OTRS csoport kizárólagos támogatást "
+"biztosít a `menedzselt OTRS <https://otrs.com/how-to-buy/>`__ "
+"környezetében."
+
+#: ../content/requirements.rst:2
+msgid "Hardware and Software Requirements"
+msgstr "Hardver- és szoftverkövetelmények"
+
+#: ../content/requirements.rst:4
+msgid ""
+"OTRS can be installed on Linux and on other Unix derivates (e.g. OpenBSD "
+"or FreeBSD). To run OTRS on Microsoft Windows is not possible."
+msgstr ""
+"Az OTRS telepíthető Linuxra és egyéb UNIX-származékokra (például OpenBSD-"
+"re vagy FreeBSD-re). Az OTRS futtatása Microsoft Windowson nem "
+"lehetséges."
+
+#: ../content/requirements.rst:6
+msgid ""
+"To run OTRS, you'll also need to use a web server as reverse proxy and a "
+"database server. Apart from that, you should install Perl and/or install "
+"some additional Perl modules on the OTRS machine."
+msgstr ""
+"Az OTRS futtatásához szüksége lesz egy fordított proxyként működő "
+"webkiszolgáló és egy adatbázis-kiszolgáló használatára is. Ettől "
+"eltekintve telepítenie kell a Perl parancsértelmezőt és/vagy telepítenie "
+"kell néhány további Perl-modult az OTRS-gépre."
+
+#: ../content/requirements.rst:8
+msgid ""
+"Perl must be installed on the same machine as OTRS. The database back end"
+" and the web server may be installed locally or on another host."
+msgstr ""
+"A Perl parancsértelmezőt ugyanarra a gépre kell telepíteni mint az "
+"OTRS-t. Az adatbázis háttérprogram és a webkiszolgáló telepíthető "
+"helyileg vagy egy távoli gépre."
+
+#: ../content/requirements.rst:10
+msgid ""
+"For Perl, you will need some additional modules which can be installed "
+"either with the Perl shell and CPAN, or via the package manager of your "
+"operating system (rpm, yast, apt-get)."
+msgstr ""
+"A Perl parancsértelmezőhöz szüksége lesz néhány további modulra, amelyek "
+"vagy a Perl parancsértelmezővel és CPAN használatával, vagy az operációs "
+"rendszer csomagkezelőjén keresztül (rpm, yast, apt-get) telepíthetők."
+
+#: ../content/requirements.rst:12
+msgid ""
+"OTRS has a console command to check the environment and the missing "
+"modules."
+msgstr ""
+"Az OTRS rendelkezik egy konzolparanccsal a környezet és a hiányzó modulok"
+" ellenőrzéséhez."
+
+#: ../content/requirements.rst:18
+msgid ""
+"If some packages are missing, you can get an install command for your "
+"operating system, if you run the script with ``--list`` option."
+msgstr ""
+"Ha valamelyik csomag hiányzik, akkor kaphat egy telepítési parancsot az "
+"operációs rendszeréhez, ha a ``--list`` kapcsolóval futtatja a "
+"parancsfájlt."
+
+#: ../content/requirements.rst:24
+msgid ""
+"If all needed packages are installed, the output of the environment check"
+" script shows the installed packages and the version numbers."
+msgstr ""
+"Ha az összes szükséges csomag telepítve van, akkor a környezet-ellenőrző "
+"parancsfájl kimenete megjeleníti a telepített csomagokat és azok "
+"verziószámait."
+
+#: ../content/requirements.rst:74
+msgid "Hardware Requirements"
+msgstr "Hardverkövetelmények"
+
+#: ../content/requirements.rst:76
+msgid ""
+"Hardware requirements highly depend on the usage of OTRS. OTRS can be "
+"used to process a few tickets per month or to process hundreds of tickets"
+" per day. The storage requirement also depends on the number of tickets "
+"and size of attachments."
+msgstr ""
+"A hardverkövetelmények erősen függnek az OTRS használatától. Az OTRS "
+"használható havi néhány jegy feldolgozásához vagy naponta több száz jegy "
+"feldolgozásához is. A tárolási követelmény szintén a jegyek számától és a"
+" mellékletek méretétől függ."
+
+#: ../content/requirements.rst:78
+msgid "We recommend using a machine with **at least**:"
+msgstr ""
+"Azt javasoljuk, hogy olyan gépet használjon, amelyben van **legalább**:"
+
+#: ../content/requirements.rst:80
+msgid "3 GHz Xeon or comparable CPU"
+msgstr "3 GHz Xeon vagy ezzel egyenértékű CPU"
+
+#: ../content/requirements.rst:81
+msgid "8 GB RAM"
+msgstr "8 GB RAM"
+
+#: ../content/requirements.rst:82
+msgid "256 GB storage"
+msgstr "256 GB tárhely"
+
+#: ../content/requirements.rst:86
+msgid ""
+"Hardware requirements depend on the usage of OTRS. Please contact your "
+"OTRS consultant before deploying a hardware."
+msgstr ""
+"A hardverkövetelmények az OTRS használatától függenek. Vegye fel a "
+"kapcsolatot az OTRS tanácsadójával, mielőtt üzembe állítana egy hardvert."
+
+#: ../content/requirements.rst:90
+msgid "Software requirements"
+msgstr "Szoftverkövetelmények"
+
+#: ../content/requirements.rst:94
+msgid "Perl"
+msgstr "Perl"
+
+#: ../content/requirements.rst:93
+msgid "Perl 5.16.0 or higher"
+msgstr "Perl 5.16.0 vagy magasabb"
+
+#: ../content/requirements.rst:94
+msgid ""
+"Perl packages listed by ``/opt/otrs/bin/otrs.CheckEnvironment.pl`` "
+"console command"
+msgstr ""
+"Az ``/opt/otrs/bin/otrs.CheckEnvironment.pl`` konzolparancs által "
+"felsorolt Perl-csomagok"
+
+#: ../content/requirements.rst:99
+msgid "Web Servers"
+msgstr "Webkiszolgálók"
+
+#: ../content/requirements.rst:97
+msgid "Apache2"
+msgstr "Apache2"
+
+#: ../content/requirements.rst:98
+msgid "nginx"
+msgstr "nginx"
+
+#: ../content/requirements.rst:99
+msgid "Any other web server that can be used as a reverse proxy"
+msgstr "Bármely egyéb webkiszolgáló, amely használható fordított proxyként"
+
+#: ../content/requirements.rst:105
+msgid "Databases"
+msgstr "Adatbázisok"
+
+#: ../content/requirements.rst:102
+msgid "MySQL 5.0 or higher"
+msgstr "MySQL 5.0 vagy magasabb"
+
+#: ../content/requirements.rst:103
+msgid "MariaDB"
+msgstr "MariaDB"
+
+#: ../content/requirements.rst:104
+msgid "PostgreSQL 9.2 or higher"
+msgstr "PostgreSQL 9.2 vagy magasabb"
+
+#: ../content/requirements.rst:105
+msgid "Oracle 10g or higher"
+msgstr "Oracle 10g vagy magasabb"
+
+#: ../content/requirements.rst:109
+msgid "Other dependencies"
+msgstr "Egyéb függőségek"
+
+#: ../content/requirements.rst:108
+msgid "Elasticsearch 6.0 or higher"
+msgstr "Elasticsearch 6.0 vagy magasabb"
+
+#: ../content/requirements.rst:109
+msgid "Node.js 8.9 or higher"
+msgstr "Node.js 8.9 vagy magasabb"
+
+#: ../content/requirements.rst:116
+msgid "Web browsers"
+msgstr "Webböngészők"
+
+#: ../content/requirements.rst:112
+msgid "Apple Safari version 7 or higher"
+msgstr "Apple Safari 7-es verzió vagy magasabb"
+
+#: ../content/requirements.rst:113
+msgid "Google Chrome"
+msgstr "Google Chrome"
+
+#: ../content/requirements.rst:114
+msgid "Microsoft Internet Explorer 11"
+msgstr "Microsoft Internet Explorer 11"
+
+#: ../content/requirements.rst:115
+msgid "Microsoft Edge"
+msgstr "Microsoft Edge"
+
+#: ../content/requirements.rst:116
+msgid "Mozilla Firefox version 32 or higher"
+msgstr "Mozilla Firefox 32-es verzió vagy magasabb"
+
+#: ../content/requirements.rst:117
+msgid "Any other modern web browser with JavaScript support"
+msgstr "Bármilyen egyéb modern webböngésző JavaScript támogatással"
+
+#: ../content/updating.rst:2
+msgid "Updating"
+msgstr "Frissítés"
+
+#: ../content/updating.rst:6
+msgid ""
+"It is highly recommended to perform a test update on a separate testing "
+"machine first."
+msgstr ""
+"Erősen ajánlott először egy próbafrissítést végrehajtani egy elkülönített"
+" tesztelési gépen."
+
+#: ../content/updating.rst:9
+msgid "Updating from an earlier version of OTRS 7"
+msgstr "Frissítés az OTRS 7 egy korábbi verziójáról"
+
+#: ../content/updating.rst:9
+msgid ""
+"You can update directly from any previous to the latest available patch "
+"level release."
+msgstr ""
+"Frissíthet közvetlenül bármely előző verzióról az elérhető legfrissebb "
+"hibajavító szintű kiadásra."
+
+#: ../content/updating.rst:12
+msgid "Updating from OTRS 6"
+msgstr "Frissítés OTRS 6-ról"
+
+#: ../content/updating.rst:12
+msgid ""
+"You can update from any OTRS 6 patch level release to the latest "
+"available OTRS 7 patch level release."
+msgstr ""
+"Frissíthet bármely OTRS 6 hibajavító szintű kiadásról az elérhető "
+"legfrissebb OTRS 7 hibajavító szintű kiadásra."
+
+#: ../content/updating.rst:20
+msgid "Updating from OTRS 5 or earlier"
+msgstr "Frissítés OTRS 5-ről vagy egy korábbi verzióról"
+
+#: ../content/updating.rst:15
+msgid ""
+"You cannot update from OTRS 5 or earlier directly to OTRS 7. Full updates"
+" to all available minor versions have to be made sequentially instead. "
+"For example, if you come from OTRS 4, you first have to perform a full "
+"update to OTRS 5, then to OTRS 6 and finally to OTRS 7."
+msgstr ""
+"Nem frissíthet az OTRS 5-ről vagy egy korábbi kiadásról közvetlenül OTRS "
+"7-re. Ehelyett teljes frissítést kell elvégezni egymás után az összes "
+"elérhető kisebb verzióra. Például ha az OTRS 4-ről indul, akkor először "
+"teljes frissítést kell végrehajtani az OTRS 5-re, majd OTRS 6-ra és végül"
+" az OTRS 7-re."
+
+#: ../content/updating.rst:19
+msgid ""
+"See the admin manual of the previous versions of OTRS for the update "
+"instructions."
+msgstr ""
+"Nézze meg az OTRS előző verzióinak adminisztrátori kézikönyvét a "
+"frissítési utasításokért."
+
+#: ../content/updating.rst:23
+msgid "Step 1: Stop All Relevant Services and the OTRS Daemon"
+msgstr ""
+"1. lépés: az összes kapcsolódó szolgáltatás és az OTRS démon leállítása"
+
+#: ../content/updating.rst:25
+msgid ""
+"Please make sure there are no more running services or cron jobs that try"
+" to access OTRS. This will depend on your service configuration and OTRS "
+"version."
+msgstr ""
+"Győződjön meg arról, hogy nincs-e több olyan futó szolgáltatás vagy cron-"
+"feladat, amely megpróbál hozzáférni az OTRS-hez. Ez a szolgáltatás "
+"beállításától és az OTRS verziójától fog függeni."
+
+#: ../content/updating.rst:32
+msgid ""
+"If you do a major update form OTRS 6, you need to stop the old OTRS cron "
+"jobs and daemon (in this order):"
+msgstr ""
+"Ha főverzió-frissítést hajt végre OTRS 6-ról, akkor le kell állítania a "
+"régi OTRS cron-feladatokat és a démont (ebben a sorrendben):"
+
+#: ../content/updating.rst:39
+msgid ""
+"If you do a patch level update within OTRS 7 (using the new systemd "
+"files), stop the OTRS services via systemd:"
+msgstr ""
+"Ha hibajavító szintű frissítést hajt végre az OTRS 7-en belül (az új "
+"systemd fájlok használatával), akkor állítsa le az OTRS szolgáltatásokat "
+"a systemd parancson keresztül:"
+
+#: ../content/updating.rst:48
+msgid "Step 2: Backup Files and Database"
+msgstr "2. lépés: fájlok és adatbázis biztonsági mentése"
+
+#: ../content/updating.rst:50
+msgid "Create a backup of the following files and folders:"
+msgstr "Készítsen biztonsági mentést a következő fájlokról és mappákról:"
+
+#: ../content/updating.rst:52 ../content/updating.rst:99
+msgid "``Kernel/Config.pm``"
+msgstr "``Kernel/Config.pm``"
+
+#: ../content/updating.rst:53 ../content/updating.rst:100
+msgid ""
+"``Kernel/WebApp.conf`` (only in case of a patch level update of OTRS 7, "
+"and only if the file was modified)"
+msgstr ""
+"``Kernel/WebApp.conf`` (csak az OTRS 7 hibajavítás szintű frissítése "
+"esetén, és csak akkor, ha a fájlt módosították)"
+
+#: ../content/updating.rst:54
+msgid "``var/*``"
+msgstr "``var/*``"
+
+#: ../content/updating.rst:55
+msgid "as well as the database"
+msgstr "valamint az adatbázisról"
+
+#: ../content/updating.rst:59
+msgid ""
+"Don't proceed without a complete backup of your system. Use the "
+":ref:`backup` script for this."
+msgstr ""
+"Ne folytassa a rendszer teljes biztonsági mentése nélkül. Használja a "
+":ref:`backup` parancsfájlt ehhez."
+
+#: ../content/updating.rst:63
+msgid "Step 3: Install the New Release"
+msgstr "3. lépés: az új kiadás telepítése"
+
+#: ../content/updating.rst:67
+msgid ""
+"With OTRS 7 RPMs are no longer provided. RPM based installations need to "
+"switch by uninstalling the RPM (this will not drop your database) and "
+"using the source archives instead."
+msgstr ""
+"Az OTRS 7-tel az RPM-csomagok többé nem érhetők el. Az RPM-alapú "
+"telepítéseket át kell költöztetni az RPM-csomagok eltávolításával (ez nem"
+" fogja eldobni az adatbázist) és helyettük a forrásarchívumokat kell "
+"használni."
+
+#: ../content/updating.rst:97
+msgid "Restore Old Configuration Files"
+msgstr "Régi beállítófájlok visszaállítása"
+
+#: ../content/updating.rst:104
+msgid "Restore Article Data"
+msgstr "Bejegyzésadatok visszaállítása"
+
+#: ../content/updating.rst:106
+msgid ""
+"If you configured OTRS to store article data in the file system you have "
+"to restore the ``article`` folder to ``/opt/otrs/var/`` or the folder "
+"specified in the system configuration."
+msgstr ""
+"Ha úgy állította be az OTRS-t, hogy a bejegyzésadatokat a fájlrendszeren "
+"tárolja, akkor vissza kell állítania az ``article`` mappát az "
+"``/opt/otrs/var/`` mappába vagy a rendszerbeállításokban megadott "
+"mappába."
+
+#: ../content/updating.rst:110
+msgid "Restore Already Installed Default Statistics"
+msgstr "A már telepített alapértelmezett statisztikák visszaállítása"
+
+#: ../content/updating.rst:112
+msgid ""
+"If you have additional packages with default statistics you have to "
+"restore the stats XML files with the suffix ``*.installed`` to "
+"``/opt/otrs/var/stats``."
+msgstr ""
+"Ha alapértelmezett statisztikákkal rendelkező további csomagjai vannak, "
+"akkor vissza kell állítania a statisztikák XML-fájljait az "
+"``*.installed`` utótaggal az ``/opt/otrs/var/stats`` mappába."
+
+#: ../content/updating.rst:121
+msgid "Set File Permissions"
+msgstr "Fájljogosultságok beállítása"
+
+#: ../content/updating.rst:131
+msgid "Install Required Programs and Perl Modules"
+msgstr "Szükséges programok és Perl-modulok telepítése"
+
+#: ../content/updating.rst:133
+msgid ""
+"Please refer to the section :ref:`Step 2: Install Additional Programs and"
+" Perl Modules` in the installation guide that explains how to verify "
+"external dependencies such as Perl modules and Node.js."
+msgstr ""
+"Nézze meg a :ref:`Step 2: Install Additional Programs and Perl Modules` "
+"szakaszt a telepítési útmutatóban, amely elmagyarázza, hogy hogyan kell "
+"ellenőrizni a külső függőségeket, mint például a Perl-modulokat és a "
+"Node.js-t."
+
+#: ../content/updating.rst:135
+msgid ""
+"In addition to that, OTRS 7 also requires an active cluster of "
+"Elasticsearch 6.0 or higher. Please refer to the :ref:`Step 8: Setup "
+"Elasticsearch Cluster` section in the installation guide."
+msgstr ""
+"Ezenkívül az OTRS 7-nek szüksége van egy Elasticsearch 6.0 vagy újabb "
+"verziójú aktív fürtre. Nézze meg a :ref:`Step 8: Setup Elasticsearch "
+"Cluster` szakaszt a telepítési útmutatóban."
+
+#: ../content/updating.rst:139
+msgid "Step 4: Run the Migration Script"
+msgstr "4. lépés: a költöztető parancsfájl futtatása"
+
+#: ../content/updating.rst:141
+msgid ""
+"The migration script will perform many checks on your system and give you"
+" advice on how to install missing Perl modules etc., if that is required."
+" If all checks succeeded, the necessary migration steps will be "
+"performed. Please also run this script in case of patch level updates."
+msgstr ""
+"A frissítő parancsfájl számos ellenőrzést fog végrehajtani a rendszerén, "
+"és tanácsot ad azzal kapcsolatban, hogy hogyan telepítse a hiányzó Perl-"
+"modulokat, stb., ha az szükséges. Ha sz összes ellenőrzés sikeres, akkor "
+"a szükséges költöztető lépések végre lesznek hajtva. Futtassa ezt a "
+"parancsfájlt hibajavító szintű frissítések esetén is."
+
+#: ../content/updating.rst:143
+msgid "Run the migration script:"
+msgstr "Futtassa a költöztető parancsfájlt:"
+
+#: ../content/updating.rst:151
+msgid ""
+"Do not continue the upgrading process if this script did not work "
+"properly for you. Otherwise malfunction or data loss may occur."
+msgstr ""
+"Ne folytassa a frissítési folyamatot, ha ez a parancsfájl nem működött "
+"megfelelően Önnél. Egyébként hibás működés vagy adatvesztés történhet."
+
+#: ../content/updating.rst:153
+msgid ""
+"The migration script also checks if ACLs and system configuration "
+"settings are correct. In case of an invalid system configuration setting,"
+" script will offer you an opportunity to fix it by choosing from a list "
+"of possible values. In case the script runs in a non-interactive mode, it"
+" will try to automatically fix invalid settings. If this fails, you will "
+"be asked to manually update the setting after the migration."
+msgstr ""
+"A költöztető parancsfájl azt is ellenőrzi, hogy az ACL-ek és a "
+"rendszerbeállítások helyesek-e. Bármilyen érvénytelen rendszerbeállítási "
+"érték esetén a parancsfájl fel fog ajánlani egy lehetőséget annak "
+"javításához a lehetséges értékek egy listából való kiválasztásával. Abban"
+" az esetben, ha a parancsfájl nem interaktív módban fut, megpróbálja "
+"automatikusan javítani az érvénytelen beállításokat. Ha ez meghiúsul, "
+"akkor arra fogja kérni, hogy kézzel frissítse a beállításokat a "
+"költöztetés után."
+
+#: ../content/updating.rst:155
+msgid ""
+"If there are outdated ACLs, the system will not be able to fix them "
+"automatically, and they need to be corrected by the administrator. Please"
+" see the last step for manual changes for details."
+msgstr ""
+"Ha elavult ACL-ek találhatók, akkor a rendszer nem lesz képes "
+"automatikusan javítani, hanem az adminisztrátornak kell javítania azokat."
+" A részletekért nézze meg az utolsó lépést a kézi változtatáshoz."
+
+#: ../content/updating.rst:159
+msgid "Step 5: Update Installed Packages"
+msgstr "5. lépés: telepített csomagok frissítése"
+
+#: ../content/updating.rst:163
+msgid ""
+"Packages for OTRS 6 are not compatible with OTRS 7 and have to be updated."
+msgstr ""
+"Az OTRS 6 csomagjai nem kompatibilisek az OTRS 7-tel, és frissíteni kell "
+"azokat."
+
+#: ../content/updating.rst:165
+msgid ""
+"You can use the command below to update all installed packages. This "
+"works for all packages that are available from online repositories. You "
+"can update other packages later via the package manager (this requires a "
+"running OTRS daemon)."
+msgstr ""
+"Használhatja a lenti parancsot az összes telepített csomag frissítéséhez."
+" Ez működik az összes olyan csomagnál, amely elérhető az internetes "
+"tárolókból. Az egyéb csomagokat frissítheti később is a csomagkezelőn "
+"keresztül (ez futó OTRS démont igényel)."
+
+#: ../content/updating.rst:173
+msgid "Step 6: Restart your Services"
+msgstr "6. lépés: szolgáltatások újraindítása"
+
+#: ../content/updating.rst:175
+msgid ""
+"OTRS 7 comes with an own built-in web server that is used behind Apache "
+"as a reverse proxy (or any other reverse proxy server). For major update "
+"from OTRS 6, the Apache configuration must be updated with the new "
+"version in ``/opt/otrs/scripts/apache2-httpd.include.conf``, if it was "
+"copied and not just linked."
+msgstr ""
+"Az OTRS 7 saját beépített webkiszolgálóval érkezik, amely az Apache "
+"fordított proxyként (vagy bármely más fordított proxy kiszolgálóként) "
+"történő használata mögött található. Az OTRS 6-ról történő főverzió "
+"frissítésnél az Apache beállításait frissíteni kell az "
+"``/opt/otrs/scripts/apache2-httpd.include.conf`` fájlban lévő új "
+"verzióval, ha az másolva volt és nem csak hivatkozva."
+
+#: ../content/updating.rst:177
+msgid ""
+"Please also note that while ``mod_perl`` is no longer needed, other "
+"Apache modules are required now: ``proxy_module``, ``proxy_http_module`` "
+"and ``proxy_wstunnel_module``."
+msgstr ""
+"Ne feledje azt sem, hogy míg a ``mod_perl`` többé nem szükséges, egyéb "
+"Apache-modulok szükségesek most: ``proxy_module``, ``proxy_http_module`` "
+"és ``proxy_wstunnel_module``."
+
+#: ../content/updating.rst:179
+msgid ""
+"After that, the services can be restarted. This will depend on your "
+"service configuration, here is an example:"
+msgstr ""
+"Ezután a szolgáltatások újraindíthatók. Ez a szolgáltatás beállításaitól "
+"függ, itt egy példa:"
+
+#: ../content/updating.rst:188
+msgid ""
+"The OTRS daemon is required for correct operation of OTRS such as sending"
+" emails. Please activate it as described in the next step."
+msgstr ""
+"Az OTRS démon szükséges az OTRS helyes működéséhez, mint például e-mailek"
+" küldéséhez. Kapcsolja be a következő lépésben leírtak szerint."
+
+#: ../content/updating.rst:192
+msgid "Step 7: Start the OTRS Daemon, Web Server and Cron Job"
+msgstr "7. lépés: az OTRS démon, webkiszolgáló és a cron-feladat elindítása"
+
+#: ../content/updating.rst:194
+msgid ""
+"The OTRS daemon is responsible for handling any asynchronous and "
+"recurring tasks in OTRS. The daemon and its keepalive cron job must be "
+"started as the ``otrs`` user. The built-in OTRS web server process "
+"handles the web requests handed over from Apache."
+msgstr ""
+"Az OTRS démon felelős bármely aszinkron és ismétlődő feladat kezelésénél "
+"az OTRS-ben. A démont és az életben tartó cron-feladatát az ``otrs`` "
+"felhasználóként kell elindítani. A beépített OTRS webkiszolgáló folyamat "
+"kezeli az Apache-tól megkapott webkéréseket."
+
+#: ../content/updating.rst:209
+msgid "Now you can log into your system."
+msgstr "Most már bejelentkezhet a rendszerre."
+
+#: ../content/updating.rst:213
+msgid "Step 8: Manual Migration Tasks and Changes"
+msgstr "8. lépés: feladatok és változtatások kézi költöztetése"
+
+#: ../content/updating.rst:217
+msgid "This step is required only for major update from OTRS 6."
+msgstr "Ez a lépés csak az OTRS 6-ról történő főverzió-frissítésnél szükséges."
+
+#: ../content/updating.rst:219
+msgid ""
+"Since the old customer interface screens are no longer present, some ACLs"
+" need to be corrected manually by the administrator. The migration script"
+" already informed you if this is the case."
+msgstr ""
+"Mivel a régi ügyfélfelület képernyői többé nincsenek meg, néhány ACL-t "
+"kézzel kell javítania az adminisztrátornak. A költöztető parancsfájl már "
+"tájékoztatta Önt, ha ez az eset áll fenn."
+
+#: ../content/updating.rst:221
+msgid ""
+"Affected ACLs are those that refer to a non-existing customer interface "
+"screen in their ``Action`` setting. This front end ``Action`` rule needs "
+"to be replaced with a corresponding ``Endpoint`` rule. A table with "
+"possible mapping is included below."
+msgstr ""
+"Azok az ACL-ek érintettek, amelyek egy nemlétező ügyfélfelület képernyőre"
+" hivatkoznak az ``Action`` beállításban. Ezt az előtétprogram ``Action`` "
+"szabályt kell kicserélni a megfelelő ``Endpoint`` szabállyal. Alább egy "
+"táblázat látható a lehetséges leképezésekkel."
+
+#: ../content/updating.rst:224
+msgid "Action"
+msgstr "Művelet"
+
+#: ../content/updating.rst:224
+msgid "Endpoint"
+msgstr "Végpont"
+
+#: ../content/updating.rst:226
+msgid "``CustomerTicketPrint``"
+msgstr "``CustomerTicketPrint``"
+
+#: ../content/updating.rst:226
+msgid "No replacement (feature dropped)"
+msgstr "Nincs helyettesítés (a funkció el lett dobva)"
+
+#: ../content/updating.rst:228
+msgid "``CustomerTicketZoom``"
+msgstr "``CustomerTicketZoom``"
+
+#: ../content/updating.rst:228
+msgid "``ExternalFrontend::TicketDetailView``"
+msgstr "``ExternalFrontend::TicketDetailView``"
+
+#: ../content/updating.rst:230
+msgid "``CustomerTicketProcess``"
+msgstr "``CustomerTicketProcess``"
+
+#: ../content/updating.rst:230
+msgid ""
+"``ExternalFrontend::ProcessTicketCreate`` or "
+"``ExternalFrontend::ProcessTicketNextStep``"
+msgstr ""
+"``ExternalFrontend::ProcessTicketCreate`` vagy "
+"``ExternalFrontend::ProcessTicketNextStep``"
+
+#: ../content/updating.rst:233
+msgid "``CustomerTicketMessage``"
+msgstr "``CustomerTicketMessage``"
+
+#: ../content/updating.rst:233
+msgid "``ExternalFrontend::TicketCreate``"
+msgstr "``ExternalFrontend::TicketCreate``"
+
