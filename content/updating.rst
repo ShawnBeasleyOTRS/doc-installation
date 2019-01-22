@@ -166,8 +166,8 @@ Step 6: Restart your Services
    The OTRS daemon is required for correct operation of OTRS such as sending emails. Please activate it as described in the next step.
 
 
-Step 7: Start the OTRS Daemon, Web Server and Cron Job
-------------------------------------------------------
+Step 7: Start the OTRS Daemon and Web Server
+--------------------------------------------
 
 OTRS comes with example systemd configuration files that can be used to make sure that the OTRS daemon and web server are started automatically after the system starts.
 
