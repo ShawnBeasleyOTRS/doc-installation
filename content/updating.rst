@@ -140,6 +140,10 @@ Run the migration script:
 
    Do not continue the upgrading process if this script did not work properly for you. Otherwise malfunction or data loss may occur.
 
+The migration script also checks if ACLs and system configuration settings are correct. In case of an invalid system configuration setting, script will offer you an opportunity to fix it by choosing from a list of possible values. In case the script runs in a non-interactive mode, it will try to automatically fix invalid settings. If this fails, you will be asked to manually update the setting after the migration.
+
+If there are outdated ACLs, the system will not be able to fix them automatically, and they need to be corrected by the administrator. Please see the last step for manual changes for details.
+
 
 Step 5: Update Installed Packages
 ---------------------------------
