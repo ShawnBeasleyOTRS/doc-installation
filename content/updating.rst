@@ -188,16 +188,10 @@ After that, the services can be restarted. This will depend on your service conf
    The OTRS daemon is required for correct operation of OTRS such as sending emails. Please activate it as described in the next step.
 
 
-Step 7: Start the OTRS Daemon, Web Server and Cron Job
-------------------------------------------------------
+Step 7: Start the OTRS Daemon and Web Server
+--------------------------------------------
 
-The OTRS daemon is responsible for handling any asynchronous and recurring tasks in OTRS. The daemon and its keepalive cron job must be started as the ``otrs`` user. The built-in OTRS web server process handles the web requests handed over from Apache.
-
-.. code-block:: bash
-
-   otrs> /opt/otrs/bin/otrs.Daemon.pl start
-   otrs> /opt/otrs/bin/Cron.sh start
-   otrs> /opt/otrs/bin/otrs.WebServer.pl
+The OTRS daemon is responsible for handling any asynchronous and recurring tasks in OTRS. The built-in OTRS web server process handles the web requests handed over from Apache.
 
 OTRS comes with example systemd configuration files that can be used to make sure that the OTRS daemon and web server are started automatically after the system starts.
 
@@ -205,6 +199,8 @@ OTRS comes with example systemd configuration files that can be used to make sur
 
    root> cd /opt/otrs/scripts/systemd
    root> for UNIT in *.service; do cp -vf $UNIT /usr/lib/systemd/system/; systemctl enable $UNIT; done
+   root> systemctl start otrs-daemon
+   root> systemctl start otrs-webserver
 
 Now you can log into your system.
 
