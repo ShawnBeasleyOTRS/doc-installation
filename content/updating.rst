@@ -38,7 +38,8 @@ Step 2: Backup Files and Database
 Create a backup of the following files and folders:
 
 - ``Kernel/Config.pm``
-- ``Kernel/WebApp.conf`` (only in case of a patch level update of OTRS 8, and only if the file was modified)
+- ``Kernel/Config/Files/User/*.pm``
+- ``Kernel/WebApp.conf``
 - ``var/*``
 - as well as the database
 
@@ -85,6 +86,7 @@ Restore Old Configuration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``Kernel/Config.pm``
+- ``Kernel/Config/Files/User/*.pm``
 - ``Kernel/WebApp.conf``
 
 
