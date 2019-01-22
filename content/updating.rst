@@ -191,3 +191,34 @@ Step 8: Manual Migration Tasks and Changes
    This step is required only for major update from OTRS 7.
 
 ...
+
+With OTRS 8 a new default password policy for agent and customer users is in effect. The password policy rules can be changed in the system configuration (``PreferencesGroups###Password`` and ``CustomerPersonalPreference###Password``).
+
++---------------------------------------+--------------+
+| Password Policy Rule                  | Default      |
++=======================================+==============+
+| ``PasswordMinSize``                   | 8            |
++---------------------------------------+--------------+
+| ``PasswordMin2Lower2UpperCharacters`` | Yes          |
++---------------------------------------+--------------+
+| ``PasswordNeedDigit``                 | Yes          |
++---------------------------------------+--------------+
+| ``PasswordHistory``                   | 10           |
++---------------------------------------+--------------+
+| ``PasswordTTL``                       | 30 days      |
++---------------------------------------+--------------+
+| ``PasswordWarnBeforeExpiry``          | 5 days       |
++---------------------------------------+--------------+
+| ``PasswordChangeAfterFirstLogin``     | Yes          |
++---------------------------------------+--------------+
+
+It's also possible to add some password policy exceptions for agent or customer users, please check the following config options for details:
+
+   - ``PasswordPolicy::ExceptAgentPasswordComplexity``
+   - ``PasswordPolicy::ExceptAgentPasswordTTL``
+   - ``PasswordPolicy::ExceptAgentPasswordHistory``
+   - ``PasswordPolicy::ExceptAgentPasswordChangeAfterFirstLogin``
+   - ``PasswordPolicy::ExceptCustomerPasswordComplexity``
+   - ``PasswordPolicy::ExceptCustomerPasswordTTL``
+   - ``PasswordPolicy::ExceptCustomerPasswordHistory``
+   - ``PasswordPolicy::ExceptCustomerPasswordChangeAfterFirstLogin``
