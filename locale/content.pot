@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTRS Installation Guide 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-21 13:52+0000\n"
+"POT-Creation-Date: 2019-01-23 02:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -340,7 +340,7 @@ msgid "Step 11: Setup Systemd Files"
 msgstr ""
 
 #: ../../content/installation.rst:365
-#: ../../content/updating.rst:202
+#: ../../content/updating.rst:196
 msgid "OTRS comes with example systemd configuration files that can be used to make sure that the OTRS daemon and web server are started automatically after the system starts."
 msgstr ""
 
@@ -1059,70 +1059,70 @@ msgid "The OTRS daemon is required for correct operation of OTRS such as sending
 msgstr ""
 
 #: ../../content/updating.rst:192
-msgid "Step 7: Start the OTRS Daemon, Web Server and Cron Job"
+msgid "Step 7: Start the OTRS Daemon and Web Server"
 msgstr ""
 
 #: ../../content/updating.rst:194
-msgid "The OTRS daemon is responsible for handling any asynchronous and recurring tasks in OTRS. The daemon and its keepalive cron job must be started as the ``otrs`` user. The built-in OTRS web server process handles the web requests handed over from Apache."
+msgid "The OTRS daemon is responsible for handling any asynchronous and recurring tasks in OTRS. The built-in OTRS web server process handles the web requests handed over from Apache."
 msgstr ""
 
-#: ../../content/updating.rst:209
+#: ../../content/updating.rst:205
 msgid "Now you can log into your system."
 msgstr ""
 
-#: ../../content/updating.rst:213
+#: ../../content/updating.rst:209
 msgid "Step 8: Manual Migration Tasks and Changes"
 msgstr ""
 
-#: ../../content/updating.rst:217
+#: ../../content/updating.rst:213
 msgid "This step is required only for major update from OTRS 6."
 msgstr ""
 
-#: ../../content/updating.rst:219
+#: ../../content/updating.rst:215
 msgid "Since the old customer interface screens are no longer present, some ACLs need to be corrected manually by the administrator. The migration script already informed you if this is the case."
 msgstr ""
 
-#: ../../content/updating.rst:221
+#: ../../content/updating.rst:217
 msgid "Affected ACLs are those that refer to a non-existing customer interface screen in their ``Action`` setting. This front end ``Action`` rule needs to be replaced with a corresponding ``Endpoint`` rule. A table with possible mapping is included below."
 msgstr ""
 
-#: ../../content/updating.rst:224
+#: ../../content/updating.rst:220
 msgid "Action"
 msgstr ""
 
-#: ../../content/updating.rst:224
+#: ../../content/updating.rst:220
 msgid "Endpoint"
 msgstr ""
 
-#: ../../content/updating.rst:226
+#: ../../content/updating.rst:222
 msgid "``CustomerTicketPrint``"
 msgstr ""
 
-#: ../../content/updating.rst:226
+#: ../../content/updating.rst:222
 msgid "No replacement (feature dropped)"
 msgstr ""
 
-#: ../../content/updating.rst:228
+#: ../../content/updating.rst:224
 msgid "``CustomerTicketZoom``"
 msgstr ""
 
-#: ../../content/updating.rst:228
+#: ../../content/updating.rst:224
 msgid "``ExternalFrontend::TicketDetailView``"
 msgstr ""
 
-#: ../../content/updating.rst:230
+#: ../../content/updating.rst:226
 msgid "``CustomerTicketProcess``"
 msgstr ""
 
-#: ../../content/updating.rst:230
+#: ../../content/updating.rst:226
 msgid "``ExternalFrontend::ProcessTicketCreate`` or ``ExternalFrontend::ProcessTicketNextStep``"
 msgstr ""
 
-#: ../../content/updating.rst:233
+#: ../../content/updating.rst:229
 msgid "``CustomerTicketMessage``"
 msgstr ""
 
-#: ../../content/updating.rst:233
+#: ../../content/updating.rst:229
 msgid "``ExternalFrontend::TicketCreate``"
 msgstr ""
 
