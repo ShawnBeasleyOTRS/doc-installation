@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTRS Installation Guide 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-21 13:52+0000\n"
+"POT-Creation-Date: 2019-01-23 02:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,32 +94,32 @@ msgid "Step 1: Unpack and Install the Application"
 msgstr ""
 
 #: ../../content/installation.rst:44
-#: ../../content/updating.rst:69
+#: ../../content/updating.rst:58
 msgid "You can obtain either ``otrs-x.y.z.tar.gz`` or ``otrs-x.y.z.tar.bz2``. Unpack the source archive (for example, using ``tar``) into the directory ``/opt``, and create a symbolic link ``/opt/otrs`` that points to ``/opt/otrs-x.y.z``. **Do not forget** to replace the version numbers!"
 msgstr ""
 
 #: ../../content/installation.rst:48
-#: ../../content/updating.rst:73
+#: ../../content/updating.rst:62
 msgid "Package ``bzip2`` is not installed in some systems by default. Make sure, that ``bzip2`` is installed before unpacking ``otrs-x.y.z.tar.bz2``."
 msgstr ""
 
 #: ../../content/installation.rst:50
-#: ../../content/updating.rst:75
+#: ../../content/updating.rst:64
 msgid "Unpack command for ``otrs-x.y.z.tar.gz``:"
 msgstr ""
 
 #: ../../content/installation.rst:56
-#: ../../content/updating.rst:81
+#: ../../content/updating.rst:70
 msgid "Unpack command for ``otrs-x.y.z.tar.bz2``:"
 msgstr ""
 
 #: ../../content/installation.rst:62
-#: ../../content/updating.rst:87
+#: ../../content/updating.rst:76
 msgid "It is recommended to create a symbolic link named ``/opt/otrs`` that always points to the latest OTRS version. Using symbolic link makes easy to manage the OTRS updates, because you can leave untouched the directory of the previous version, only the symbolic link needs to change. If you need to revert the update, you can change the target of the symbolic link back."
 msgstr ""
 
 #: ../../content/installation.rst:64
-#: ../../content/updating.rst:89
+#: ../../content/updating.rst:78
 msgid "Execute this command to create a symbolic link:"
 msgstr ""
 
@@ -188,7 +188,7 @@ msgid "Step 6: Set File Permissions"
 msgstr ""
 
 #: ../../content/installation.rst:152
-#: ../../content/updating.rst:123
+#: ../../content/updating.rst:113
 msgid "Please execute the following command to set the file and directory permissions for OTRS. It will try to detect the correct user and group settings needed for your setup."
 msgstr ""
 
@@ -340,7 +340,7 @@ msgid "Step 11: Setup Systemd Files"
 msgstr ""
 
 #: ../../content/installation.rst:365
-#: ../../content/updating.rst:202
+#: ../../content/updating.rst:178
 msgid "OTRS comes with example systemd configuration files that can be used to make sure that the OTRS daemon and web server are started automatically after the system starts."
 msgstr ""
 
@@ -885,7 +885,7 @@ msgid "It is highly recommended to perform a test update on a separate testing m
 msgstr ""
 
 #: ../../content/updating.rst:9
-msgid "Updating from an earlier version of OTRS 7"
+msgid "Updating from an earlier version of OTRS 8"
 msgstr ""
 
 #: ../../content/updating.rst:9
@@ -893,19 +893,19 @@ msgid "You can update directly from any previous to the latest available patch l
 msgstr ""
 
 #: ../../content/updating.rst:12
-msgid "Updating from OTRS 6"
+msgid "Updating from OTRS 7"
 msgstr ""
 
 #: ../../content/updating.rst:12
-msgid "You can update from any OTRS 6 patch level release to the latest available OTRS 7 patch level release."
+msgid "You can update from any OTRS 7 patch level release to the latest available OTRS 8 patch level release."
 msgstr ""
 
 #: ../../content/updating.rst:20
-msgid "Updating from OTRS 5 or earlier"
+msgid "Updating from OTRS 6 or earlier"
 msgstr ""
 
 #: ../../content/updating.rst:15
-msgid "You cannot update from OTRS 5 or earlier directly to OTRS 7. Full updates to all available minor versions have to be made sequentially instead. For example, if you come from OTRS 4, you first have to perform a full update to OTRS 5, then to OTRS 6 and finally to OTRS 7."
+msgid "You cannot update from OTRS 6 or earlier directly to OTRS 8. Full updates to all available minor versions have to be made sequentially instead. For example, if you come from OTRS 5, you first have to perform a full update to OTRS 6, then to OTRS 7 and finally to OTRS 8."
 msgstr ""
 
 #: ../../content/updating.rst:19
@@ -920,209 +920,244 @@ msgstr ""
 msgid "Please make sure there are no more running services or cron jobs that try to access OTRS. This will depend on your service configuration and OTRS version."
 msgstr ""
 
-#: ../../content/updating.rst:32
-msgid "If you do a major update form OTRS 6, you need to stop the old OTRS cron jobs and daemon (in this order):"
-msgstr ""
-
-#: ../../content/updating.rst:39
-msgid "If you do a patch level update within OTRS 7 (using the new systemd files), stop the OTRS services via systemd:"
-msgstr ""
-
-#: ../../content/updating.rst:48
+#: ../../content/updating.rst:36
 msgid "Step 2: Backup Files and Database"
 msgstr ""
 
-#: ../../content/updating.rst:50
+#: ../../content/updating.rst:38
 msgid "Create a backup of the following files and folders:"
 msgstr ""
 
-#: ../../content/updating.rst:52
-#: ../../content/updating.rst:99
+#: ../../content/updating.rst:40
+#: ../../content/updating.rst:88
 msgid "``Kernel/Config.pm``"
 msgstr ""
 
-#: ../../content/updating.rst:53
-#: ../../content/updating.rst:100
-msgid "``Kernel/WebApp.conf`` (only in case of a patch level update of OTRS 7, and only if the file was modified)"
+#: ../../content/updating.rst:41
+#: ../../content/updating.rst:89
+msgid "``Kernel/Config/Files/User/*.pm``"
 msgstr ""
 
-#: ../../content/updating.rst:54
+#: ../../content/updating.rst:42
+#: ../../content/updating.rst:90
+msgid "``Kernel/WebApp.conf``"
+msgstr ""
+
+#: ../../content/updating.rst:43
 msgid "``var/*``"
 msgstr ""
 
-#: ../../content/updating.rst:55
+#: ../../content/updating.rst:44
 msgid "as well as the database"
 msgstr ""
 
-#: ../../content/updating.rst:59
+#: ../../content/updating.rst:48
 msgid "Don't proceed without a complete backup of your system. Use the :ref:`backup` script for this."
 msgstr ""
 
-#: ../../content/updating.rst:63
+#: ../../content/updating.rst:52
 msgid "Step 3: Install the New Release"
 msgstr ""
 
-#: ../../content/updating.rst:67
-msgid "With OTRS 7 RPMs are no longer provided. RPM based installations need to switch by uninstalling the RPM (this will not drop your database) and using the source archives instead."
+#: ../../content/updating.rst:56
+msgid "With OTRS 8 RPMs are no longer provided. RPM based installations need to switch by uninstalling the RPM (this will not drop your database) and using the source archives instead."
 msgstr ""
 
-#: ../../content/updating.rst:97
+#: ../../content/updating.rst:86
 msgid "Restore Old Configuration Files"
 msgstr ""
 
-#: ../../content/updating.rst:104
+#: ../../content/updating.rst:94
 msgid "Restore Article Data"
 msgstr ""
 
-#: ../../content/updating.rst:106
+#: ../../content/updating.rst:96
 msgid "If you configured OTRS to store article data in the file system you have to restore the ``article`` folder to ``/opt/otrs/var/`` or the folder specified in the system configuration."
 msgstr ""
 
-#: ../../content/updating.rst:110
+#: ../../content/updating.rst:100
 msgid "Restore Already Installed Default Statistics"
 msgstr ""
 
-#: ../../content/updating.rst:112
+#: ../../content/updating.rst:102
 msgid "If you have additional packages with default statistics you have to restore the stats XML files with the suffix ``*.installed`` to ``/opt/otrs/var/stats``."
 msgstr ""
 
-#: ../../content/updating.rst:121
+#: ../../content/updating.rst:111
 msgid "Set File Permissions"
 msgstr ""
 
-#: ../../content/updating.rst:131
+#: ../../content/updating.rst:121
 msgid "Install Required Programs and Perl Modules"
 msgstr ""
 
-#: ../../content/updating.rst:133
+#: ../../content/updating.rst:123
 msgid "Please refer to the section :ref:`Step 2: Install Additional Programs and Perl Modules` in the installation guide that explains how to verify external dependencies such as Perl modules and Node.js."
 msgstr ""
 
-#: ../../content/updating.rst:135
-msgid "In addition to that, OTRS 7 also requires an active cluster of Elasticsearch 6.0 or higher. Please refer to the :ref:`Step 8: Setup Elasticsearch Cluster` section in the installation guide."
+#: ../../content/updating.rst:125
+msgid "In addition to that, OTRS 8 also requires an active cluster of Elasticsearch 6.0 or higher. Please refer to the :ref:`Step 8: Setup Elasticsearch Cluster` section in the installation guide."
 msgstr ""
 
-#: ../../content/updating.rst:139
+#: ../../content/updating.rst:129
 msgid "Step 4: Run the Migration Script"
 msgstr ""
 
-#: ../../content/updating.rst:141
+#: ../../content/updating.rst:131
 msgid "The migration script will perform many checks on your system and give you advice on how to install missing Perl modules etc., if that is required. If all checks succeeded, the necessary migration steps will be performed. Please also run this script in case of patch level updates."
 msgstr ""
 
-#: ../../content/updating.rst:143
+#: ../../content/updating.rst:133
 msgid "Run the migration script:"
 msgstr ""
 
-#: ../../content/updating.rst:151
+#: ../../content/updating.rst:141
 msgid "Do not continue the upgrading process if this script did not work properly for you. Otherwise malfunction or data loss may occur."
 msgstr ""
 
-#: ../../content/updating.rst:153
+#: ../../content/updating.rst:143
 msgid "The migration script also checks if ACLs and system configuration settings are correct. In case of an invalid system configuration setting, script will offer you an opportunity to fix it by choosing from a list of possible values. In case the script runs in a non-interactive mode, it will try to automatically fix invalid settings. If this fails, you will be asked to manually update the setting after the migration."
 msgstr ""
 
-#: ../../content/updating.rst:155
+#: ../../content/updating.rst:145
 msgid "If there are outdated ACLs, the system will not be able to fix them automatically, and they need to be corrected by the administrator. Please see the last step for manual changes for details."
 msgstr ""
 
-#: ../../content/updating.rst:159
+#: ../../content/updating.rst:149
 msgid "Step 5: Update Installed Packages"
 msgstr ""
 
-#: ../../content/updating.rst:163
-msgid "Packages for OTRS 6 are not compatible with OTRS 7 and have to be updated."
+#: ../../content/updating.rst:153
+msgid "Packages for OTRS 7 are not compatible with OTRS 8 and have to be updated."
 msgstr ""
 
-#: ../../content/updating.rst:165
+#: ../../content/updating.rst:155
 msgid "You can use the command below to update all installed packages. This works for all packages that are available from online repositories. You can update other packages later via the package manager (this requires a running OTRS daemon)."
 msgstr ""
 
-#: ../../content/updating.rst:173
+#: ../../content/updating.rst:163
 msgid "Step 6: Restart your Services"
 msgstr ""
 
-#: ../../content/updating.rst:175
-msgid "OTRS 7 comes with an own built-in web server that is used behind Apache as a reverse proxy (or any other reverse proxy server). For major update from OTRS 6, the Apache configuration must be updated with the new version in ``/opt/otrs/scripts/apache2-httpd.include.conf``, if it was copied and not just linked."
-msgstr ""
-
-#: ../../content/updating.rst:177
-msgid "Please also note that while ``mod_perl`` is no longer needed, other Apache modules are required now: ``proxy_module``, ``proxy_http_module`` and ``proxy_wstunnel_module``."
-msgstr ""
-
-#: ../../content/updating.rst:179
-msgid "After that, the services can be restarted. This will depend on your service configuration, here is an example:"
-msgstr ""
-
-#: ../../content/updating.rst:188
+#: ../../content/updating.rst:172
 msgid "The OTRS daemon is required for correct operation of OTRS such as sending emails. Please activate it as described in the next step."
 msgstr ""
 
-#: ../../content/updating.rst:192
-msgid "Step 7: Start the OTRS Daemon, Web Server and Cron Job"
+#: ../../content/updating.rst:176
+msgid "Step 7: Start the OTRS Daemon and Web Server"
 msgstr ""
 
-#: ../../content/updating.rst:194
-msgid "The OTRS daemon is responsible for handling any asynchronous and recurring tasks in OTRS. The daemon and its keepalive cron job must be started as the ``otrs`` user. The built-in OTRS web server process handles the web requests handed over from Apache."
-msgstr ""
-
-#: ../../content/updating.rst:209
+#: ../../content/updating.rst:187
 msgid "Now you can log into your system."
 msgstr ""
 
-#: ../../content/updating.rst:213
+#: ../../content/updating.rst:191
 msgid "Step 8: Manual Migration Tasks and Changes"
 msgstr ""
 
-#: ../../content/updating.rst:217
-msgid "This step is required only for major update from OTRS 6."
+#: ../../content/updating.rst:195
+msgid "This step is required only for major update from OTRS 7."
+msgstr ""
+
+#: ../../content/updating.rst:197
+msgid "..."
+msgstr ""
+
+#: ../../content/updating.rst:199
+msgid "With OTRS 8 a new default password policy for agent and customer users is in effect. The password policy rules can be changed in the system configuration (``PreferencesGroups###Password`` and ``CustomerPersonalPreference###Password``)."
+msgstr ""
+
+#: ../../content/updating.rst:202
+msgid "Password Policy Rule"
+msgstr ""
+
+#: ../../content/updating.rst:202
+msgid "Default"
+msgstr ""
+
+#: ../../content/updating.rst:204
+msgid "``PasswordMinSize``"
+msgstr ""
+
+#: ../../content/updating.rst:204
+msgid "8"
+msgstr ""
+
+#: ../../content/updating.rst:206
+msgid "``PasswordMin2Lower2UpperCharacters``"
+msgstr ""
+
+#: ../../content/updating.rst:206
+#: ../../content/updating.rst:208
+#: ../../content/updating.rst:216
+msgid "Yes"
+msgstr ""
+
+#: ../../content/updating.rst:208
+msgid "``PasswordNeedDigit``"
+msgstr ""
+
+#: ../../content/updating.rst:210
+msgid "``PasswordHistory``"
+msgstr ""
+
+#: ../../content/updating.rst:210
+msgid "10"
+msgstr ""
+
+#: ../../content/updating.rst:212
+msgid "``PasswordTTL``"
+msgstr ""
+
+#: ../../content/updating.rst:212
+msgid "30 days"
+msgstr ""
+
+#: ../../content/updating.rst:214
+msgid "``PasswordWarnBeforeExpiry``"
+msgstr ""
+
+#: ../../content/updating.rst:214
+msgid "5 days"
+msgstr ""
+
+#: ../../content/updating.rst:216
+msgid "``PasswordChangeAfterFirstLogin``"
 msgstr ""
 
 #: ../../content/updating.rst:219
-msgid "Since the old customer interface screens are no longer present, some ACLs need to be corrected manually by the administrator. The migration script already informed you if this is the case."
+msgid "It's also possible to add some password policy exceptions for agent or customer users, please check the following config options for details:"
 msgstr ""
 
 #: ../../content/updating.rst:221
-msgid "Affected ACLs are those that refer to a non-existing customer interface screen in their ``Action`` setting. This front end ``Action`` rule needs to be replaced with a corresponding ``Endpoint`` rule. A table with possible mapping is included below."
+msgid "``PasswordPolicy::ExceptAgentPasswordComplexity``"
+msgstr ""
+
+#: ../../content/updating.rst:222
+msgid "``PasswordPolicy::ExceptAgentPasswordTTL``"
+msgstr ""
+
+#: ../../content/updating.rst:223
+msgid "``PasswordPolicy::ExceptAgentPasswordHistory``"
 msgstr ""
 
 #: ../../content/updating.rst:224
-msgid "Action"
+msgid "``PasswordPolicy::ExceptAgentPasswordChangeAfterFirstLogin``"
 msgstr ""
 
-#: ../../content/updating.rst:224
-msgid "Endpoint"
-msgstr ""
-
-#: ../../content/updating.rst:226
-msgid "``CustomerTicketPrint``"
+#: ../../content/updating.rst:225
+msgid "``PasswordPolicy::ExceptCustomerPasswordComplexity``"
 msgstr ""
 
 #: ../../content/updating.rst:226
-msgid "No replacement (feature dropped)"
+msgid "``PasswordPolicy::ExceptCustomerPasswordTTL``"
+msgstr ""
+
+#: ../../content/updating.rst:227
+msgid "``PasswordPolicy::ExceptCustomerPasswordHistory``"
 msgstr ""
 
 #: ../../content/updating.rst:228
-msgid "``CustomerTicketZoom``"
-msgstr ""
-
-#: ../../content/updating.rst:228
-msgid "``ExternalFrontend::TicketDetailView``"
-msgstr ""
-
-#: ../../content/updating.rst:230
-msgid "``CustomerTicketProcess``"
-msgstr ""
-
-#: ../../content/updating.rst:230
-msgid "``ExternalFrontend::ProcessTicketCreate`` or ``ExternalFrontend::ProcessTicketNextStep``"
-msgstr ""
-
-#: ../../content/updating.rst:233
-msgid "``CustomerTicketMessage``"
-msgstr ""
-
-#: ../../content/updating.rst:233
-msgid "``ExternalFrontend::TicketCreate``"
+msgid "``PasswordPolicy::ExceptCustomerPasswordChangeAfterFirstLogin``"
 msgstr ""
 
