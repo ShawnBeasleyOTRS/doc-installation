@@ -100,11 +100,11 @@ OTRS requires a supported stable version of Node.js to be installed. Please refe
 Step 3: Create the OTRS User
 ----------------------------
 
-Create a dedicated user for OTRS:
+Create a dedicated user for OTRS within its own group:
 
 .. code-block:: bash
 
-   root> useradd -r -d /opt/otrs -c 'OTRS user' otrs -s /bin/bash
+   root> useradd -r -U -d /opt/otrs -c 'OTRS user' otrs -s /bin/bash
 
 
 Step 4: Activate the Default Configuration File
