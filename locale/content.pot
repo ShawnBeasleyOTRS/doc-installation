@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTRS Installation Guide 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-29 02:02+0000\n"
+"POT-Creation-Date: 2019-01-30 02:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -152,7 +152,7 @@ msgid "Step 3: Create the OTRS User"
 msgstr ""
 
 #: ../../content/installation.rst:103
-msgid "Create a dedicated user for OTRS:"
+msgid "Create a dedicated user for OTRS within its own group:"
 msgstr ""
 
 #: ../../content/installation.rst:111
