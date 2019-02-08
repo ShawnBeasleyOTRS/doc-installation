@@ -388,7 +388,8 @@ After restarting your shell, you can just type this command followed by TAB, and
 If you type a few characters of the command name, TAB will show all matching commands. After typing a complete command, all possible options and arguments will be shown by pressing TAB.
 
 .. note::
-   By problems you can source it in your ~/.bashrc by adding this line:
+
+   If you have problems, you can add the following line to your ``~/.bashrc`` to execute the commands from the file.
 
    .. code-block:: bash
 
