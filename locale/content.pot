@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTRS Installation Guide 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-08 02:03+0000\n"
+"POT-Creation-Date: 2019-02-09 02:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -368,15 +368,15 @@ msgstr ""
 msgid "If you type a few characters of the command name, TAB will show all matching commands. After typing a complete command, all possible options and arguments will be shown by pressing TAB."
 msgstr ""
 
-#: ../../content/installation.rst:391
-msgid "By problems you can source it in your ~/.bashrc by adding this line:"
+#: ../../content/installation.rst:392
+msgid "If you have problems, you can add the following line to your ``~/.bashrc`` to execute the commands from the file."
 msgstr ""
 
-#: ../../content/installation.rst:399
+#: ../../content/installation.rst:400
 msgid "Step 13: Further Information"
 msgstr ""
 
-#: ../../content/installation.rst:401
+#: ../../content/installation.rst:402
 msgid "We advise you to read the OTRS :doc:`performance-tuning` chapter."
 msgstr ""
 
