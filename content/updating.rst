@@ -29,7 +29,7 @@ Please make sure there are no more running services or cron jobs that try to acc
    root> systemctl stop postfix
    root> systemctl stop apache2
 
-If you do a major update form OTRS 6, you need to stop the old OTRS cron jobs and daemon (in this order):
+If you do a major update from OTRS 6, you need to stop the old OTRS cron jobs and daemon (in this order):
 
 .. code-block:: bash
 
