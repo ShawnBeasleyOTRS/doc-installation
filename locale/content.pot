@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OTRS Installation Guide 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-12 02:03+0000\n"
+"POT-Creation-Date: 2019-02-13 02:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -921,7 +921,7 @@ msgid "Please make sure there are no more running services or cron jobs that try
 msgstr ""
 
 #: ../../content/updating.rst:32
-msgid "If you do a major update form OTRS 6, you need to stop the old OTRS cron jobs and daemon (in this order):"
+msgid "If you do a major update from OTRS 6, you need to stop the old OTRS cron jobs and daemon (in this order):"
 msgstr ""
 
 #: ../../content/updating.rst:39
