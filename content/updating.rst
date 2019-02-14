@@ -9,7 +9,7 @@ Updating from an earlier version of OTRS 7
    You can update directly from any previous to the latest available patch level release.
 
 Updating from OTRS 6
-   You can update from any OTRS 6 patch level release to the latest available OTRS 7 patch level release.
+   You can update from any OTRS 6 patch level release to the latest available OTRS 7 patch level release. In order to continue, you should install Elasticsearch. For more information see Step 8: Setup Elasticsearch Cluster of this manual.
 
 Updating from OTRS 5 or earlier
    You cannot update from OTRS 5 or earlier directly to OTRS 7. Full updates to all available minor versions have to be made sequentially instead. For example, if you come from OTRS 4, you first have to perform a full update to OTRS 5, then to OTRS 6 and finally to OTRS 7.
